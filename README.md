@@ -16,7 +16,7 @@ Hello, I'm Jiang Muran. You can call me Andy Jiang or simply Jiang. Back in Chin
 <!-- 高质量小徽章图标 https://img.shields.io -->
 <span> 
   <br>
-  <img src="https://img.shields.io/badge/-CSharp-d0de31?style=flat-square&logo=.NET" />
+  <img src="https://img.shields.io/badge/-C++-d0de31?style=flat-square&logo=cpp" />
   <img src="https://img.shields.io/badge/-Java-81a6de?style=flat-square&logo=Icinga" />
   <img src="https://img.shields.io/badge/-TypeScript-9f71de?style=flat-square&logo=TypeScript" />
   <img src="https://img.shields.io/badge/-Docker-de97aa?style=flat-square&logo=Docker" />
