@@ -1,7 +1,7 @@
 ## Andy Jiang | JIANGMURAN
 **Code weaves dreams, line by line, a universe unfolds in time.**
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?lines=天空属于哈夫克!&center=true&size=27&color=000000"> 
+  <img src="https://readme-typing-svg.herokuapp.com/?lines=lzw&center=true&size=27&color=ffffff#upd_on_251019_del_at_260101"> 
   <br/>
 </h1>
 Hello, I'm Jiang Muran. You can call me Andy Jiang or simply Jiang. Back in China, my classmates often refer to me as JMR.
