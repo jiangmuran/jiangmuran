@@ -1,0 +1,176 @@
+1:"$Sreact.fragment"
+c:I[88343,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js"],"I18nProvider"]
+d:I[20032,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js"],"SmoothScroll"]
+e:I[28128,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js"],"ClientComponents"]
+f:I[39756,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js"],"default"]
+10:I[37457,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js"],"default"]
+11:I[29306,["/_next/static/chunks/dd942f51e08d6e9e.js","/_next/static/chunks/c6249ad17bbcd983.js","/_next/static/chunks/7af618df578ea2d5.js","/_next/static/chunks/7147ce41689f3d6a.js"],"default"]
+:HL["/_next/static/chunks/41b5c8a24d4c4288.css","style"]
+:HL["/_next/static/chunks/6de6e4d36427b1d9.css","style"]
+:HL["/_next/static/chunks/728dbb8cdd46b735.css","style"]
+:HL["/_next/static/chunks/bb3e957e7c4c1864.css","style"]
+:HL["/mypic.jpg","image",{"type":"image/jpeg"}]
+:HL["https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","font",{"crossOrigin":"anonymous","type":"font/truetype"}]
+:HL["https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","style"]
+:HL["https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap","style"]
+2:Tc81,
+            /* 内联字体定义 - 确保字体加载完成后再显示 */
+            @font-face {
+              font-family: 'Lora';
+              font-style: normal;
+              font-weight: 700;
+              font-display: block; /* 阻塞渲染直到字体加载完成 */
+              src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf') format('truetype');
+            }
+            @keyframes ssr-pulse {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes ssr-rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            @keyframes ssr-rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            #ssr-loader .ssr-title {
+              font-size: clamp(1.875rem, 5vw, 3rem);
+              font-weight: 700;
+              color: white;
+              margin-bottom: 2rem;
+              font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+            }
+            #ssr-loader .ssr-pulse-text {
+              animation: ssr-pulse 2s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-gray-text {
+              color: #8a8a8a;
+              margin-left: 0.5rem;
+            }
+            #ssr-loader .ssr-progress-container {
+              width: clamp(12rem, 50vw, 16rem);
+              height: 2px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 9999px;
+              overflow: hidden;
+            }
+            #ssr-loader .ssr-progress-bar {
+              height: 100%;
+              background: linear-gradient(to right, #c0c0c0, #8a8a8a);
+              width: 0%;
+              transition: width 0.1s ease-out;
+            }
+            #ssr-loader .ssr-progress-text {
+              margin-top: 1rem;
+              font-family: 'Courier New', 'Courier', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+              font-size: 0.75rem;
+              color: #8a8a8a;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+            }
+            #ssr-loader .ssr-progress-number {
+              color: #c0c0c0;
+            }
+            #ssr-loader .ssr-dots {
+              animation: ssr-pulse 1s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-circle-1 {
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              width: 8rem;
+              height: 8rem;
+              border: 1px solid rgba(192, 192, 192, 0.05);
+              border-radius: 50%;
+              animation: ssr-rotate 20s linear infinite;
+            }
+            #ssr-loader .ssr-circle-2 {
+              position: absolute;
+              bottom: 25%;
+              right: 25%;
+              width: 12rem;
+              height: 12rem;
+              border: 1px solid rgba(192, 192, 192, 0.03);
+              border-radius: 50%;
+              animation: ssr-rotate-reverse 30s linear infinite;
+            }
+            #ssr-loader.ssr-hidden {
+              opacity: 0;
+              pointer-events: none;
+            }
+          0:{"buildId":"7WyL9CQ24C6YIVUrNr9SL","rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/41b5c8a24d4c4288.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/6de6e4d36427b1d9.css","precedence":"next"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/chunks/728dbb8cdd46b735.css","precedence":"next"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/chunks/bb3e957e7c4c1864.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/dd942f51e08d6e9e.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/c6249ad17bbcd983.js","async":true}]],["$","html",null,{"lang":"zh-CN","className":"lenis lenis-smooth playfair_display_e099ab5b-module__TCdCaa__variable lora_b4b8a761-module__gRDlFq__variable outfit_5779da51-module__2xRKIa__variable noto_serif_sc_8ee6940-module__xGCTYq__variable ubuntu_mono_22efa9ca-module__ePIbrq__variable","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","href":"/mypic.jpg","as":"image","type":"image/jpeg"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","as":"font","type":"font/truetype","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","as":"style"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap","rel":"stylesheet"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"alternateName\":\"蒋沐然\",\"url\":\"https://jiangmuran.com\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://jiangmuran.com/mypic.jpg\",\"width\":400,\"height\":400},\"jobTitle\":\"学生 / 嵌入式爱好者 / 开源开发者\",\"description\":\"笔尖流淌诗意，梦想编织光影。热爱探索未知，拥抱每一瞬灵感。\",\"knowsAbout\":[\"编程\",\"数学建模\",\"嵌入式开发\",\"Web开发\",\"算法\",\"开源项目\"],\"sameAs\":[\"https://github.com/jiangmuran\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://jiangmuran.com/#website\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\",\"description\":\"Jiang Muran 的个人主页 - 嵌入式开发者、开源爱好者\",\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"},\"inLanguage\":\"zh-CN\"}"}}]]}],["$","body",null,{"className":"antialiased","children":[["$","div",null,{"id":"ssr-loader","suppressHydrationWarning":true,"style":{"position":"fixed","inset":0,"zIndex":99999,"background":"#050505","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","opacity":1,"transition":"opacity 0.5s ease-in-out"},"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5","$L6","$L7"]}],"$L8","$L9","$La"]}]]}]]}],"loading":null,"isPartial":false}
+3:["$","div",null,{"className":"ssr-circle-1"}]
+4:["$","div",null,{"className":"ssr-circle-2"}]
+5:["$","div",null,{"className":"ssr-title","children":[["$","span",null,{"className":"ssr-pulse-text","id":"ssr-first-name","children":"Jiang"}],["$","span",null,{"className":"ssr-gray-text","id":"ssr-last-name","children":"Muran"}]]}]
+6:["$","div",null,{"className":"ssr-progress-container","children":["$","div",null,{"className":"ssr-progress-bar","id":"ssr-progress-bar","suppressHydrationWarning":true}]}]
+7:["$","div",null,{"className":"ssr-progress-text","children":[["$","span",null,{"className":"ssr-progress-number","id":"ssr-progress-number","suppressHydrationWarning":true,"children":"0%"}],["$","span",null,{"style":{"marginLeft":"0.5rem"},"children":"LOADING"}],["$","span",null,{"className":"ssr-dots","children":"..."}]]}]
+b:Ta12,
+          (function() {
+            var progress = 0;
+            var progressBar = document.getElementById('ssr-progress-bar');
+            var progressNumber = document.getElementById('ssr-progress-number');
+            var ssrLoader = document.getElementById('ssr-loader');
+            
+            // 追踪资源加载进度
+            function updateProgress() {
+              if (typeof PerformanceObserver !== 'undefined') {
+                var resources = performance.getEntriesByType('resource');
+                var completed = 0;
+                var total = 0;
+                
+                resources.forEach(function(res) {
+                  total++;
+                  if (res.responseEnd > 0) completed++;
+                });
+                
+                if (total > 0) {
+                  progress = Math.min(95, Math.floor((completed / total) * 100));
+                }
+              } else {
+                // 降级：使用模拟进度
+                progress = Math.min(95, progress + Math.max(1, (95 - progress) * 0.1));
+              }
+              
+              if (progressBar) progressBar.style.width = progress + '%';
+              if (progressNumber) progressNumber.textContent = Math.round(progress) + '%';
+            }
+            
+            // 定期更新进度
+            var progressInterval = setInterval(updateProgress, 100);
+            
+            // 页面加载完成
+            function handleLoad() {
+              clearInterval(progressInterval);
+              progress = 100;
+              if (progressBar) progressBar.style.width = '100%';
+              if (progressNumber) progressNumber.textContent = '100%';
+              
+              // 传递进度给 React 组件
+              if (typeof window !== 'undefined') {
+                window.__SSR_LOADER_PROGRESS__ = 100;
+                window.__SSR_LOADER_READY__ = true;
+              }
+              
+              // 等待 React hydration
+              setTimeout(function() {
+                if (ssrLoader) {
+                  ssrLoader.classList.add('ssr-hidden');
+                  setTimeout(function() {
+                    if (ssrLoader && ssrLoader.parentNode) {
+                      ssrLoader.parentNode.removeChild(ssrLoader);
+                    }
+                  }, 500);
+                }
+              }, 300);
+            }
+            
+            if (document.readyState === 'complete') {
+              handleLoad();
+            } else {
+              window.addEventListener('load', handleLoad);
+            }
+          })();
+        8:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$b"}}]
+9:["$","$Lc",null,{"children":[["$","$Ld",null,{}],["$","$Le",null,{}],["$","$Lf",null,{"parallelRouterKey":"children","template":["$","$L10",null,{}],"notFound":[["$","$L11",null,{}],[]]}]]}]
+a:["$","script",null,{"defer":true,"src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\": \"979c05fb5cbf4f8fb5268ef84c91ba07\"}"}]

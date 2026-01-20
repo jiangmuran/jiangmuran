@@ -1,0 +1,109 @@
+{
+  "interestTags": [
+    { "text": "算法竞赛", "color": "from-violet-500/20 to-purple-500/20" },
+    { "text": "开源", "color": "from-cyan-500/20 to-blue-500/20" },
+    { "text": "数学建模", "color": "from-emerald-500/20 to-green-500/20" },
+    { "text": "嵌入式", "color": "from-orange-500/20 to-amber-500/20" },
+    { "text": "Web开发", "color": "from-pink-500/20 to-rose-500/20" },
+    { "text": "音乐", "color": "from-indigo-500/20 to-violet-500/20" },
+    { "text": "Web3", "color": "from-red-500/20 to-orange-500/20" },
+    { "text": "AI", "color": "from-blue-500/20 to-cyan-500/20" }
+  ],
+  "projects": {
+    "zh-CN": [
+      {
+        "id": 1,
+        "name": "OI-Wiki",
+        "description": "为OI / ICPC 知识整合项目提交贡献。",
+        "technologies": ["贡献者"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 2,
+        "name": "Filehelper Chatbot",
+        "description": "基于微信文件传输助手协议的自动化框架，探索日常机器人的轻量级实现。",
+        "technologies": ["Python", "Requests", "协议逆向"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 3,
+        "name": "AIDocGenius",
+        "description": "智能文档助手 - LLM驱动的文档结构化处理工具（WIP）。",
+        "technologies": ["仍在开发", "Python", "LLM"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "icon": "FileText"
+      }
+    ],
+    "zh-TW": [
+      {
+        "id": 1,
+        "name": "OI-Wiki",
+        "description": "OI / ICPC 知識整合專案。致力於消除資訊差，構建開放的演算法知識庫。",
+        "technologies": ["貢獻者"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 2,
+        "name": "Filehelper Chatbot",
+        "description": "基於微信檔案傳輸助手協定的自動化框架，探索IM機器人的輕量級實現。",
+        "technologies": ["Python", "Requests", "協定逆向"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 3,
+        "name": "AIDocGenius",
+        "description": "智慧文件助手 - LLM驅動的文件結構化處理工具（WIP）。",
+        "technologies": ["仍在開發", "Python", "LLM"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "icon": "FileText"
+      }
+    ],
+    "en": [
+      {
+        "id": 1,
+        "name": "OI-Wiki",
+        "description": "OI / ICPC knowledge integration project. Committed to eliminating information gaps and building an open algorithm knowledge base.",
+        "technologies": ["Contributor"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "icon": "BookOpen"
+      },
+      {
+        "id": 2,
+        "name": "Filehelper Chatbot",
+        "description": "Automation framework based on WeChat File Transfer Assistant protocol, exploring lightweight IM bot implementation.",
+        "technologies": ["Python", "Requests", "Protocol Reverse"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 3,
+        "name": "AIDocGenius",
+        "description": "Intelligent Document Assistant - LLM-driven document structuring tool (WIP).",
+        "technologies": ["In Development", "Python", "LLM"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "icon": "FileText"
+      }
+    ]
+  },
+  "friendLinks": [
+    {
+      "id": 1,
+      "name": "Paperee's Homepage",
+      "url": "https://paperee.guru",
+      "description": "纸片君ee的个人主页"
+    }
+  ]
+}
