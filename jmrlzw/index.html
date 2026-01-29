@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>JMR love LZW forever</title>
+    
+    <meta name="description" content="jmrlzw 的专属主页。是一个重要的页面，表达了JMR 对 LZW 的喜爱与赞美之情。JMR loves LZW forever.">
+    <meta name="keywords" content="jmrlzw, jmr, lzw, jmrlovelzw, jmrandlzw, 恋爱计时, 纪念日">
+    <link rel="canonical" href="https://jiangmuran.com/jmrlzw" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            /* 深色木质桌面背景 */
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    #2c2c2c 0px,
+                    #2c2c2c 2px,
+                    #2a2a2a 2px,
+                    #2a2a2a 4px
+                ),
+                linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 添加纸张纹理噪点 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23noise)" opacity="0.05"/></svg>');
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .receipt-container {
+            width: 350px;
+            background: #fffdf0;
+            position: relative;
+            padding: 30px 25px 40px;
+            /* 逼真的阴影效果 */
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.15),
+                0 16px 32px rgba(0, 0, 0, 0.2),
+                0 32px 64px rgba(0, 0, 0, 0.15);
+            /* 轻微旋转增加真实感 */
+            transform: rotate(-0.5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .receipt-container:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.12),
+                0 12px 24px rgba(0, 0, 0, 0.18),
+                0 24px 48px rgba(0, 0, 0, 0.22),
+                0 40px 80px rgba(0, 0, 0, 0.18);
+        }
+
+        /* 顶部锯齿边缘 */
+        .receipt-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: 
+                linear-gradient(135deg, #fffdf0 25%, transparent 25%),
+                linear-gradient(225deg, #fffdf0 25%, transparent 25%);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 0;
+        }
+
+        /* 底部锯齿边缘 */
+        .receipt-container::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: 
+                linear-gradient(45deg, #fffdf0 25%, transparent 25%),
+                linear-gradient(-45deg, #fffdf0 25%, transparent 25%);
+            background-size: 10px 10px;
+            background-position: 0 0, 5px 0;
+        }
+
+        /* 纸张纹理叠加 */
+        .receipt-paper-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise"/><feDiffuseLighting in="noise" lighting-color="%23fff" surfaceScale="1"><feDistantLight azimuth="45" elevation="35"/></feDiffuseLighting></filter><rect width="400" height="400" filter="url(%23paper)" opacity="0.4"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .receipt-content {
+            position: relative;
+            z-index: 1;
+            color: #333;
+        }
+
+        /* 头部 */
+        .receipt-header {
+            text-align: center;
+            border-bottom: 2px dashed #999;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .store-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .store-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .receipt-date {
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* 心形图标 SVG */
+        .heart-icon {
+            width: 30px;
+            height: 30px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        /* 收据项目 */
+        .receipt-item {
+            margin: 20px 0;
+            padding: 15px 0;
+            border-bottom: 1px dashed #999;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+        }
+
+        .item-name {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .item-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .item-detail {
+            font-size: 0.65rem;
+            color: #666;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        /* 页脚 */
+        .receipt-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed #999;
+            text-align: center;
+        }
+
+        .thank-you {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* 条形码 */
+        .barcode-container {
+            margin: 20px 0;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .barcode {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 60px;
+            gap: 2px;
+        }
+
+        .barcode .bar {
+            background: #000;
+            height: 100%;
+            width: 2px;
+        }
+
+        .barcode .bar:nth-child(3n) { height: 90%; }
+        .barcode .bar:nth-child(5n) { height: 70%; }
+        .barcode .bar:nth-child(7n) { height: 85%; }
+        .barcode .bar:nth-child(11n) { width: 3px; }
+        .barcode .bar:nth-child(13n) { height: 60%; }
+
+        .barcode-number {
+            font-size: 0.65rem;
+            text-align: center;
+            margin-top: 5px;
+            letter-spacing: 3px;
+        }
+
+        .footer-text {
+            font-size: 0.65rem;
+            color: #666;
+            margin: 3px 0;
+            text-transform: uppercase;
+        }
+
+        /* 礼物盒图标 */
+        .gift-icon {
+            width: 25px;
+            height: 25px;
+            margin: 10px auto;
+            display: block;
+        }
+
+        /* ========== 生日特效 ========== */
+        
+        /* 生日当天的收据特殊样式 */
+        .receipt-container.birthday-mode {
+            border: 3px solid #ff6b95;
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.15),
+                0 16px 32px rgba(0, 0, 0, 0.2),
+                0 32px 64px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(255, 107, 149, 0.4),
+                0 0 60px rgba(255, 107, 149, 0.2);
+            animation: birthdayGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes birthdayGlow {
+            from {
+                box-shadow: 
+                    0 2px 4px rgba(0, 0, 0, 0.1),
+                    0 8px 16px rgba(0, 0, 0, 0.15),
+                    0 16px 32px rgba(0, 0, 0, 0.2),
+                    0 32px 64px rgba(0, 0, 0, 0.15),
+                    0 0 20px rgba(255, 107, 149, 0.3);
+            }
+            to {
+                box-shadow: 
+                    0 4px 8px rgba(0, 0, 0, 0.12),
+                    0 12px 24px rgba(0, 0, 0, 0.18),
+                    0 24px 48px rgba(0, 0, 0, 0.22),
+                    0 40px 80px rgba(0, 0, 0, 0.18),
+                    0 0 50px rgba(255, 107, 149, 0.6);
+            }
+        }
+
+        /* 生日快乐文字特殊样式 */
+        .birthday-message {
+            font-size: 1.4rem !important;
+            font-weight: 700 !important;
+            background: linear-gradient(45deg, #ff6b95, #ffd700, #ff6b95, #ffd700);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbowText 3s ease infinite;
+        }
+
+        @keyframes rainbowText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 彩纸容器 */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        /* 单个彩纸片 */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            opacity: 0;
+        }
+
+        .confetti.active {
+            opacity: 1;
+            animation: confettiFall 4s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* 生日蛋糕动画图标 */
+        .birthday-cake-icon {
+            width: 60px;
+            height: 60px;
+            margin: 15px auto;
+            display: none;
+        }
+
+        .birthday-cake-icon.show {
+            display: block;
+            animation: cakeBounce 1s ease-in-out infinite;
+        }
+
+        @keyframes cakeBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+
+        /* 蜡烛火焰闪烁 */
+        .candle-flame {
+            animation: flameFlicker 0.3s ease-in-out infinite alternate;
+        }
+
+        @keyframes flameFlicker {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0.8; transform: scale(0.95) translateY(1px); }
+        }
+
+        /* ========== 环境装饰元素 ========== */
+        
+        /* 左侧：宝丽来照片 */
+        .polaroid-photo {
+            position: absolute;
+            left: 10%;
+            top: 15%;
+            width: 200px;
+            background: #fff;
+            padding: 15px 15px 50px;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.15),
+                0 8px 16px rgba(0, 0, 0, 0.1),
+                0 16px 32px rgba(0, 0, 0, 0.08);
+            transform: rotate(-8deg);
+            transition: transform 0.3s ease;
+            z-index: 0;
+        }
+
+        .polaroid-photo:hover {
+            transform: rotate(-5deg) scale(1.05);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.18),
+                0 12px 24px rgba(0, 0, 0, 0.15),
+                0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* 做旧效果叠加层 */
+        .polaroid-photo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(139, 69, 19, 0.05) 50%, transparent 70%),
+                radial-gradient(circle at 20% 30%, rgba(101, 67, 33, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 35%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .polaroid-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            /* 做旧滤镜效果 */
+            filter: sepia(0.15) contrast(1.05) brightness(0.98) saturate(0.95);
+        }
+
+        .polaroid-caption {
+            position: relative;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: #555;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+            z-index: 3;
+        }
+
+        /* 移动端隐藏装饰元素 */
+        @media (max-width: 768px) {
+            .polaroid-photo {
+                display: none;
+            }
+        }
+
+        /* 确保收据容器在装饰元素之上 */
+        .receipt-container {
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 彩纸容器（仅生日当天显示） -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- 环境装饰元素：宝丽来照片（左侧） -->
+    <div class="polaroid-photo">
+        <img src="bulr.jpg" alt="Memory Photo" loading="lazy">
+        <div class="polaroid-caption">Shot by jmr at 2024/09/26</div>
+    </div>
+    <div class="receipt-container">
+        <div class="receipt-paper-texture"></div>
+        <div class="receipt-content">
+            
+            <!-- 头部 -->
+            <div class="receipt-header">
+                <div class="store-name">JMR & LZW</div>
+                <div class="store-subtitle">RELATIONSHIP RECEIPT</div>
+                
+                <!-- 心形图标 SVG -->
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                
+                <div class="receipt-date">DATE: 2024/08/07</div>
+            </div>
+
+            <!-- 恋爱时长项目 -->
+            <div class="receipt-item">
+                <div class="item-header">
+                    <span>ITEM</span>
+                    <span>DURATION</span>
+                </div>
+                <div class="item-name">LOVE DURATION</div>
+                <div class="item-value" id="love-timer">...</div>
+                <div class="item-detail">SINCE 2024/08/07 09:00</div>
+            </div>
+
+            <!-- 生日倒计时项目 -->
+            <div class="receipt-item">
+                <div class="item-header">
+                    <span>ITEM</span>
+                    <span>COUNTDOWN</span>
+                </div>
+                <div class="item-name">BIRTHDAY COUNTDOWN</div>
+                
+                <!-- 礼物盒图标 SVG -->
+                <svg class="gift-icon" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                    <rect x="2" y="7" width="20" height="5"></rect>
+                    <line x1="12" y1="22" x2="12" y2="7"></line>
+                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                </svg>
+                
+                <!-- 生日蛋糕图标（仅在生日当天显示） -->
+                <svg class="birthday-cake-icon" id="birthday-cake" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 蛋糕底层 -->
+                    <rect x="10" y="65" width="80" height="25" rx="3" fill="#f4a460" stroke="#d2691e" stroke-width="2"/>
+                    <ellipse cx="50" cy="65" rx="40" ry="8" fill="#daa520"/>
+                    
+                    <!-- 蛋糕中层 -->
+                    <rect x="20" y="45" width="60" height="20" rx="2" fill="#ff69b4" stroke="#ff1493" stroke-width="2"/>
+                    <ellipse cx="50" cy="45" rx="30" ry="6" fill="#ff85c1"/>
+                    
+                    <!-- 蛋糕顶层 -->
+                    <rect x="30" y="30" width="40" height="15" rx="2" fill="#ffd700" stroke="#ffb700" stroke-width="2"/>
+                    <ellipse cx="50" cy="30" rx="20" ry="5" fill="#ffe44d"/>
+                    
+                    <!-- 装饰 -->
+                    <circle cx="30" cy="55" r="3" fill="#fff"/>
+                    <circle cx="50" cy="55" r="3" fill="#fff"/>
+                    <circle cx="70" cy="55" r="3" fill="#fff"/>
+                    <circle cx="40" cy="75" r="3" fill="#8b4513"/>
+                    <circle cx="60" cy="75" r="3" fill="#8b4513"/>
+                    
+                    <!-- 蜡烛1 -->
+                    <rect x="38" y="18" width="4" height="12" rx="1" fill="#e74c3c"/>
+                    <ellipse cx="40" cy="18" rx="2" ry="1" fill="#c0392b"/>
+                    
+                    <!-- 蜡烛2 -->
+                    <rect x="58" y="18" width="4" height="12" rx="1" fill="#e74c3c"/>
+                    <ellipse cx="60" cy="18" rx="2" ry="1" fill="#c0392b"/>
+                    
+                    <!-- 火焰1 -->
+                    <ellipse class="candle-flame" cx="40" cy="15" rx="3" ry="5" fill="#ffd700" opacity="0.9"/>
+                    <ellipse class="candle-flame" cx="40" cy="14" rx="2" ry="3" fill="#ff6b35"/>
+                    
+                    <!-- 火焰2 -->
+                    <ellipse class="candle-flame" cx="60" cy="15" rx="3" ry="5" fill="#ffd700" opacity="0.9"/>
+                    <ellipse class="candle-flame" cx="60" cy="14" rx="2" ry="3" fill="#ff6b35"/>
+                </svg>
+                
+                <div class="item-value" id="bday-timer">...</div>
+                <div class="item-detail">TARGET: LZW'S BIRTHDAY 09/26</div>
+            </div>
+
+            <!-- 页脚 -->
+            <div class="receipt-footer">
+                <div class="thank-you">THANK YOU!</div>
+                
+                <!-- 条形码 -->
+                <div class="barcode-container">
+                    <div class="barcode">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="barcode-number">2024080720260926</div>
+                </div>
+                
+                <div class="footer-text">&copy; 2024-2025 JMRLZW</div>
+                <div class="footer-text">JMR LOVES LZW FOREVER</div>
+                <div class="footer-text">京ICP备20240930号-1</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const startDate = new Date('2024-08-07T09:00:00');
+        const bdayMonth = 9;
+        const bdayDay = 26;
+        
+        let birthdayEffectInitialized = false;
+
+        // 生日彩纸效果
+        function createConfetti() {
+            const colors = ['#ff6b95', '#ffd700', '#4ecdc4', '#95e1d3', '#f38181', '#aa96da'];
+            const container = document.getElementById('confetti-container');
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                    
+                    container.appendChild(confetti);
+                    
+                    // 添加active类触发动画
+                    setTimeout(() => confetti.classList.add('active'), 10);
+                    
+                    // 动画结束后移除元素
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 100);
+            }
+        }
+
+        // 初始化生日特效
+        function initBirthdayEffects() {
+            if (birthdayEffectInitialized) return;
+            
+            // 添加收据特殊样式
+            document.querySelector('.receipt-container').classList.add('birthday-mode');
+            
+            // 显示生日蛋糕
+            document.getElementById('birthday-cake').classList.add('show');
+            
+            // 添加彩虹文字效果
+            const bdayTimer = document.getElementById('bday-timer');
+            bdayTimer.classList.add('birthday-message');
+            
+            // 启动彩纸动画（持续整天）
+            createConfetti();
+            setInterval(createConfetti, 3000);
+            
+            birthdayEffectInitialized = true;
+            
+            console.log('🎉 生日特效已启动！');
+        }
+
+        function updateTimers() {
+            const now = new Date();
+
+            // 1. 恋爱时长
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const f = (n) => n < 10 ? '0' + n : n;
+
+            // 收据风格的时间显示
+            document.getElementById('love-timer').textContent = 
+                `${days}D ${f(hours)}H ${f(minutes)}M ${f(seconds)}S`;
+
+            // 2. 生日倒计时
+            let currentYear = now.getFullYear();
+            let nextBday = new Date(currentYear, bdayMonth - 1, bdayDay);
+
+            if (now > nextBday) {
+                nextBday.setFullYear(currentYear + 1);
+            }
+            
+            const isToday = now.getMonth() === (bdayMonth - 1) && now.getDate() === bdayDay;
+            
+            if (isToday) {
+                // 🎉 生日当天触发特效
+                initBirthdayEffects();
+                document.getElementById('bday-timer').textContent = "🎂 HAPPY BIRTHDAY LZW! 🎂";
+            } else {
+                const bdayDiff = nextBday - now;
+                const bDays = Math.floor(bdayDiff / (1000 * 60 * 60 * 24));
+                const bHours = Math.floor((bdayDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const bMinutes = Math.floor((bdayDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const bSeconds = Math.floor((bdayDiff % (1000 * 60)) / 1000);
+
+                document.getElementById('bday-timer').textContent = 
+                    `${bDays}D ${f(bHours)}H ${f(bMinutes)}M ${f(bSeconds)}S`;
+            }
+        }
+
+        setInterval(updateTimers, 1000);
+        updateTimers();
+    </script>
+</body>
+</html>

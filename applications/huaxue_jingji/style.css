@@ -1,0 +1,891 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 屏幕切换 */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+.screen.fade-out {
+    opacity: 0;
+}
+
+.screen.fade-in {
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 预加载界面 */
+.preloader {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 1000;
+}
+
+.preloader-content {
+    text-align: center;
+    color: white;
+}
+
+.preloader-logo {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.preloader-text {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.preloader-progress {
+    width: 400px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.preloader-progress-bar {
+    height: 100%;
+    background: white;
+    width: 0%;
+    animation: loading 5s linear;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 开始界面 */
+.start-content {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    text-align: center;
+}
+
+.game-title {
+    font-size: 56px;
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.game-instructions {
+    text-align: left;
+    margin-bottom: 30px;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-instructions h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+.game-instructions ul {
+    list-style: none;
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+.game-instructions li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.game-instructions li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.player-inputs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.player-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.player-input-group label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.player-input-group input {
+    font-size: 28px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.player-input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.start-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 按钮样式 */
+.btn {
+    font-size: 28px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+}
+
+.btn-small {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+/* 游戏界面 */
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    height: 100vh;
+    width: 100vw;
+    gap: 0;
+}
+
+.player-area {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative; /* 为知识点弹窗提供定位基准 */
+}
+
+.player-left {
+    border-right: 2px solid #ddd;
+}
+
+.player-right {
+    border-left: 2px solid #ddd;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+}
+
+.player-id {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.player-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.stat-label {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.category-display {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.cards-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.chemical-card {
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.chemical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chemical-card:active {
+    transform: scale(0.95);
+}
+
+.chemical-card.selected {
+    border-color: #667eea;
+    background: #e7f0ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.chemical-card.correct {
+    animation: correctAnimation 0.6s ease;
+}
+
+.chemical-card.wrong {
+    animation: wrongAnimation 0.6s ease;
+}
+
+@keyframes correctAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        background: #4caf50;
+        color: white;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes wrongAnimation {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+        background: #f44336;
+        color: white;
+    }
+    75% {
+        transform: translateX(10px);
+        background: #f44336;
+        color: white;
+    }
+}
+
+.target-area {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 200px;
+}
+
+.target-area:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.target-area.active {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.6);
+}
+
+.target-label {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.player-feedback {
+    min-height: 60px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.feedback-message {
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    animation: feedbackAnimation 1s ease;
+}
+
+.feedback-correct {
+    background: #4caf50;
+    color: white;
+}
+
+.feedback-wrong {
+    background: #f44336;
+    color: white;
+}
+
+.feedback-combo {
+    background: #ff9800;
+    color: white;
+    font-size: 32px;
+    animation: comboAnimation 1s ease;
+}
+
+@keyframes feedbackAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes comboAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25%, 75% {
+        transform: scale(1.3) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.5) rotate(-5deg);
+    }
+}
+
+/* 分隔线 */
+.divider {
+    width: 4px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.divider-content {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+    z-index: 11;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comparison-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.comparison-item span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+/* 游戏控制 */
+.game-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+/* 结束界面 */
+.end-content {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    text-align: center;
+}
+
+.end-title {
+    font-size: 56px;
+    color: #667eea;
+    margin-bottom: 40px;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.result-item {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid #ddd;
+}
+
+.result-item.winner {
+    border-color: #ffd700;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-player-id {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.result-winner {
+    font-size: 24px;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.result-stats {
+    text-align: left;
+    font-size: 24px;
+    line-height: 2;
+}
+
+.result-stats span {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.end-message {
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #e7f0ff;
+    border-radius: 10px;
+}
+
+.end-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 排行榜界面 */
+.leaderboard-content {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.leaderboard-title {
+    font-size: 56px;
+    color: #667eea;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.leaderboard-list {
+    margin-bottom: 30px;
+}
+
+.leaderboard-item {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 100px 150px;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    align-items: center;
+    font-size: 24px;
+}
+
+.leaderboard-item.top3 {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border: 2px solid #ffd700;
+}
+
+.leaderboard-rank {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+}
+
+.leaderboard-id {
+    font-weight: bold;
+    color: #333;
+}
+
+.leaderboard-score {
+    text-align: center;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.leaderboard-accuracy {
+    text-align: center;
+    color: #666;
+}
+
+.leaderboard-date {
+    text-align: center;
+    color: #999;
+    font-size: 20px;
+}
+
+.leaderboard-buttons {
+    text-align: center;
+}
+
+/* 知识点弹窗 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 40px;
+    color: #667eea;
+    margin: 0;
+}
+
+.modal-body {
+    margin-bottom: 30px;
+}
+
+.knowledge-text {
+    font-size: 28px;
+    line-height: 1.8;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-countdown {
+    font-size: 48px;
+    font-weight: bold;
+    color: #667eea;
+    animation: pulse 1s infinite;
+}
+
+/* 玩家区域内的知识点弹窗 */
+.player-knowledge-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.player-knowledge-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+.player-knowledge-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.player-knowledge-text {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.player-knowledge-countdown {
+    font-size: 48px;
+    font-weight: bold;
+    color: #667eea;
+    animation: pulse 1s infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 1920px) {
+    body {
+        font-size: 20px;
+    }
+    
+    .category-display {
+        font-size: 40px;
+    }
+    
+    .chemical-card {
+        font-size: 24px;
+        min-width: 100px;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 1366px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .category-display {
+        font-size: 36px;
+    }
+    
+    .chemical-card {
+        font-size: 20px;
+        min-width: 90px;
+        min-height: 90px;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+

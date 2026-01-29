@@ -1,0 +1,195 @@
+1:"$Sreact.fragment"
+d:I[68027,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"default"]
+:HL["/_next/static/chunks/c32cde9efba4d410.css","style"]
+:HL["/_next/static/chunks/4c96ad731c46992e.css","style"]
+:HL["/_next/static/chunks/728dbb8cdd46b735.css","style"]
+:HL["/_next/static/chunks/bb3e957e7c4c1864.css","style"]
+:HL["/_next/static/media/2a65768255d6b625.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/5e5dfa9e86f764b8.p.da6e3317.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70e3db2de7f94926.p.347f98aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8c2eb9ceedecfc8e.p.21935807.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f112ed7f0b91582f.p.12569d31.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/mypic.jpg","image",{"type":"image/jpeg"}]
+:HL["https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","font",{"crossOrigin":"anonymous","type":"font/truetype"}]
+:HL["https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","style"]
+2:Tc81,
+            /* 内联字体定义 - 确保字体加载完成后再显示 */
+            @font-face {
+              font-family: 'Lora';
+              font-style: normal;
+              font-weight: 700;
+              font-display: block; /* 阻塞渲染直到字体加载完成 */
+              src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf') format('truetype');
+            }
+            @keyframes ssr-pulse {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes ssr-rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            @keyframes ssr-rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            #ssr-loader .ssr-title {
+              font-size: clamp(1.875rem, 5vw, 3rem);
+              font-weight: 700;
+              color: white;
+              margin-bottom: 2rem;
+              font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+            }
+            #ssr-loader .ssr-pulse-text {
+              animation: ssr-pulse 2s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-gray-text {
+              color: #8a8a8a;
+              margin-left: 0.5rem;
+            }
+            #ssr-loader .ssr-progress-container {
+              width: clamp(12rem, 50vw, 16rem);
+              height: 2px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 9999px;
+              overflow: hidden;
+            }
+            #ssr-loader .ssr-progress-bar {
+              height: 100%;
+              background: linear-gradient(to right, #c0c0c0, #8a8a8a);
+              width: 0%;
+              transition: width 0.1s ease-out;
+            }
+            #ssr-loader .ssr-progress-text {
+              margin-top: 1rem;
+              font-family: 'Courier New', 'Courier', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+              font-size: 0.75rem;
+              color: #8a8a8a;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+            }
+            #ssr-loader .ssr-progress-number {
+              color: #c0c0c0;
+            }
+            #ssr-loader .ssr-dots {
+              animation: ssr-pulse 1s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-circle-1 {
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              width: 8rem;
+              height: 8rem;
+              border: 1px solid rgba(192, 192, 192, 0.05);
+              border-radius: 50%;
+              animation: ssr-rotate 20s linear infinite;
+            }
+            #ssr-loader .ssr-circle-2 {
+              position: absolute;
+              bottom: 25%;
+              right: 25%;
+              width: 12rem;
+              height: 12rem;
+              border: 1px solid rgba(192, 192, 192, 0.03);
+              border-radius: 50%;
+              animation: ssr-rotate-reverse 30s linear infinite;
+            }
+            #ssr-loader.ssr-hidden {
+              opacity: 0;
+              pointer-events: none;
+            }
+          0:{"P":null,"b":"k6cdN6wk6dozvzL-NoVc7","c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/c32cde9efba4d410.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/4c96ad731c46992e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/chunks/728dbb8cdd46b735.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/chunks/bb3e957e7c4c1864.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/737b84b5cec61b03.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"lenis lenis-smooth playfair_display_e099ab5b-module__TCdCaa__variable lora_b4b8a761-module__gRDlFq__variable outfit_5779da51-module__2xRKIa__variable noto_serif_sc_8ee6940-module__xGCTYq__variable ubuntu_mono_22efa9ca-module__ePIbrq__variable","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","href":"/mypic.jpg","as":"image","type":"image/jpeg"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","as":"font","type":"font/truetype","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"alternateName\":\"蒋沐然\",\"url\":\"https://jiangmuran.com\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://jiangmuran.com/mypic.jpg\",\"width\":400,\"height\":400},\"jobTitle\":\"学生 / 嵌入式爱好者 / 开源开发者\",\"description\":\"笔尖流淌诗意，梦想编织光影。热爱探索未知，拥抱每一瞬灵感。\",\"knowsAbout\":[\"编程\",\"数学建模\",\"嵌入式开发\",\"Web开发\",\"算法\",\"开源项目\"],\"sameAs\":[\"https://github.com/jiangmuran\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://jiangmuran.com/#website\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\",\"description\":\"Jiang Muran 的个人主页 - 嵌入式开发者、开源爱好者\",\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"},\"inLanguage\":\"zh-CN\"}"}}]]}],["$","body",null,{"className":"antialiased","children":[["$","div",null,{"id":"ssr-loader","suppressHydrationWarning":true,"style":{"position":"fixed","inset":0,"zIndex":99999,"background":"#050505","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","opacity":1,"transition":"opacity 0.5s ease-in-out"},"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5","$L6","$L7"]}],"$L8","$L9","$La"]}]]}]]}],{"children":["$Lb",{},null,false,false]},null,false,false],"$Lc",false]],"m":"$undefined","G":["$d",[]],"S":true}
+f:I[88343,["/_next/static/chunks/737b84b5cec61b03.js"],"I18nProvider"]
+10:I[20032,["/_next/static/chunks/737b84b5cec61b03.js"],"SmoothScroll"]
+11:I[28128,["/_next/static/chunks/737b84b5cec61b03.js"],"ClientComponents"]
+12:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"default"]
+13:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"default"]
+14:I[29306,["/_next/static/chunks/737b84b5cec61b03.js","/_next/static/chunks/84821fa1f5b49fae.js","/_next/static/chunks/7147ce41689f3d6a.js"],"default"]
+15:I[47257,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"ClientPageRoot"]
+16:I[52683,["/_next/static/chunks/737b84b5cec61b03.js","/_next/static/chunks/470c38e7123981b9.js","/_next/static/chunks/7147ce41689f3d6a.js","/_next/static/chunks/d0f37a056c58bddb.js"],"default"]
+19:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"OutletBoundary"]
+1a:"$Sreact.suspense"
+1c:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"ViewportBoundary"]
+1e:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"MetadataBoundary"]
+3:["$","div",null,{"className":"ssr-circle-1"}]
+4:["$","div",null,{"className":"ssr-circle-2"}]
+5:["$","div",null,{"className":"ssr-title","children":[["$","span",null,{"className":"ssr-pulse-text","id":"ssr-first-name","children":"Jiang"}],["$","span",null,{"className":"ssr-gray-text","id":"ssr-last-name","children":"Muran"}]]}]
+6:["$","div",null,{"className":"ssr-progress-container","children":["$","div",null,{"className":"ssr-progress-bar","id":"ssr-progress-bar","suppressHydrationWarning":true}]}]
+7:["$","div",null,{"className":"ssr-progress-text","children":[["$","span",null,{"className":"ssr-progress-number","id":"ssr-progress-number","suppressHydrationWarning":true,"children":"0%"}],["$","span",null,{"style":{"marginLeft":"0.5rem"},"children":"LOADING"}],["$","span",null,{"className":"ssr-dots","children":"..."}]]}]
+e:Ta12,
+          (function() {
+            var progress = 0;
+            var progressBar = document.getElementById('ssr-progress-bar');
+            var progressNumber = document.getElementById('ssr-progress-number');
+            var ssrLoader = document.getElementById('ssr-loader');
+            
+            // 追踪资源加载进度
+            function updateProgress() {
+              if (typeof PerformanceObserver !== 'undefined') {
+                var resources = performance.getEntriesByType('resource');
+                var completed = 0;
+                var total = 0;
+                
+                resources.forEach(function(res) {
+                  total++;
+                  if (res.responseEnd > 0) completed++;
+                });
+                
+                if (total > 0) {
+                  progress = Math.min(95, Math.floor((completed / total) * 100));
+                }
+              } else {
+                // 降级：使用模拟进度
+                progress = Math.min(95, progress + Math.max(1, (95 - progress) * 0.1));
+              }
+              
+              if (progressBar) progressBar.style.width = progress + '%';
+              if (progressNumber) progressNumber.textContent = Math.round(progress) + '%';
+            }
+            
+            // 定期更新进度
+            var progressInterval = setInterval(updateProgress, 100);
+            
+            // 页面加载完成
+            function handleLoad() {
+              clearInterval(progressInterval);
+              progress = 100;
+              if (progressBar) progressBar.style.width = '100%';
+              if (progressNumber) progressNumber.textContent = '100%';
+              
+              // 传递进度给 React 组件
+              if (typeof window !== 'undefined') {
+                window.__SSR_LOADER_PROGRESS__ = 100;
+                window.__SSR_LOADER_READY__ = true;
+              }
+              
+              // 等待 React hydration
+              setTimeout(function() {
+                if (ssrLoader) {
+                  ssrLoader.classList.add('ssr-hidden');
+                  setTimeout(function() {
+                    if (ssrLoader && ssrLoader.parentNode) {
+                      ssrLoader.parentNode.removeChild(ssrLoader);
+                    }
+                  }, 500);
+                }
+              }, 300);
+            }
+            
+            if (document.readyState === 'complete') {
+              handleLoad();
+            } else {
+              window.addEventListener('load', handleLoad);
+            }
+          })();
+        8:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$e"}}]
+9:["$","$Lf",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{}],["$","$L12",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L14",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+a:["$","script",null,{"defer":true,"src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\": \"979c05fb5cbf4f8fb5268ef84c91ba07\"}"}]
+b:["$","$1","c",{"children":[["$","$L15",null,{"Component":"$16","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@17","$@18"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/470c38e7123981b9.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/7147ce41689f3d6a.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/d0f37a056c58bddb.js","async":true,"nonce":"$undefined"}]],["$","$L19",null,{"children":["$","$1a",null,{"name":"Next.MetadataOutlet","children":"$@1b"}]}]]}]
+c:["$","$1","h",{"children":[null,["$","$L1c",null,{"children":"$L1d"}],["$","div",null,{"hidden":true,"children":["$","$L1e",null,{"children":["$","$1a",null,{"name":"Next.Metadata","children":"$L1f"}]}]}],null]}]
+17:{}
+18:"$b:props:children:0:props:serverProvidedParams:params"
+1d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#050508"}]]
+20:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/c6249ad17bbcd983.js"],"IconMark"]
+1b:null
+1f:[["$","title","0",{"children":"JMR's Homepage"}],["$","meta","1",{"name":"description","content":"笔尖流淌诗意，梦想编织光影。热爱探索未知，拥抱每一瞬灵感，以艺术点燃生活，追寻真理与美。嵌入式开发者、开源爱好者、数学建模竞赛者。"}],["$","link","2",{"rel":"author","href":"https://jiangmuran.com"}],["$","meta","3",{"name":"author","content":"Jiang Muran"}],["$","meta","4",{"name":"keywords","content":"Jiang Muran,蒋沐然,开发者,嵌入式,开源,编程,算法,数学建模,个人主页,程序员,Web开发"}],["$","meta","5",{"name":"creator","content":"Jiang Muran"}],["$","meta","6",{"name":"publisher","content":"Jiang Muran"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://jiangmuran.com"}],["$","link","11",{"rel":"alternate","hrefLang":"zh-CN","href":"https://jiangmuran.com"}],["$","meta","12",{"property":"og:title","content":"JMR's Homepage"}],["$","meta","13",{"property":"og:description","content":"笔尖流淌诗意，梦想编织光影。热爱探索未知，拥抱每一瞬灵感。嵌入式开发者、开源爱好者。"}],["$","meta","14",{"property":"og:url","content":"https://jiangmuran.com"}],["$","meta","15",{"property":"og:site_name","content":"Jiang Muran"}],["$","meta","16",{"property":"og:locale","content":"zh_CN"}],["$","meta","17",{"property":"og:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","meta","18",{"property":"og:image:width","content":"400"}],["$","meta","19",{"property":"og:image:height","content":"400"}],["$","meta","20",{"property":"og:image:alt","content":"Jiang Muran - 个人头像"}],["$","meta","21",{"property":"og:type","content":"website"}],["$","meta","22",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","23",{"name":"twitter:creator","content":"@jiangmuran"}],["$","meta","24",{"name":"twitter:title","content":"JMR's Homepage"}],["$","meta","25",{"name":"twitter:description","content":"笔尖流淌诗意，梦想编织光影。嵌入式开发者、开源爱好者。"}],["$","meta","26",{"name":"twitter:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","link","27",{"rel":"shortcut icon","href":"/mypic.jpg"}],["$","link","28",{"rel":"icon","href":"/mypic.jpg","type":"image/jpeg"}],["$","link","29",{"rel":"apple-touch-icon","href":"/mypic.jpg","sizes":"180x180","type":"image/jpeg"}],["$","$L20","30",{}]]

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学物质分类双人竞技游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 预加载界面 -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">jiangmuran.com</div>
+            <div class="preloader-text">正在预渲染着色器...</div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 开始界面 -->
+    <div id="start-screen" class="screen hidden">
+        <div class="start-content">
+            <h1 class="game-title">化学物质分类竞技</h1>
+            <div class="game-instructions">
+                <h2>游戏说明</h2>
+                <ul>
+                    <li>双人同屏竞技，左右各操作一个区域</li>
+                    <li>点击物质卡片选中，再点击目标分类完成分类</li>
+                    <li>答对+10分，答错-5分，答对+1秒，答错-3秒</li>
+                    <li>连续答对3题有连击奖励，连续答对5题触发完美连击</li>
+                    <li>游戏时间3分钟，看谁得分更高！</li>
+                </ul>
+            </div>
+            <div class="player-inputs">
+                <div class="player-input-group">
+                    <label>玩家1 ID:</label>
+                    <input type="text" id="player1-id" placeholder="Player1" maxlength="20">
+                </div>
+                <div class="player-input-group">
+                    <label>玩家2 ID:</label>
+                    <input type="text" id="player2-id" placeholder="Player2" maxlength="20">
+                </div>
+            </div>
+            <div class="start-buttons">
+                <button id="start-btn" class="btn btn-primary">开始游戏</button>
+                <button id="leaderboard-btn" class="btn btn-secondary">查看排行榜</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 知识点弹窗 -->
+    <div id="knowledge-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>知识点提示</h2>
+            </div>
+            <div class="modal-body">
+                <div class="knowledge-text" id="knowledge-text"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-countdown" id="modal-countdown">3</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 游戏界面 -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-container">
+            <!-- 玩家1区域 -->
+            <div class="player-area player-left" data-player="1">
+                <div class="player-header">
+                    <div class="player-id" id="player1-display-id">Player1</div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">得分:</span>
+                            <span class="stat-value" id="player1-score">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">时间:</span>
+                            <span class="stat-value" id="player1-time">180</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">进度:</span>
+                            <span class="stat-value" id="player1-progress">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-display" id="player1-category">等待开始...</div>
+                <div class="game-content">
+                    <div class="cards-area" id="player1-cards">
+                        <!-- 物质卡片将在这里动态生成 -->
+                    </div>
+                    <div class="target-area" id="player1-target">
+                        <div class="target-label">拖拽到这里</div>
+                    </div>
+                </div>
+                <div class="player-feedback" id="player1-feedback"></div>
+            </div>
+
+            <!-- 中间分隔线 -->
+            <div class="divider">
+                <div class="divider-content">
+                    <div class="comparison">
+                        <div class="comparison-item">
+                            <span>玩家1得分</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="player1-progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <span>玩家2得分</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="player2-progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 玩家2区域 -->
+            <div class="player-area player-right" data-player="2">
+                <div class="player-header">
+                    <div class="player-id" id="player2-display-id">Player2</div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">得分:</span>
+                            <span class="stat-value" id="player2-score">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">时间:</span>
+                            <span class="stat-value" id="player2-time">180</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">进度:</span>
+                            <span class="stat-value" id="player2-progress">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-display" id="player2-category">等待开始...</div>
+                <div class="game-content">
+                    <div class="cards-area" id="player2-cards">
+                        <!-- 物质卡片将在这里动态生成 -->
+                    </div>
+                    <div class="target-area" id="player2-target">
+                        <div class="target-label">拖拽到这里</div>
+                    </div>
+                </div>
+                <div class="player-feedback" id="player2-feedback"></div>
+            </div>
+        </div>
+        <div class="game-controls">
+            <button id="pause-btn" class="btn btn-small">暂停</button>
+            <button id="leaderboard-btn-game" class="btn btn-small">排行榜</button>
+        </div>
+    </div>
+
+    <!-- 结束界面 -->
+    <div id="end-screen" class="screen hidden">
+        <div class="end-content">
+            <h1 class="end-title">游戏结束</h1>
+            <div class="results">
+                <div class="result-item" id="player1-result">
+                    <div class="result-header">
+                        <span class="result-player-id" id="end-player1-id">Player1</span>
+                        <span class="result-winner hidden" id="player1-winner">🏆 获胜者</span>
+                    </div>
+                    <div class="result-stats">
+                        <div>得分: <span id="end-player1-score">0</span></div>
+                        <div>正确率: <span id="end-player1-accuracy">0%</span></div>
+                        <div>完成题数: <span id="end-player1-completed">0</span></div>
+                    </div>
+                </div>
+                <div class="result-item" id="player2-result">
+                    <div class="result-header">
+                        <span class="result-player-id" id="end-player2-id">Player2</span>
+                        <span class="result-winner hidden" id="player2-winner">🏆 获胜者</span>
+                    </div>
+                    <div class="result-stats">
+                        <div>得分: <span id="end-player2-score">0</span></div>
+                        <div>正确率: <span id="end-player2-accuracy">0%</span></div>
+                        <div>完成题数: <span id="end-player2-completed">0</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="end-message" id="end-message"></div>
+            <div class="end-buttons">
+                <button id="restart-btn" class="btn btn-primary">再来一局</button>
+                <button id="leaderboard-btn-end" class="btn btn-secondary">查看排行榜</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 排行榜界面 -->
+    <div id="leaderboard-screen" class="screen hidden">
+        <div class="leaderboard-content">
+            <h1 class="leaderboard-title">排行榜</h1>
+            <div class="leaderboard-list" id="leaderboard-list">
+                <!-- 排行榜条目将在这里动态生成 -->
+            </div>
+            <div class="leaderboard-buttons">
+                <button id="back-btn" class="btn btn-primary">返回</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

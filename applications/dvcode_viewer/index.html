@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepV Chat Viewer v4.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-bg"></div>
+
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">DV</div>
+                <div>
+                    <span class="title">DeepV Code</span>
+                    <span class="subtitle">Chat Viewer v4.0 by jmr</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="stats" id="stats-container" style="display: none;">
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-projects">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-sessions">0</div>
+                        <div class="stat-label">Sessions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-messages">0</div>
+                        <div class="stat-label">Messages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-tokens">0</div>
+                        <div class="stat-label">Tokens</div>
+                    </div>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme (T)">☀️</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload State -->
+            <div class="upload-state" id="upload-state">
+                <div class="upload-container">
+                    <div class="upload-icon">📦</div>
+                    <h2 class="upload-title">Upload Chat Archive</h2>
+                    <p class="upload-desc">Drag & drop a .zip file exported from DeepV Code, or click to browse</p>
+                    <input type="file" id="file-input" accept=".zip" hidden>
+                    <button class="upload-btn" id="upload-btn">Select ZIP File</button>
+                    <div class="upload-hint">
+                        <p>Generate archive with: <code>python -m deepv_exporter</code></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main View (hidden until file uploaded) -->
+            <div class="main-view" id="main-view" style="display: none;">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" class="search-input" id="search-input" placeholder="Search sessions... (/)">
+                        </div>
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">All</button>
+                            <button class="filter-tab" data-filter="cli">CLI</button>
+                            <button class="filter-tab" data-filter="vscode">VS Code</button>
+                        </div>
+                    </div>
+                    <div class="session-list" id="session-list">
+                        <!-- Session cards will be rendered here -->
+                    </div>
+                    <div class="sidebar-footer">
+                        <button class="load-new-btn" id="load-new-btn">📁 Load Another File</button>
+                    </div>
+                </aside>
+
+                <!-- Detail Panel -->
+                <section class="detail-panel">
+                    <!-- Empty State -->
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">💬</div>
+                        <h2 class="empty-title">Welcome</h2>
+                        <p class="empty-subtitle">Select a session from the sidebar to start browsing</p>
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <div class="feature-title">Search</div>
+                                <div class="feature-desc">Press / to search</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📋</div>
+                                <div class="feature-title">Copy</div>
+                                <div class="feature-desc">Copy messages easily</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🎨</div>
+                                <div class="feature-title">Theme</div>
+                                <div class="feature-desc">Press T to toggle</div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📥</div>
+                                <div class="feature-title">Export</div>
+                                <div class="feature-desc">ZIP or Markdown</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Session Detail (hidden by default) -->
+                    <div class="session-detail" id="session-detail">
+                        <div class="detail-header">
+                            <h1 class="detail-title" id="detail-title">Session Title</h1>
+                            <div class="detail-meta">
+                                <span>📅 <span id="detail-date">-</span></span>
+                                <span>💬 <span id="detail-messages">0</span> messages</span>
+                                <span>🔢 <span id="detail-tokens">0</span> tokens</span>
+                                <span class="model-tag" id="detail-model">-</span>
+                                <span class="source-tag cli" id="detail-source">CLI</span>
+                            </div>
+                            <div class="detail-actions">
+                                <button class="action-btn" id="btn-export-zip">📦 Export ZIP</button>
+                                <button class="action-btn" id="btn-export-md">📄 Export MD</button>
+                                <button class="action-btn" id="btn-copy-all">📋 Copy All</button>
+                            </div>
+                        </div>
+                        <div class="message-list" id="message-list">
+                            <!-- Messages will be rendered here (virtual scroll) -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loading-text">Loading...</div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Drop Zone Overlay -->
+    <div class="drop-zone-overlay" id="drop-zone-overlay">
+        <div class="drop-zone-content">
+            <div class="drop-zone-icon">📂</div>
+            <div class="drop-zone-text">Drop ZIP file here</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
