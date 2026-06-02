@@ -10,7 +10,7 @@ Beyond rationality, sensibility is essential for harmony. In Western pop and roc
 
 Stay curious, keep building. May we leave our mark in the fabric of the internet.
 
-🌐 **Visit my website**: [en.jiangmuran.com](https://en.jiangmuran.com)
+🌐 **Visit my website**: [global.jiangmuran.com](https:/global.jiangmuran.com)
 
 *Written on the night of October 14, 2020*
 
