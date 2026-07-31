@@ -1,0 +1,25 @@
+{
+  "interestTags": [
+    { "text": "算法竞赛", "color": "from-violet-500/20 to-purple-500/20" },
+    { "text": "开源", "color": "from-cyan-500/20 to-blue-500/20" },
+    { "text": "数学建模", "color": "from-emerald-500/20 to-green-500/20" },
+    { "text": "嵌入式", "color": "from-orange-500/20 to-amber-500/20" },
+    { "text": "Web开发", "color": "from-pink-500/20 to-rose-500/20" },
+    { "text": "音乐", "color": "from-indigo-500/20 to-violet-500/20" },
+    { "text": "Web3", "color": "from-red-500/20 to-orange-500/20" },
+    { "text": "AI", "color": "from-blue-500/20 to-cyan-500/20" }
+  ],
+  "projects": {
+    "zh-CN": [],
+    "zh-TW": [],
+    "en": []
+  },
+  "friendLinks": [
+    {
+      "id": 1,
+      "name": "Paperee's Homepage",
+      "url": "https://paperee.guru",
+      "description": "纸片君ee的个人主页"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+1:"$Sreact.fragment"
+2:I[60906,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js"],"LinkConfirmProvider"]
+10:I[68027,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+:HL["/_next/static/chunks/b4a91a930c01ddab.css","style"]
+:HL["/_next/static/chunks/4c96ad731c46992e.css","style"]
+:HL["/_next/static/chunks/728dbb8cdd46b735.css","style"]
+:HL["/_next/static/chunks/bb3e957e7c4c1864.css","style"]
+:HL["/_next/static/media/2a65768255d6b625.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/5e5dfa9e86f764b8.p.da6e3317.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70e3db2de7f94926.p.347f98aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8c2eb9ceedecfc8e.p.21935807.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f112ed7f0b91582f.p.12569d31.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/mypic.jpg","image",{"type":"image/jpeg"}]
+:HL["https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","font",{"crossOrigin":"anonymous","type":"font/truetype"}]
+:HL["https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","style"]
+3:Tcda,
+            /* 内联字体定义 - 确保字体加载完成后再显示 */
+            @font-face {
+              font-family: 'Lora';
+              font-style: normal;
+              font-weight: 700;
+              font-display: block; /* 阻塞渲染直到字体加载完成 */
+              src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf') format('truetype');
+            }
+            @keyframes ssr-pulse {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes ssr-rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            @keyframes ssr-rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            #ssr-loader .ssr-title {
+              font-size: clamp(1.875rem, 5vw, 3rem);
+              font-weight: 700;
+              color: white;
+              margin-bottom: 2rem;
+              font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+            }
+            #ssr-loader .ssr-pulse-text {
+              animation: ssr-pulse 2s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-gray-text {
+              color: #8a8a8a;
+              margin-left: 0.5rem;
+            }
+            #ssr-loader .ssr-progress-container {
+              width: clamp(12rem, 50vw, 16rem);
+              height: 2px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 9999px;
+              overflow: hidden;
+            }
+            #ssr-loader .ssr-progress-bar {
+              height: 100%;
+              background: linear-gradient(to right, #c0c0c0, #8a8a8a);
+              width: 0%;
+              transition: width 0.1s ease-out;
+            }
+            #ssr-loader .ssr-progress-text {
+              margin-top: 1rem;
+              font-family: 'Courier New', 'Courier', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+              font-size: 0.75rem;
+              color: #8a8a8a;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+            }
+            #ssr-loader .ssr-progress-number {
+              color: #c0c0c0;
+            }
+            #ssr-loader .ssr-dots {
+              animation: ssr-pulse 1s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-circle-1 {
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              width: 8rem;
+              height: 8rem;
+              border: 1px solid rgba(192, 192, 192, 0.05);
+              border-radius: 50%;
+              animation: ssr-rotate 20s linear infinite;
+            }
+            #ssr-loader .ssr-circle-2 {
+              position: absolute;
+              bottom: 25%;
+              right: 25%;
+              width: 12rem;
+              height: 12rem;
+              border: 1px solid rgba(192, 192, 192, 0.03);
+              border-radius: 50%;
+              animation: ssr-rotate-reverse 30s linear infinite;
+            }
+            #ssr-loader.ssr-hidden {
+              opacity: 0;
+              pointer-events: none;
+            }
+            #ssr-loader.ssr-gone {
+              display: none !important;
+            }
+          0:{"P":null,"b":"RMj_dboktdKcbcrZFe4sU","c":["","demo","kintsugi"],"q":"","i":false,"f":[[["",{"children":["demo",{"children":[["palette","kintsugi","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/b4a91a930c01ddab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/4c96ad731c46992e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/chunks/728dbb8cdd46b735.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/chunks/bb3e957e7c4c1864.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/af6715fa020a259d.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/f8f5d0c955b94b71.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/5705204611eb1c83.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"lenis lenis-smooth playfair_display_e099ab5b-module__TCdCaa__variable lora_b4b8a761-module__gRDlFq__variable outfit_5779da51-module__2xRKIa__variable noto_serif_sc_8ee6940-module__xGCTYq__variable ubuntu_mono_22efa9ca-module__ePIbrq__variable","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","href":"/mypic.jpg","as":"image","type":"image/jpeg"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","as":"font","type":"font/truetype","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"alternateName\":\"姜睦然\",\"url\":\"https://jiangmuran.com\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://jiangmuran.com/mypic.jpg\",\"width\":400,\"height\":400},\"jobTitle\":\"学生 / AI Builder / 开源开发者\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"knowsAbout\":[\"AI Agent\",\"编程\",\"数学建模\",\"算法竞赛\",\"Web开发\",\"开源项目\"],\"sameAs\":[\"https://github.com/jiangmuran\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://jiangmuran.com/#website\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"},\"inLanguage\":\"zh-CN\"}"}}]]}],["$","body",null,{"className":"antialiased","children":["$","$L2",null,{"children":[["$","div",null,{"id":"ssr-loader","suppressHydrationWarning":true,"style":{"position":"fixed","inset":0,"zIndex":99999,"background":"#050505","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","opacity":1,"transition":"opacity 0.5s ease-in-out"},"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6","$L7","$L8"]}],"$L9","$La","$Lb"]}]}]]}]]}],{"children":["$Lc",{"children":["$Ld",{"children":["$Le",{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$Lf",false]],"m":"$undefined","G":["$10",[]],"S":true}
+12:I[88343,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js"],"I18nProvider"]
+13:I[69080,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js"],"IframeBridge"]
+14:I[20032,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js"],"SmoothScroll"]
+15:I[28128,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js"],"ClientComponents"]
+16:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+17:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+18:I[29306,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js","/_next/static/chunks/73317515f6ab30c2.js"],"default"]
+1a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+1d:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"ViewportBoundary"]
+1f:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"MetadataBoundary"]
+4:["$","div",null,{"className":"ssr-circle-1"}]
+5:["$","div",null,{"className":"ssr-circle-2"}]
+6:["$","div",null,{"className":"ssr-title","children":[["$","span",null,{"className":"ssr-pulse-text","id":"ssr-first-name","children":"Jiang"}],["$","span",null,{"className":"ssr-gray-text","id":"ssr-last-name","children":"Muran"}]]}]
+7:["$","div",null,{"className":"ssr-progress-container","children":["$","div",null,{"className":"ssr-progress-bar","id":"ssr-progress-bar","suppressHydrationWarning":true}]}]
+8:["$","div",null,{"className":"ssr-progress-text","children":[["$","span",null,{"className":"ssr-progress-number","id":"ssr-progress-number","suppressHydrationWarning":true,"children":"0%"}],["$","span",null,{"style":{"marginLeft":"0.5rem"},"children":"LOADING"}],["$","span",null,{"className":"ssr-dots","children":"..."}]]}]
+11:Td62,
+          (function() {
+            var progress = 0;
+            var progressBar = document.getElementById('ssr-progress-bar');
+            var progressNumber = document.getElementById('ssr-progress-number');
+            var ssrLoader = document.getElementById('ssr-loader');
+            
+            // 追踪资源加载进度
+            function updateProgress() {
+              if (typeof PerformanceObserver !== 'undefined') {
+                var resources = performance.getEntriesByType('resource');
+                var completed = 0;
+                var total = 0;
+                
+                resources.forEach(function(res) {
+                  total++;
+                  if (res.responseEnd > 0) completed++;
+                });
+                
+                if (total > 0) {
+                  progress = Math.min(92, Math.floor((completed / total) * 100));
+                }
+              } else {
+                // 降级：使用模拟进度
+                progress = Math.min(92, progress + Math.max(1, (92 - progress) * 0.1));
+              }
+              
+              if (progressBar) progressBar.style.width = progress + '%';
+              if (progressNumber) progressNumber.textContent = Math.round(progress) + '%';
+            }
+            
+            // 定期更新进度
+            var progressInterval = setInterval(updateProgress, 100);
+            var loaded = false;
+            var capTimer = null;
+
+            // 页面加载完成（幂等：只执行一次）
+            function handleLoad() {
+              if (loaded) return;
+              loaded = true;
+              clearInterval(progressInterval);
+              if (capTimer) clearTimeout(capTimer);
+              progress = 100;
+              if (progressBar) progressBar.style.width = '100%';
+              if (progressNumber) progressNumber.textContent = '100%';
+
+              // 传递进度给 React 组件
+              if (typeof window !== 'undefined') {
+                window.__SSR_LOADER_PROGRESS__ = 100;
+                window.__SSR_LOADER_READY__ = true;
+              }
+
+              // Hide the loader but DO NOT removeChild it — that breaks React's
+              // reconciliation (NotFoundError: removeChild / insertBefore).
+              // Leave it in the DOM as display:none after the fade completes.
+              setTimeout(function() {
+                if (ssrLoader) {
+                  ssrLoader.classList.add('ssr-hidden');
+                  setTimeout(function() {
+                    if (ssrLoader) {
+                      ssrLoader.classList.add('ssr-gone');
+                    }
+                  }, 500);
+                }
+              }, 200);
+            }
+
+            // 硬性兜底：无论 window.load 是否/何时触发，最多 2.2s 就收起加载页。
+            // 这修复了"卡在 95%"——此前只等 load 事件，遇到慢字体/挂起请求会一直卡住。
+            capTimer = setTimeout(handleLoad, 2200);
+
+            if (document.readyState === 'complete') {
+              handleLoad();
+            } else {
+              window.addEventListener('load', handleLoad);
+              // DOM 就绪后给一点缓冲即可收起，不必死等全部资源（字体、图片等）
+              document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(handleLoad, 600);
+              });
+            }
+          })();
+        9:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]
+a:["$","$L12",null,{"children":[["$","$L13",null,{}],["$","$L14",null,{}],["$","$L15",null,{}],["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L18",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:["$","script",null,{"defer":true,"src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\": \"979c05fb5cbf4f8fb5268ef84c91ba07\"}"}]
+c:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+d:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+e:["$","$1","c",{"children":["$L19",[["$","script","script-0",{"src":"/_next/static/chunks/1daf18714c01bd60.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/326c3bb8b0f5294f.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/6fac58be654a59fc.js","async":true,"nonce":"$undefined"}]],["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]]}]
+f:["$","$1","h",{"children":[null,["$","$L1d",null,{"children":"$L1e"}],["$","div",null,{"hidden":true,"children":["$","$L1f",null,{"children":["$","$1b",null,{"name":"Next.Metadata","children":"$L20"}]}]}],null]}]
+21:I[40614,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/5705204611eb1c83.js","/_next/static/chunks/1daf18714c01bd60.js","/_next/static/chunks/326c3bb8b0f5294f.js","/_next/static/chunks/6fac58be654a59fc.js"],"DemoShell"]
+19:["$","$L21",null,{"paletteName":"kintsugi"}]
+1e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#080503"}]]
+22:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"IconMark"]
+1c:null
+20:[["$","title","0",{"children":"Kintsugi · Palette Demo | Jiangmuran.com"}],["$","meta","1",{"name":"description","content":"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。"}],["$","meta","2",{"name":"application-name","content":"Jiangmuran.com"}],["$","link","3",{"rel":"author","href":"https://jiangmuran.com"}],["$","meta","4",{"name":"author","content":"Jiang Muran"}],["$","link","5",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"姜睦然,Jiang Muran,JMR,AI Builder,OpenClaw,开发者,开源,算法竞赛,个人主页,AI Agent,中学生开发者"}],["$","meta","7",{"name":"creator","content":"Jiang Muran"}],["$","meta","8",{"name":"publisher","content":"Jiang Muran"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://jiangmuran.com"}],["$","link","12",{"rel":"alternate","hrefLang":"zh-CN","href":"https://jiangmuran.com"}],["$","link","13",{"rel":"alternate","hrefLang":"en","href":"https://global.jiangmuran.com"}],["$","meta","14",{"property":"og:title","content":"姜睦然｜Jiang Muran"}],["$","meta","15",{"property":"og:description","content":"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。"}],["$","meta","16",{"property":"og:url","content":"https://jiangmuran.com"}],["$","meta","17",{"property":"og:site_name","content":"Jiangmuran.com"}],["$","meta","18",{"property":"og:locale","content":"zh_CN"}],["$","meta","19",{"property":"og:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","meta","20",{"property":"og:image:width","content":"400"}],["$","meta","21",{"property":"og:image:height","content":"400"}],["$","meta","22",{"property":"og:image:alt","content":"姜睦然 Jiang Muran"}],["$","meta","23",{"property":"og:type","content":"website"}],["$","meta","24",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","25",{"name":"twitter:creator","content":"@jiangmuran"}],["$","meta","26",{"name":"twitter:title","content":"姜睦然｜Jiang Muran"}],["$","meta","27",{"name":"twitter:description","content":"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。"}],["$","meta","28",{"name":"twitter:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","link","29",{"rel":"shortcut icon","href":"/mypic.jpg"}],["$","link","30",{"rel":"icon","href":"/mypic.jpg","type":"image/jpeg"}],["$","link","31",{"rel":"apple-touch-icon","href":"/mypic.jpg","sizes":"180x180","type":"image/jpeg"}],["$","$L22","32",{}]]

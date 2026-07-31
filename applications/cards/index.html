@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Force - 门禁卡认证系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: #00ff00;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #00cc00;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #008800;
+        }
+
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 255, 0, 0.5);
+            animation: scan 2s linear infinite;
+            z-index: 9999;
+        }
+
+        .button {
+            background: #001100;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background: #002200;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+        }
+
+        .modal-content {
+            position: relative;
+            background: #000;
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 20px #00ff00;
+        }
+
+        .code-scroll {
+            height: 100px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-family: monospace;
+            color: #00ff00;
+            font-size: 12px;
+            background: #000;
+            border: 1px solid #00ff00;
+            padding: 10px;
+        }
+
+        .code-line {
+            white-space: nowrap;
+            animation: scrollCode 0.5s linear infinite;
+        }
+
+        .password-input {
+            background: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        @keyframes scrollCode {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        .status {
+            font-size: 1.1rem;
+            color: #00ff00;
+            margin: 1rem 0;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* 密码盘样式 */
+        .password-panel {
+            margin: 2rem auto;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .password-display {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .password-digit {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #00ff00;
+            background: #001100;
+            color: #00ff00;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .numpad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        .numpad-button {
+            background: #001100;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .numpad-button:hover {
+            background: #002200;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .verification-message {
+            margin-top: 20px;
+            font-size: 18px;
+            height: 24px;
+            transition: color 0.3s;
+        }
+
+        .password-panel.success .password-digit {
+            border-color: #00ff00;
+            background: #003300;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .password-panel.error .password-digit {
+            border-color: #ff0000;
+            color: #ff0000;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* 科技感弹窗样式 */
+        .tech-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+
+        .tech-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 20, 0, 0.95);
+            padding: 30px;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 20px #00ff00;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .tech-modal-header {
+            font-size: 1.5em;
+            color: #00ff00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tech-modal-text {
+            color: #00ff00;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .tech-modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-button {
+            background: #001100;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 10px 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-button:hover {
+            background: #002200;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        .loading-line {
+            width: 100%;
+            height: 2px;
+            background: #001100;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-line::after {
+            content: '';
+            position: absolute;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+
+        /* 验证区域框架样式 */
+        .verification-area {
+            margin: 2rem auto;
+            max-width: 400px;
+            background: rgba(0, 20, 40, 0.6);
+            border: 2px solid #000000;
+            padding: 25px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 204, 255, 0.15);
+        }
+
+        .verification-area::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+
+            z-index: -1;
+            animation: borderGlow 10s linear infinite;
+            background-size: 400% 400%;
+        }
+
+        .verification-area::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            pointer-events: none;
+        }
+
+        .verification-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .verification-title {
+            color: #00ffff;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px #00ffff;
+            margin-bottom: 10px;
+        }
+
+        /* 更新密码盘样式以配合新框架 */
+        .password-panel {
+            margin: 1rem auto;
+            padding: 20px;
+            background: rgba(0, 15, 30, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+
+        .verification-title {
+            color: #00ffff;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px #00ffff;
+            margin-bottom: 10px;
+        }
+
+        /* 调整其他相关样式 */
+        .buttons-container {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="scan-line"></div>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">HEAVK 集团</h1>
+            <div class="subtitle">航天基地I类授权验证系统</div>
+            <div class="buttons-container">
+                <footer class="footer">
+                    <p>Design by JMR</p>
+                    <p>Powered by jiangmuran.com</p>
+                </footer>
+            </div>
+
+            
+            <div class="verification-area">
+                <div class="verification-header">
+                    <div class="verification-title">Heavk Authorization System</div>
+                    <div class="status">状态：等待验证</div>
+                </div>
+                
+                <div class="password-panel" id="passwordPanel">
+                    <div class="password-display">
+                        <div class="password-digit" id="digit1"></div>
+                        <div class="password-digit" id="digit2"></div>
+                        <div class="password-digit" id="digit3"></div>
+                    </div>
+                    <div class="numpad">
+                        <button class="numpad-button" onclick="inputDigit(1)">1</button>
+                        <button class="numpad-button" onclick="inputDigit(2)">2</button>
+                        <button class="numpad-button" onclick="inputDigit(3)">3</button>
+                        <button class="numpad-button" onclick="inputDigit(4)">4</button>
+                        <button class="numpad-button" onclick="inputDigit(5)">5</button>
+                        <button class="numpad-button" onclick="inputDigit(6)">6</button>
+                        <button class="numpad-button" onclick="inputDigit(7)">7</button>
+                        <button class="numpad-button" onclick="inputDigit(8)">8</button>
+                        <button class="numpad-button" onclick="inputDigit(9)">9</button>
+                        <button style="visibility: hidden;" class="numpad-button" onclick="inputDigit(0)">0</button>
+                        <button class="numpad-button" onclick="inputDigit(0)">0</button>
+                    </div>
+                    <div class="verification-message" id="verificationMessage"></div>
+                </div>
+
+                <div class="buttons-container">
+                    <a href="https://jiangmuran.com" class="button">返回脑机</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=114286210913823&bvid=BV15CRZYwETK&cid=29254354548&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+
+        
+
+        
+    </div>
+
+    <div class="tech-modal" id="authModal">
+        <div class="tech-modal-content">
+            <div class="tech-modal-header">HEAVK 认证系统</div>
+            <div class="loading-line"></div>
+            <div class="tech-modal-text">检测到系统未启动<br>是否初始化 HEAVK 认证程序？</div>
+            <div class="tech-modal-buttons">
+                <button class="tech-button" onclick="initializeSystem()">确认启动</button>
+                <button class="tech-button" onclick="closeAuthModal()">暂不启动</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://game.gtimg.cn/images/dfm/cp/a20240906main/bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let currentPassword = '';
+        const correctPassword = '114';
+        const passwordPanel = document.getElementById('passwordPanel');
+        const verificationMessage = document.getElementById('verificationMessage');
+        const statusDisplay = document.querySelector('.status');
+
+        function inputDigit(digit) {
+            if (currentPassword.length < 3) {
+                currentPassword += digit;
+                updateDisplay();
+                
+                if (currentPassword.length === 3) {
+                    verifyPassword();
+                }
+            }
+        }
+
+        function updateDisplay() {
+            for (let i = 1; i <= 3; i++) {
+                const digitElement = document.getElementById(`digit${i}`);
+                digitElement.textContent = currentPassword.length >= i ? currentPassword[i-1] : '';
+            }
+        }
+
+        function verifyPassword() {
+            if (currentPassword === correctPassword) {
+                passwordPanel.classList.remove('error');
+                passwordPanel.classList.add('success');
+                verificationMessage.style.color = '#00ff00';
+                verificationMessage.textContent = '密码正确 - 哈夫科与你同频';
+                statusDisplay.textContent = '状态：正在接入内部网络';
+                 setTimeout(() => {
+                    document.location="https://blog.jiangmuran.com";
+                }, 3000);
+            } else {
+                passwordPanel.classList.remove('success');
+                passwordPanel.classList.add('error');
+                verificationMessage.style.color = '#ff0000';
+                verificationMessage.textContent = '密码错误 - 访问被拒绝';
+                statusDisplay.textContent = '状态：验证失败';
+                
+                // 清空密码并在短暂延迟后重置显示
+                setTimeout(() => {
+                    currentPassword = '';
+                    updateDisplay();
+                    passwordPanel.classList.remove('error');
+                    verificationMessage.textContent = '';
+                    statusDisplay.textContent = '状态：等待验证';
+                }, 1500);
+            }
+        }
+
+        // 背景音乐和认证系统初始化
+        window.addEventListener('DOMContentLoaded', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            
+            // 尝试自动播放
+            bgMusic.play().then(() => {
+                console.log('背景音乐已自动播放');
+            }).catch(() => {
+                // 如果无法自动播放，显示认证弹窗
+                document.getElementById('authModal').style.display = 'block';
+            });
+        });
+
+        // 初始化系统
+        function initializeSystem() {
+            const bgMusic = document.getElementById('bgMusic');
+            const authModal = document.getElementById('authModal');
+            
+            bgMusic.play();
+            authModal.style.display = 'none';
+        }
+
+        // 关闭认证弹窗
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+
+        // 确保页面可见时继续播放音乐
+        document.addEventListener('visibilitychange', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            if (document.visibilityState === 'visible' && !bgMusic.paused) {
+                bgMusic.play();
+            }
+        });
+    </script>
+</body>
+</html> 

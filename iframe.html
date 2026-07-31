@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>姜睦然 · Jiang Muran</title>
+<meta name="color-scheme" content="dark">
+
+<!-- 默认加载的站点;也可用 ?h=<base64> 覆盖,例如
+     ?h=aHR0cHM6Ly9qaWFuZ211cmFuLmNvbQ==  →  https://jiangmuran.com -->
+<script>window.__DEFAULT_HOST__ = "https://jiangmuran.com";</script>
+
+<style>
+  html,body{margin:0;height:100%;width:100%;background:#080503;overflow:hidden}
+  #frame{position:fixed;inset:0;width:100%;height:100%;border:0;display:block;background:#080503}
+</style>
+</head>
+<body>
+  <iframe id="frame"
+    title="姜睦然 · 主页"
+    allow="fullscreen; autoplay; clipboard-read; clipboard-write; encrypted-media; picture-in-picture; accelerometer; gyroscope; geolocation"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script>
+(function(){
+  "use strict";
+
+  // ── Host:?h=<base64> 优先,否则用文件顶部默认 ──
+  function resolveHost(){
+    try{
+      var p = new URLSearchParams(location.search).get('h');
+      if(p){ var d = atob(p); if(/^https?:\/\//i.test(d)) return d.replace(/\/+$/,''); }
+    }catch(e){}
+    return String(window.__DEFAULT_HOST__ || '').replace(/\/+$/,'');
+  }
+  var HOST = resolveHost();
+  var HOST_ORIGIN = (function(){ try{ return new URL(HOST).origin; }catch(e){ return '*'; } })();
+  var frame = document.getElementById('frame');
+
+  // ── 壳 #/path  ⇄  iframe host/path ──
+  function hashToPath(){
+    var h = (location.hash || '').replace(/^#/, '');
+    if(!h) return '/';
+    return h.charAt(0) === '/' ? h : '/' + h;
+  }
+  var currentPath = null;
+
+  // 父 → 子:hash 改变时导航 iframe
+  function loadPath(path){
+    if(path === currentPath) return;
+    currentPath = path;
+    frame.src = HOST + path;
+  }
+  function syncFromHash(){ loadPath(hashToPath()); }
+  window.addEventListener('hashchange', syncFromHash);
+
+  // 子 → 父:把 iframe 当前路径写回壳的 #hash(replaceState 不触发 hashchange,避免回环)
+  function writeHash(path){
+    var target = (path && path !== '/') ? ('#' + path) : '';
+    var curr = location.hash || '';
+    if(curr === target || (target === '' && curr === '')) return;
+    currentPath = path;
+    try{ history.replaceState(null, '', target || (location.pathname + location.search)); }
+    catch(e){ location.hash = target; }
+  }
+
+  // 跨域:靠主站 IframeBridge 的 postMessage
+  window.addEventListener('message', function(e){
+    if(HOST_ORIGIN !== '*' && e.origin !== HOST_ORIGIN) return;
+    var d = e.data;
+    if(!d || d.type !== 'jmr:nav' || typeof d.path !== 'string') return;
+    writeHash(d.path);
+  });
+
+  // 同域兜底:仅同步「真实 host 页面」,排除初始/加载中的 about:blank(pathname 为 "blank")
+  setInterval(function(){
+    try{
+      var loc = frame.contentWindow.location;
+      if(loc.protocol !== 'http:' && loc.protocol !== 'https:') return;
+      if(HOST_ORIGIN !== '*' && loc.origin !== HOST_ORIGIN) return;
+      writeHash(loc.pathname + loc.search);
+    }catch(e){ /* 跨域,忽略 */ }
+  }, 600);
+
+  // 立即按当前 hash 加载(最快)
+  syncFromHash();
+})();
+</script>
+</body>
+</html>
