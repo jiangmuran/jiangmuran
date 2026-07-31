@@ -1,0 +1,389 @@
+1:"$Sreact.fragment"
+2:I[60906,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"LinkConfirmProvider"]
+10:I[68027,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+:HL["/_next/static/chunks/b4a91a930c01ddab.css","style"]
+:HL["/_next/static/chunks/4c96ad731c46992e.css","style"]
+:HL["/_next/static/chunks/728dbb8cdd46b735.css","style"]
+:HL["/_next/static/chunks/bb3e957e7c4c1864.css","style"]
+:HL["/_next/static/media/2a65768255d6b625.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/5e5dfa9e86f764b8.p.da6e3317.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70e3db2de7f94926.p.347f98aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8c2eb9ceedecfc8e.p.21935807.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f112ed7f0b91582f.p.12569d31.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/chunks/23c0fd5017a2b615.css","style"]
+:HL["/mypic.jpg","image",{"type":"image/jpeg"}]
+:HL["https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","font",{"crossOrigin":"anonymous","type":"font/truetype"}]
+:HL["https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","style"]
+3:Tcda,
+            /* 内联字体定义 - 确保字体加载完成后再显示 */
+            @font-face {
+              font-family: 'Lora';
+              font-style: normal;
+              font-weight: 700;
+              font-display: block; /* 阻塞渲染直到字体加载完成 */
+              src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf') format('truetype');
+            }
+            @keyframes ssr-pulse {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes ssr-rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            @keyframes ssr-rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            #ssr-loader .ssr-title {
+              font-size: clamp(1.875rem, 5vw, 3rem);
+              font-weight: 700;
+              color: white;
+              margin-bottom: 2rem;
+              font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+            }
+            #ssr-loader .ssr-pulse-text {
+              animation: ssr-pulse 2s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-gray-text {
+              color: #8a8a8a;
+              margin-left: 0.5rem;
+            }
+            #ssr-loader .ssr-progress-container {
+              width: clamp(12rem, 50vw, 16rem);
+              height: 2px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 9999px;
+              overflow: hidden;
+            }
+            #ssr-loader .ssr-progress-bar {
+              height: 100%;
+              background: linear-gradient(to right, #c0c0c0, #8a8a8a);
+              width: 0%;
+              transition: width 0.1s ease-out;
+            }
+            #ssr-loader .ssr-progress-text {
+              margin-top: 1rem;
+              font-family: 'Courier New', 'Courier', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+              font-size: 0.75rem;
+              color: #8a8a8a;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+            }
+            #ssr-loader .ssr-progress-number {
+              color: #c0c0c0;
+            }
+            #ssr-loader .ssr-dots {
+              animation: ssr-pulse 1s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-circle-1 {
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              width: 8rem;
+              height: 8rem;
+              border: 1px solid rgba(192, 192, 192, 0.05);
+              border-radius: 50%;
+              animation: ssr-rotate 20s linear infinite;
+            }
+            #ssr-loader .ssr-circle-2 {
+              position: absolute;
+              bottom: 25%;
+              right: 25%;
+              width: 12rem;
+              height: 12rem;
+              border: 1px solid rgba(192, 192, 192, 0.03);
+              border-radius: 50%;
+              animation: ssr-rotate-reverse 30s linear infinite;
+            }
+            #ssr-loader.ssr-hidden {
+              opacity: 0;
+              pointer-events: none;
+            }
+            #ssr-loader.ssr-gone {
+              display: none !important;
+            }
+          0:{"P":null,"b":"vT3D1Js7XGyXeYe6JXE1b","c":["","blog","anticheat-of-webgame"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","anticheat-of-webgame","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/b4a91a930c01ddab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/4c96ad731c46992e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/chunks/728dbb8cdd46b735.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/chunks/bb3e957e7c4c1864.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/af6715fa020a259d.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/f8f5d0c955b94b71.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/91a69682796eef98.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"lenis lenis-smooth playfair_display_e099ab5b-module__TCdCaa__variable lora_b4b8a761-module__gRDlFq__variable outfit_5779da51-module__2xRKIa__variable noto_serif_sc_8ee6940-module__xGCTYq__variable ubuntu_mono_22efa9ca-module__ePIbrq__variable","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","href":"/mypic.jpg","as":"image","type":"image/jpeg"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","as":"font","type":"font/truetype","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"alternateName\":\"姜睦然\",\"url\":\"https://jiangmuran.com\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://jiangmuran.com/mypic.jpg\",\"width\":400,\"height\":400},\"jobTitle\":\"学生 / AI Builder / 开源开发者\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"knowsAbout\":[\"AI Agent\",\"编程\",\"数学建模\",\"算法竞赛\",\"Web开发\",\"开源项目\"],\"sameAs\":[\"https://github.com/jiangmuran\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://jiangmuran.com/#website\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"},\"inLanguage\":\"zh-CN\"}"}}]]}],["$","body",null,{"className":"antialiased","children":["$","$L2",null,{"children":[["$","div",null,{"id":"ssr-loader","suppressHydrationWarning":true,"style":{"position":"fixed","inset":0,"zIndex":99999,"background":"#050505","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","opacity":1,"transition":"opacity 0.5s ease-in-out"},"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6","$L7","$L8"]}],"$L9","$La","$Lb"]}]}]]}]]}],{"children":["$Lc",{"children":["$Ld",{"children":["$Le",{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$Lf",false]],"m":"$undefined","G":["$10",[]],"S":true}
+12:I[88343,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"I18nProvider"]
+13:I[69080,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"IframeBridge"]
+14:I[20032,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"SmoothScroll"]
+15:I[28128,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"ClientComponents"]
+16:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+17:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+18:I[29306,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/21e9ba04f3a9dd5b.js"],"default"]
+1a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+1d:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"ViewportBoundary"]
+1f:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"MetadataBoundary"]
+4:["$","div",null,{"className":"ssr-circle-1"}]
+5:["$","div",null,{"className":"ssr-circle-2"}]
+6:["$","div",null,{"className":"ssr-title","children":[["$","span",null,{"className":"ssr-pulse-text","id":"ssr-first-name","children":"Jiang"}],["$","span",null,{"className":"ssr-gray-text","id":"ssr-last-name","children":"Muran"}]]}]
+7:["$","div",null,{"className":"ssr-progress-container","children":["$","div",null,{"className":"ssr-progress-bar","id":"ssr-progress-bar","suppressHydrationWarning":true}]}]
+8:["$","div",null,{"className":"ssr-progress-text","children":[["$","span",null,{"className":"ssr-progress-number","id":"ssr-progress-number","suppressHydrationWarning":true,"children":"0%"}],["$","span",null,{"style":{"marginLeft":"0.5rem"},"children":"LOADING"}],["$","span",null,{"className":"ssr-dots","children":"..."}]]}]
+11:Td62,
+          (function() {
+            var progress = 0;
+            var progressBar = document.getElementById('ssr-progress-bar');
+            var progressNumber = document.getElementById('ssr-progress-number');
+            var ssrLoader = document.getElementById('ssr-loader');
+            
+            // 追踪资源加载进度
+            function updateProgress() {
+              if (typeof PerformanceObserver !== 'undefined') {
+                var resources = performance.getEntriesByType('resource');
+                var completed = 0;
+                var total = 0;
+                
+                resources.forEach(function(res) {
+                  total++;
+                  if (res.responseEnd > 0) completed++;
+                });
+                
+                if (total > 0) {
+                  progress = Math.min(92, Math.floor((completed / total) * 100));
+                }
+              } else {
+                // 降级：使用模拟进度
+                progress = Math.min(92, progress + Math.max(1, (92 - progress) * 0.1));
+              }
+              
+              if (progressBar) progressBar.style.width = progress + '%';
+              if (progressNumber) progressNumber.textContent = Math.round(progress) + '%';
+            }
+            
+            // 定期更新进度
+            var progressInterval = setInterval(updateProgress, 100);
+            var loaded = false;
+            var capTimer = null;
+
+            // 页面加载完成（幂等：只执行一次）
+            function handleLoad() {
+              if (loaded) return;
+              loaded = true;
+              clearInterval(progressInterval);
+              if (capTimer) clearTimeout(capTimer);
+              progress = 100;
+              if (progressBar) progressBar.style.width = '100%';
+              if (progressNumber) progressNumber.textContent = '100%';
+
+              // 传递进度给 React 组件
+              if (typeof window !== 'undefined') {
+                window.__SSR_LOADER_PROGRESS__ = 100;
+                window.__SSR_LOADER_READY__ = true;
+              }
+
+              // Hide the loader but DO NOT removeChild it — that breaks React's
+              // reconciliation (NotFoundError: removeChild / insertBefore).
+              // Leave it in the DOM as display:none after the fade completes.
+              setTimeout(function() {
+                if (ssrLoader) {
+                  ssrLoader.classList.add('ssr-hidden');
+                  setTimeout(function() {
+                    if (ssrLoader) {
+                      ssrLoader.classList.add('ssr-gone');
+                    }
+                  }, 500);
+                }
+              }, 200);
+            }
+
+            // 硬性兜底：无论 window.load 是否/何时触发，最多 2.2s 就收起加载页。
+            // 这修复了"卡在 95%"——此前只等 load 事件，遇到慢字体/挂起请求会一直卡住。
+            capTimer = setTimeout(handleLoad, 2200);
+
+            if (document.readyState === 'complete') {
+              handleLoad();
+            } else {
+              window.addEventListener('load', handleLoad);
+              // DOM 就绪后给一点缓冲即可收起，不必死等全部资源（字体、图片等）
+              document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(handleLoad, 600);
+              });
+            }
+          })();
+        9:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]
+a:["$","$L12",null,{"children":[["$","$L13",null,{}],["$","$L14",null,{}],["$","$L15",null,{}],["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L18",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:["$","script",null,{"defer":true,"src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\": \"979c05fb5cbf4f8fb5268ef84c91ba07\"}"}]
+c:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+d:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+e:["$","$1","c",{"children":["$L19",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/23c0fd5017a2b615.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/097816f103c65cd3.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/1f88d2eae0bc9c31.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/6fac58be654a59fc.js","async":true,"nonce":"$undefined"}]],["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]]}]
+f:["$","$1","h",{"children":[null,["$","$L1d",null,{"children":"$L1e"}],["$","div",null,{"hidden":true,"children":["$","$L1f",null,{"children":["$","$1b",null,{"name":"Next.Metadata","children":"$L20"}]}]}],null]}]
+21:I[45678,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"Navbar"]
+22:I[65808,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"BlogPost"]
+23:T5f43,<blockquote>
+<p>本研究所有技术分析工作在隔离沙箱环境中完成。涉及的反编译、字符串解码、协议逆向和行为模拟均仅限于对已公开客户端资源的学术研究。研究过程中未对 deadshot.io 的生产服务器发起任何攻击性请求，未篡改或干扰任何在线玩家的正常游戏体验，未获取或存储任何用户的个人信息。所有技术手段和发现仅供安全研究与教育参考，不构成对任何形式的作弊工具的支持或鼓励。</p>
+</blockquote>
+<hr>
+<h2 id="一quot这不就是个-io-小游戏吗quot" class="prose-heading">一、&quot;这不就是个 .io 小游戏吗&quot;</h2>
+<p>第一天的感觉是乐观的。极度乐观。</p>
+<p>打开 DevTools → Network → Preserve log → 输入 <code>deadshot.io</code> → 导出 HAR。47MB，494 条请求。Python 脚本逐条解析：</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+har = json.load(<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;deadshot.io.har&#x27;</span>))
+hosts = Counter(e[<span class="hljs-string">&#x27;request&#x27;</span>][<span class="hljs-string">&#x27;url&#x27;</span>].split(<span class="hljs-string">&#x27;/&#x27;</span>)[<span class="hljs-number">2</span>] <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> har[<span class="hljs-string">&#x27;log&#x27;</span>][<span class="hljs-string">&#x27;entries&#x27;</span>])
+<span class="hljs-comment"># deadshot.io → 207 条 (游戏主站)</span>
+<span class="hljs-comment"># hb.vntsm.com → 48 条 (Venatus 广告竞价)</span>
+<span class="hljs-comment"># pixel.rubiconproject.com → 15 条 (Rubicon DSP)</span>
+<span class="hljs-comment"># ad-delivery.net → 10 条</span>
+<span class="hljs-comment"># matchmaking.deadshot.io → 3 条</span>
+<span class="hljs-comment"># na_rp.deadshot.io → 5 条 (北美延迟中继探测)</span>
+<span class="hljs-comment"># error.deadshot.io → 8 条 (反作弊上报)</span>
+</code></pre><p>所有资源在十分钟内列了出来：</p>
+<pre><code>final.pkg              780KB   entropy 8.000  ← 完全加密
+wasm_bg.wasm            63KB   Rust/wasm-bindgen
+draco_decoder.js       754KB   Google 网格解压
+basis_transcoder.js    500KB   KTX2 纹理
+weapons/  vector.glb   86KB    冲锋枪
+          ar2.glb      93KB    突击步枪
+          awp.glb     158KB    狙击枪
+          shotgun.glb  38KB    霰弹枪
+character/ tuxedonew.glb  811KB
+           female compressed gltf  997KB
+maps/neon/ out.drc   2.7MB  (Draco压缩地图)
+           lightmap0.ktx2  8.1MB (KTX2烘焙光照)
+           skybox.drc  2.3MB
+           audio/  8条环境音轨 mp3
+</code></pre><p><strong>Three.js r124。</strong> 路径打在 HAR 里：<code>r124/examples/js/libs/basis-ktx2/basis_transcoder.js</code>。版本号直接写了。源码静态没加密。</p>
+<p>接下来是网络协议。WebSocket 二进制帧结构直接可读：保留字节 + 消息类型 + 有效载荷。7 字节的输入心跳 <code>[00 01][按键:2][yaw:2][seq:1]</code>，float32 的实体位置，MessagePack 的匹配请求。</p>
+<pre><code class="hljs language-jsonc"><span class="hljs-comment">// 匹配请求 (MessagePack over WSS)</span>
+<span class="hljs-punctuation">{</span>type<span class="hljs-punctuation">:</span><span class="hljs-string">&quot;matchmake&quot;</span><span class="hljs-punctuation">,</span> region<span class="hljs-punctuation">:</span><span class="hljs-string">&quot;North America&quot;</span><span class="hljs-punctuation">,</span> lpm<span class="hljs-punctuation">:</span><span class="hljs-number">-1</span><span class="hljs-punctuation">,</span> sgr<span class="hljs-punctuation">:</span><span class="hljs-number">0.3288</span><span class="hljs-punctuation">}</span>
+
+<span class="hljs-comment">// 服务器返回</span>
+<span class="hljs-punctuation">{</span>ip<span class="hljs-punctuation">:</span><span class="hljs-string">&quot;f3a9a942c3df006974e09ce9affe8f82&quot;</span><span class="hljs-punctuation">,</span> port<span class="hljs-punctuation">:</span><span class="hljs-number">80</span><span class="hljs-punctuation">,</span> r<span class="hljs-punctuation">:</span><span class="hljs-string">&quot;token...&quot;</span><span class="hljs-punctuation">}</span>
+</code></pre><p>聊天用 Xor 0x80——任何会用 Python 的人三分钟就能破：</p>
+<pre><code class="hljs language-python"><span class="hljs-built_in">bytes</span>(b ^ <span class="hljs-number">0x80</span> <span class="hljs-keyword">for</span> b <span class="hljs-keyword">in</span> encrypted)  <span class="hljs-comment"># → &quot;Player joined the lobby&quot;</span>
+<span class="hljs-comment"># 还泄露了皮肤系统结构：</span>
+<span class="hljs-comment"># [{&quot;name&quot;:&quot;default&quot;,&quot;weapon&quot;:&quot;ar&quot;,&quot;wear&quot;:0}, ...]</span>
+</code></pre><p>区域延迟探测也极其直白：POST <code>pingplx</code> 到 <code>{na,eu,as,sa,in,au}_rp.deadshot.io/rp</code>，期望返回 <code>pong</code>。而且是 HTTP（非加密）。这些中继服务器（<code>144.202.58.157</code> / <code>45.76.17.163</code>）是直接暴露的 Vultr VPS，连 Cloudflare 都没套。</p>
+<p>到了这个节点，我的想法是&quot;这东西撑不过今天&quot;——一个 Canvas 覆盖层，读一下 Three.js scene graph 取实体坐标，camera.viewMatrix 做投影，画框，按右键自瞄。不就是个网页游戏吗。</p>
+<h2 id="二第一堵墙代码里没有字符串" class="prose-heading">二、第一堵墙：代码里没有字符串</h2>
+<p>Three.js r124 的渲染循环是公开的。WebSocket 协议是明文二进制的。那挡在中间的只剩下 925KB 的引导脚本。</p>
+<p>打开它，第一眼就知道不对。单行，无缩进，无换行，所有 token 紧挨。不是 UglifyJS——是 javascript-obfuscator 的最高配置。</p>
+<p>三个手段叠在一起：</p>
+<p><strong>1. 字符串不以明文存在。</strong> 通常的混淆有一个 <code>_0x3f7a</code> 数组，索引引用。但这套用了 FNV-1a 哈希直接比较——部分字符串<strong>从未被还原成原文</strong>，直接用哈希值判断语义。你在代码里搜不到 <code>&quot;Function.prototype.toString&quot;</code> 或 <code>&quot;WebSocket&quot;</code> 或 <code>&quot;getContext&quot;</code>——因为它们从未以字符串形式出现在代码里。</p>
+<p><strong>2. 解码器有三层回退。</strong> <code>TextDecoder</code> → Node.js <code>Buffer.from().toString(&#39;utf-8&#39;)</code> → 手写 UTF-8 变长解码。为什么一个浏览器游戏需要 Node.js 路径？因为这段代码是<strong>同构的</strong>——浏览器和服务器跑同一份。HTML 顶部 <code>var isServer = false;</code> 是证据。服务端是 Bun <code>--compile</code> 打包的可执行文件。</p>
+<p><strong>3. 控制流被展平，混入不透明谓词。</strong> 成百上千个 <code>XJvoTF &gt; 0x3 ? ... : ...</code> 式的恒真/恒假分支，让 AST 级分析几乎不可能。</p>
+<p>我们选择了一条暴力路线：<strong>把代码扔进受控的沙箱跑起来</strong>。</p>
+<p>Node.js <code>vm</code> 模块，mock 了 <code>document</code>、<code>window</code>、<code>TextDecoder</code>、<code>fetch</code>。Hook 了字符串解码器 <code>FA4YXOv</code>、<code>createElement</code>、<code>XHR.open</code>、<code>WebSocket</code> 构造函数、<code>addEventListener</code>。把引导代码的前 ~8000 字节扔进去，强制转动一轮事件循环。</p>
+<p>不到 10 秒，沙箱吐出约 340 条真实字符串。包括反作弊的全部关键字：</p>
+<pre><code>reportTamper, tamper, tampered, guardInit
+clean-realm:init, :descriptor-missing
+MutationObserver, observe, subtree, childList
+SHA-256, digest, verify, importKey, wrapKey
+RSA-OAEP-256, AES-GCM, RSA-OAEP
+hardwareConcurrency, deviceMemory, getTimezoneOffset
+webdriver, userAgentData, brands, mobile
+perf:pkgindex-load, runtime:init, startup
+</code></pre><p>还捕获了两个真实网络请求和一个硬编码哈希：</p>
+<pre><code>SHA-256: 1d21d6659703dd2f48cb985d0947820e77c29e511bbbf06d19c37c4a6040bef5
+RSA exponent: AQAB (公钥 ~340 字符 base64url)
+上报端点: XHR POST https://error.deadshot.io/script
+匹配遥测: XHR POST https://error.deadshot.io/matchmaking
+        → {&quot;elapsedMs&quot;:12274,&quot;mode&quot;:&quot;deathmatch&quot;,&quot;rnd&quot;:99378,...} (明文)
+</code></pre><p><strong>关于 final.pkg 的熵。</strong></p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">import</span> collections, math
+data = <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;final.pkg&#x27;</span>, <span class="hljs-string">&#x27;rb&#x27;</span>).read()
+counter = collections.Counter(data)
+entropy = -<span class="hljs-built_in">sum</span>((c/<span class="hljs-built_in">len</span>(data))*math.log2(c/<span class="hljs-built_in">len</span>(data)) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> counter.values())
+<span class="hljs-comment"># 结果: 8.000 bits/byte</span>
+</code></pre><p>8.0。不是 7.9。<strong>恰好是理论上限。</strong> 英文文本约 4.0-5.0。Gzip 的 JS 约 6.5-7.0。AES 密文约 8.0。<code>final.pkg</code> 就是 AES 密文。</p>
+<p><code>file</code> 命令报 <code>data</code>。文件中找不到任何长度 ≥6 的可读 ASCII 字符串——扫描整个 780KB 文件，1259 个&quot;字符串&quot;全是噪声碎片：<code>u|,1&lt;SA</code>、<code>B&quot;ejA5</code>、<code>IQp!i]</code>。</p>
+<p><code>wasm_bg.wasm</code> 的 Section 解析确认解密机制：</p>
+<pre><code>Export: untransform          ← 解密函数
+Export: func20               ← 热路径
+Export: __wbindgen_* (x4)    ← Rust/wasm-bindgen 胶水
+Data Section: 54709 bytes    ← 54KB 密钥/查找表
+</code></pre><p>到了这个节点，我们觉得自己已经&quot;拥有了&quot;它。协议在手，引擎确认，反作弊字符串全解码，加密方案已确证。剩下不就是绕过吗？</p>
+<h2 id="三第二堵墙游戏在你动手之前自毁" class="prose-heading">三、第二堵墙：游戏在你动手之前自毁</h2>
+<p>第一个攻击脚本是 Tampermonkey。思路直接：<code>@run-at document-start</code>（比页面任何脚本都早）装三个钩子：</p>
+<ol>
+<li>XHR 拦截——阻断 error.deadshot.io</li>
+<li>MutationObserver 替换——过滤我们自己的 DOM（<code>_dt</code> 前缀）</li>
+<li>Clean Realm 感染——劫持 <code>createElement(&#39;iframe&#39;)</code>，在 contentWindow 上注入我们的 MO 版本，让&quot;干净参照&quot;和我们一样&quot;脏&quot;</li>
+</ol>
+<p>语法正确，跑起来了。日志打了：<code>[AC] MutationObserver filtered</code>、<code>[AC] Clean Realm neutralized</code>、<code>[AC] Error XHR blocked</code>。</p>
+<p>然后页面一片空白。</p>
+<p>不是渲染失败。&quot;页面空白&quot;是游戏根本<strong>没有启动</strong>。Canvas 不存在，WebSocket 没连接，所有 JS 停在初始化的某一帧。一个叫 <code>vn0OD9()</code> 的函数在引导阶段从 no-op 被重定义为真正的检查器，发现 <code>XMLHttpRequest.prototype.send</code> 不再是原生对象——<code>typeof</code> 还是 <code>&quot;function&quot;</code>，但引用已不同。下一行它把 <code>PL0Ie9y</code> 设成了真值。<strong>从这一行起，游戏引擎整个短路。</strong> 不渲染，不发送，不接收。自毁完成。</p>
+<p>然后试了 <code>document-end</code>——游戏初始化完再装钩子。XHR 成功了。但其他原型方法全部被封印：</p>
+<pre><code>WebSocket.prototype.addEventListener → 只读
+WebSocket.prototype.onmessage → 不可重定义
+HTMLCanvasElement.prototype.getContext → 只读
+</code></pre><p>早装 → 游戏自杀。晚装 → API 已冻结。<strong>没有任何中间窗口。</strong></p>
+<p>这就是 V8 层的第一个天花板：游戏在初始化阶段检查并锁定了你要控制的那些 API。你先执行，游戏检测到你。你后执行，游戏不让你动。</p>
+<p>同时游戏还有一个防御手段我们没注意到——初始化时将 GL 上下文的方法通过 <code>.bind()</code> 全部缓存：</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> gl = canvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&#x27;webgl2&#x27;</span>);
+<span class="hljs-keyword">const</span> _drawElements = gl.<span class="hljs-property">drawElements</span>.<span class="hljs-title function_">bind</span>(gl);
+<span class="hljs-comment">// 后续全走 _drawElements(...)，永不经过 gl.drawElements(...)</span>
+</code></pre><p>这意味着即便 API 没被封印，你在原型或实例上设置的任何钩子也不会被调用——绑定函数持有对原始原生函数的直接引用。</p>
+<h2 id="四v8-层唯一的突破口在调试器里暂停游戏" class="prose-heading">四、V8 层唯一的突破口：在调试器里暂停游戏</h2>
+<p>既然正常执行流程赢不了，换思路——<strong>暂停游戏，在调试器里偷看它的内存。</strong></p>
+<p>Chrome Manifest V3 扩展的 <code>chrome.debugger</code> API 底层是 CDP（Chrome DevTools Protocol）。CDP 的权力层级高于任何 JavaScript：在任意函数调用时暂停、读调用栈的作用域链、枚举局部变量、在全局上下文执行表达式、拦截网络。</p>
+<p>这一切在 V8 调试器层运行——游戏的 <code>vn0OD9()</code> 监控 JS 层，看不到 CDP。</p>
+<p>实际操作：</p>
+<p><strong>一、获取原生函数对象 ID。</strong> <code>Runtime.evaluate</code> 在主世界执行 <code>WebGL2RenderingContext.prototype.uniformMatrix4fv</code>，拿回 V8 堆中的唯一 objectId。</p>
+<p><strong>二、设条件断点。</strong> <code>Debugger.setBreakpointOnFunctionCall</code>，条件 <code>((self.__dc=(self.__dc||0)+1)%2000===0)</code>——每 2000 次调用才暂停一次，否则游戏直接卡死。</p>
+<p><strong>三、断点命中，枚举作用域链。</strong> CDP 暂停事件携带 <code>callFrames[0].scopeChain</code>——完整的局部变量绑定。调用栈第一帧是 <code>SingleUniform.setValueM4</code>（Three.js 内部函数，<strong>JavaScript</strong> 代码，不是原生函数）。<code>Runtime.getProperties</code> 遍历其局部作用域：</p>
+<pre><code>gl: WebGL2RenderingContext
+v: Matrix4
+cache: Array(16)        ← 这里！
+elements: Array(16)
+</code></pre><p><strong>四、读数组。</strong> <code>cache</code> 是长度 16 的普通 JS 数组，存储上一次上传的矩阵。元素 [12]、[13]、[14] 是矩阵第四列——物体在世界空间中的 (x, y, z)。<code>Runtime.callFunctionOn</code> 逐个读取：</p>
+<pre><code>MATRIX cache: 0 17.5 1
+MATRIX cache: -5 4.39 -301.38
+MATRIX cache: 49.06 6.11 12.84
+MATRIX cache: 13.41 -12.4 -71.75
+MATRIX cache: -13.14 4.62 25.28
+</code></pre><p>8 名玩家，稳定追踪 5-7 个实体。去重 3 米内，过期 3 秒。</p>
+<p><strong>零代码修改。</strong> 混淆没用——不读字符串。WASM 加密没用——不解包。<code>vn0OD9()</code> 没用——不碰原型。Clean Realm 没用——不污染全局。MutationObserver 没用——不改 DOM。CDP 在 V8 里面，但比 JS 低一个抽象级。</p>
+<h2 id="五在-v8-里你能做的就这么多" class="prose-heading">五、在 V8 里，你能做的就这么多</h2>
+<p>实体坐标有了。只剩一步：把 (x, y, z) 投成 (sx, sy)。需要相机矩阵。</p>
+<p>我们试了九个方案。</p>
+<p><strong>方案一</strong>：内容脚本用 <code>gl.getUniform(viewLoc, buf)</code> 读 GPU 上的 view matrix。结果：Float32Array 全零。</p>
+<p><strong>方案二</strong>：CDP <code>Runtime.evaluate</code> 在断点暂停时读。uniform 在断点触发时尚未被写入——断点在 <code>uniformMatrix4fv</code> <strong>执行前</strong>触发。</p>
+<p><strong>方案三</strong>：<code>Debugger.stepOver</code> 执行后再读。原生函数 stepOver 不产生 paused 事件。</p>
+<p><strong>方案四</strong>：CDP <code>Runtime.evaluate</code> 在非暂停期定时读。Service Worker 的 <code>setInterval</code> 在 Manifest V3 下生命周期不可靠。我们用 <code>setTimeout</code> 链和 <code>chrome.alarms</code> 都试了——均不稳定。</p>
+<p><strong>方案五</strong>：<code>evaluateOnCallFrame</code> 在调用帧里搜各种可能的局部变量名（<code>value</code>、<code>v</code>、<code>t</code>、<code>e</code>、<code>data</code>、<code>matrix</code>、<code>cache</code>）——除了 <code>cache</code>（返回实体坐标），其余都是 undefined 或 NaN。</p>
+<p><strong>方案六</strong>：深度缓冲 <code>gl.readPixels(DEPTH_COMPONENT)</code>——隔离世界限制，全零。</p>
+<p><strong>方案七</strong>：颜色缓冲 <code>gl.readPixels(RGBA)</code>——同样全零。</p>
+<p><strong>方案八</strong>：在调用帧作用域链中找包含相机数据的其他变量——无。</p>
+<p><strong>方案九</strong>：用 <code>Runtime.evaluate</code> 在主世界做全局扫描 <code>document.querySelectorAll(&#39;canvas&#39;)</code> → <code>getContext(&#39;webgl2&#39;)</code> → <code>getUniform</code>——同样因为隔离世界限制返回零。</p>
+<p>九个方案，零个成功。</p>
+<p>根因被定位到一个 Chromium 底层行为：<code>getParameter(CURRENT_PROGRAM)</code> 在隔离世界<strong>正常工作</strong>。<code>getActiveUniform</code> <strong>正常工作</strong>。<code>getUniformLocation</code> <strong>正常工作</strong>。唯独 <code>getUniform(program, location, buffer)</code> 返回全零。程序结构信息可以通过，GPU 数据被截断。</p>
+<p>这是 V8 层的天花板——不是你不够聪明，是浏览器就给你开了这么大一扇窗。</p>
+<h2 id="六假如我们走出-v8" class="prose-heading">六、假如我们走出 V8</h2>
+<p>当前位置：手里有实体世界坐标，但没有相机。知道敌人位置，不知道屏幕像素。</p>
+<p>所有 V8 内的攻击向量都堵死了。但如果走出 V8——进入操作系统层、浏览器二进制层、或纯粹的视觉推理层——这道题会完全不同。</p>
+<h3 id="系统级钩子os-layer" class="prose-heading">系统级钩子（OS Layer）</h3>
+<p>一个独立进程。<code>task_for_pid</code> + <code>vm_read</code>（macOS）或 <code>ReadProcessMemory</code>（Windows）直读 Chromium 的内存空间。定位 WebSocket 接收缓冲区的内存地址——服务端下发的实体坐标就在那里，float32 明文排列。不需要 CDP，不需要断点，不需要枚举作用域链。</p>
+<p>相机的 view matrix 在 GPU 驱动层天然可读——<code>glGetUniformfv</code> 或者直接读 Chromium 内部的 uniform 缓冲区映射。这是 C++ 调用，不是 JS 调用——内容脚本的隔离世界限制对它毫无意义。</p>
+<p>自瞄的鼠标输入走 <code>CGEventPost</code>（macOS）或 <code>SendInput</code>（Windows）——直接把移动事件注入硬件事件队列。浏览器上层接收到的 <code>movementX/Y</code> 和真鼠标字节级一致。<code>vn0OD9()</code> 在 V8 里——对 OS 进程无感知。</p>
+<p>这也是为什么 Valorant 需要 Vanguard（内核级反作弊驱动）。因为用户态的反作弊——无论是 C++ 还是 JavaScript——都无法检测外部的 read-write 进程。</p>
+<h3 id="定制-chromiumbrowser-layer" class="prose-heading">定制 Chromium（Browser Layer）</h3>
+<p>编译一份修改版的 Chromium。在 <code>third_party/blink/renderer/modules/webgl/</code> 插入钩子：每个 <code>drawElements</code>/<code>uniformMatrix4fv</code> 调用前后，记录当前 program 的 uniform 值。model matrix 的 column 4 在渲染管线内部天然可读——这是在 C++ 层，不是 JavaScript 层。游戏的 <code>.bind()</code> 缓存、原型冻结、<code>vn0OD9()</code> 检测——全部在 JS 层，对 Blink 引擎内部的 hook 完全透明。</p>
+<p>同时关掉内容脚本的隔离世界限制——或直接在 <code>webgl_rendering_context_base.cc</code> 里解除 GPU 数据读取的跨世界屏蔽。做了这一步，<code>gl.getUniform</code> 和 <code>gl.readPixels</code> 在内容脚本里就能正常返回数据——解决我们在这三十个小时里碰到的<strong>每一个</strong> V8 层限制。</p>
+<h3 id="yolo-计算机视觉vision-layer" class="prose-heading">YOLO / 计算机视觉（Vision Layer）</h3>
+<p>完全不碰代码。一个独立进程用 <code>CGDisplayCreateImage</code>（macOS）或 Windows Graphics Capture API 以 60fps 捕获屏幕画面，喂给 YOLOv8-nano 做实时目标检测。敌人的 bounding box 由模型直接输出——不需要相机矩阵，不需要世界坐标，不需要 GPU uniform。鼠标偏移 = bounding box 中心 - 画面中心。</p>
+<p>YOLOv8-nano 在 RTX 3060 上的推理延迟约 3-5ms，远在 60fps 的 16.7ms 帧预算内。输入通道是屏幕，输出通道是 <code>CGEventPost</code>。<strong>全程不经过浏览器进程。</strong></p>
+<p>游戏的七层反作弊体系——混淆、WASM 加密、完整性检测、Clean Realm、DOM 监控、指纹、加密遥测——对这个进程来说<strong>完全不存在</strong>。它们都在 V8 里。</p>
+<h3 id="这三个方案的共同点" class="prose-heading">这三个方案的共同点</h3>
+<p>V8 是非常狭窄的一个攻击面。被 JavaScript 安全模型、浏览器隔离策略、扩展权限模型逐层包裹。任何想在 V8 里&quot;画框&quot;的方案，最终都会碰壁。</p>
+<p>但走出 V8 后——不管往下走（OS）还是往上走（Vision），所有这些限制都会瞬间消失。<strong>游戏的安全性不是因为它在浏览器里跑——恰好相反，浏览器是这个游戏最强的一层护甲。</strong> 这层护甲不是游戏开发者建的——是 Chromium 送的，免费的，默认的。</p>
+<h2 id="七这场对抗告诉我们什么" class="prose-heading">七、这场对抗告诉我们什么</h2>
+<h3 id="v8-是最强也是最弱的战场" class="prose-heading">V8 是最强也是最弱的战场</h3>
+<p>对于没有系统权限的脚本小子来说，V8 是铜墙铁壁——混淆、加密、完整性检测、API 冻结，层层叠加，让&quot;装个 Tampermonkey 就能透视&quot;几乎不可能。deadshot.io 在防御这个级别的攻击者方面做得非常出色。</p>
+<p>但对于有 OS 权限或编译工具的团队来说，V8 只是一个需要绕行的障碍，不是一道真正的防线。你只需要走到 V8 外面，一切都不一样了。</p>
+<h3 id="分层防御的数学" class="prose-heading">分层防御的数学</h3>
+<p>七层防御，没有一层是完美的。但每一层都制造摩擦——你需要为每一层设计专门的绕过方案，而这些方案彼此之间可能互相冲突。</p>
+<p>这不是加法，是乘法。是摩擦系数的累积。deadshot.io 把这七层叠在了一个 <code>.io</code> 游戏上——这个预算级别通常不会看到这样的安全投入。值得尊敬。</p>
+<h3 id="浏览器是免费的纵深" class="prose-heading">浏览器是免费的纵深</h3>
+<p>Chromium 的隔离世界机制是我们失败的直接原因。它不属于游戏的任何一层反作弊——它是浏览器自己加的，免费的，默认的。对于需要防御的系统来说，这意味着 Web 平台天生就比 Native 平台多一层保护。这是一个被严重低估的事实。</p>
+<h2 id="致谢与研究声明" class="prose-heading">致谢与研究声明</h2>
+<p>本文所有技术分析基于对 deadshot.io 公开客户端资源的合法研究，全部在隔离沙箱环境中完成。文中讨论的&quot;V8 外&quot;攻击方案（系统级钩子、定制浏览器、YOLO 视觉模型）为基于公开技术的推演性分析，未实际执行。本研究不包含任何服务端攻击、未授权访问或用户数据获取。所有内容仅供安全研究、浏览器架构理解和反作弊教育参考。不鼓励或支持对任何在线游戏的作弊行为。</p>
+19:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://jiangmuran.com/blog/anticheat-of-webgame#article\",\"headline\":\"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了\",\"description\":\"从 HAR 抓包到 WASM 解密，从 Tampermonkey 注入到 CDP 调用栈枚举，我们穷尽了浏览器能给的每一种攻击向量。最终抓住了敌人的实时坐标，却因为 Chromium 的一个隐秘限制倒在了最后一公里。\",\"datePublished\":\"2026-06-28\",\"dateModified\":\"2026-06-28\",\"keywords\":\"AI, 软件工程, 逆向, Web\",\"articleSection\":\"随记\",\"inLanguage\":\"zh-CN\",\"image\":[\"https://jiangmuran.com/mypic.jpg\"],\"url\":\"https://jiangmuran.com/blog/anticheat-of-webgame\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://jiangmuran.com/blog/anticheat-of-webgame\"},\"author\":{\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\"},\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"首页\",\"item\":\"https://jiangmuran.com\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://jiangmuran.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了\",\"item\":\"https://jiangmuran.com/blog/anticheat-of-webgame\"}]}"}}],["$","$L21",null,{}],["$","$L22",null,{"post":{"slug":"anticheat-of-webgame","title":"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了","description":"从 HAR 抓包到 WASM 解密，从 Tampermonkey 注入到 CDP 调用栈枚举，我们穷尽了浏览器能给的每一种攻击向量。最终抓住了敌人的实时坐标，却因为 Chromium 的一个隐秘限制倒在了最后一公里。","date":"2026-06-28","tags":["AI","软件工程","逆向","Web"],"category":"随记","cover":"$undefined","readingTime":"20 min read","contentHtml":"$23"}}],"$L24","$L25"]
+26:I[16142,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"SectionDivider"]
+27:I[13642,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"Footer"]
+24:["$","$L26",null,{"variant":"line"}]
+25:["$","$L27",null,{}]
+1e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#080503"}]]
+28:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"IconMark"]
+1c:null
+20:[["$","title","0",{"children":"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了 | Jiang Muran | Jiangmuran.com"}],["$","meta","1",{"name":"description","content":"从 HAR 抓包到 WASM 解密，从 Tampermonkey 注入到 CDP 调用栈枚举，我们穷尽了浏览器能给的每一种攻击向量。最终抓住了敌人的实时坐标，却因为 Chromium 的一个隐秘限制倒在了最后一公里。"}],["$","meta","2",{"name":"application-name","content":"Jiangmuran.com"}],["$","link","3",{"rel":"author","href":"https://jiangmuran.com"}],["$","meta","4",{"name":"author","content":"Jiang Muran"}],["$","link","5",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"AI,软件工程,逆向,Web"}],["$","meta","7",{"name":"creator","content":"Jiang Muran"}],["$","meta","8",{"name":"publisher","content":"Jiang Muran"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://jiangmuran.com/blog/anticheat-of-webgame"}],["$","meta","13",{"property":"og:title","content":"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了"}],["$","meta","14",{"property":"og:description","content":"从 HAR 抓包到 WASM 解密，从 Tampermonkey 注入到 CDP 调用栈枚举，我们穷尽了浏览器能给的每一种攻击向量。最终抓住了敌人的实时坐标，却因为 Chromium 的一个隐秘限制倒在了最后一公里。"}],["$","meta","15",{"property":"og:url","content":"https://jiangmuran.com/blog/anticheat-of-webgame"}],["$","meta","16",{"property":"og:site_name","content":"Jiangmuran.com"}],["$","meta","17",{"property":"og:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","meta","18",{"property":"og:image:width","content":"400"}],["$","meta","19",{"property":"og:image:height","content":"400"}],["$","meta","20",{"property":"og:type","content":"article"}],["$","meta","21",{"property":"article:published_time","content":"2026-06-28"}],["$","meta","22",{"property":"article:author","content":"Jiang Muran"}],["$","meta","23",{"property":"article:tag","content":"AI"}],["$","meta","24",{"property":"article:tag","content":"软件工程"}],["$","meta","25",{"property":"article:tag","content":"逆向"}],["$","meta","26",{"property":"article:tag","content":"Web"}],["$","meta","27",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","28",{"name":"twitter:creator","content":"@jiangmuran"}],["$","meta","29",{"name":"twitter:title","content":"我们花了三十个小时攻击一个网页游戏的反作弊——然后它赢了"}],["$","meta","30",{"name":"twitter:description","content":"从 HAR 抓包到 WASM 解密，从 Tampermonkey 注入到 CDP 调用栈枚举，我们穷尽了浏览器能给的每一种攻击向量。最终抓住了敌人的实时坐标，却因为 Chromium 的一个隐秘限制倒在了最后一公里。"}],["$","meta","31",{"name":"twitter:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","link","32",{"rel":"shortcut icon","href":"/mypic.jpg"}],["$","link","33",{"rel":"icon","href":"/mypic.jpg","type":"image/jpeg"}],["$","link","34",{"rel":"apple-touch-icon","href":"/mypic.jpg","sizes":"180x180","type":"image/jpeg"}],["$","$L28","35",{}]]

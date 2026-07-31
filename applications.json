@@ -1,0 +1,42 @@
+{
+  "applications": {
+    "zh-CN": {
+      "categories": [
+        { "id": "tools", "name": "在线工具", "icon": "Wrench" },
+        { "id": "projects", "name": "项目展示", "icon": "Monitor" },
+        { "id": "entertainment", "name": "娱乐影音", "icon": "Film" },
+        { "id": "easter-egg", "name": "不要点我", "icon": "Egg" }
+      ],
+      "items": [
+        { "id": 1, "name": "Base64编码", "description": "极简风格的编解码工具，支持多模态数据处理。", "category": "tools", "url": "/applications/base64", "tags": ["Base64", "编码", "解码", "工具"], "icon": "FileCode" },
+        { "id": 2, "name": "JES加解密", "description": "基于AES变种的中文加密方案，旨在绕过部分审核严格的平台。", "category": "tools", "url": "/applications/jes", "tags": ["AES", "加密", "解密", "工具"], "icon": "Lock" },
+        { "id": 8, "name": "学术搜索引擎", "description": "聚合多个 SearXNG 实例的元搜索工具，为学术与知识检索提供无追踪的聚合入口。", "category": "tools", "url": "/applications/s", "tags": ["搜索引擎", "学术", "SearXNG", "元搜索"], "icon": "Search" },
+        { "id": 10, "name": "Hydro反作弊系统", "description": "基于可视化的代码分析审计工具，维护公平的比赛环境。", "category": "tools", "url": "/applications/hydro_anticheat", "tags": ["Hydro", "反作弊", "可视化", "作弊检测"], "icon": "Shield" },
+        { "id": 11, "name": "LittleSkin 皮肤获取器", "description": "从 littleskin 皮肤库挑选皮肤并优雅地解析成直链。", "category": "tools", "url": "/applications/littleskin_getter", "tags": ["Minecraft", "皮肤", "LittleSkin", "工具"], "icon": "Monitor" },
+        { "id": 9, "name": "Bongo Cat", "description": "指尖的律动，一只会演奏代码的小猫。", "category": "entertainment", "url": "/applications/bongocat", "tags": ["Bongo Cat", "乐器"], "icon": "Music" },
+        { "id": 12, "name": "Minecraft Online", "description": "网页版 MC 启动中心，提供 1.8.8 WASM 与 JS 双版本入口。", "category": "entertainment", "url": "/applications/mc", "tags": ["Minecraft", "MC", "WASM", "网页"], "icon": "Gamepad2" },
+        { "id": 13, "name": "UWULAND", "description": "纸片君 ee 2023 年纯人工编写的文字剧情游戏（零 AI 含量），刨坟重发，陪 eebot 与呆鸟走一段旅途。", "category": "entertainment", "url": "/applications/uwuland/", "tags": ["文字游戏", "纯手写", "PAPEREE", "2023"], "icon": "Gamepad2" },
+        { "id": 6, "name": "哈夫克联名校园卡", "description": "复刻《三角洲行动》风格，硬核 PCB 设计的实物展示。", "category": "projects", "url": "/applications/cards", "tags": ["校园卡", "展示", "PCB", "电路板", "嵌入式"], "icon": "CreditCard" },
+        { "id": 7, "name": "不要点我", "description": "Undefined Behavior", "category": "easter-egg", "url": "/applications/rr", "tags": ["春江花月夜"], "icon": "AlertTriangle" }
+      ]
+    },
+    "zh-TW": {
+      "categories": [
+        { "id": "tools", "name": "線上工具", "icon": "Wrench" },
+        { "id": "projects", "name": "專案展示", "icon": "Monitor" },
+        { "id": "entertainment", "name": "娛樂影音", "icon": "Film" },
+        { "id": "easter-egg", "name": "不要點我", "icon": "Egg" }
+      ],
+      "items": []
+    },
+    "en": {
+      "categories": [
+        { "id": "tools", "name": "Tools", "icon": "Wrench" },
+        { "id": "projects", "name": "Projects", "icon": "Monitor" },
+        { "id": "entertainment", "name": "Entertainment", "icon": "Film" },
+        { "id": "easter-egg", "name": "Do Not Click", "icon": "Egg" }
+      ],
+      "items": []
+    }
+  }
+}

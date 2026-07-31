@@ -1,0 +1,406 @@
+{
+  "projects": {
+    "zh-CN": [
+      {
+        "id": 1,
+        "name": "ClawFounder",
+        "description": "面向创业者的 AI 协作工作台，围绕 workspace、容器与多 Agent 流程，帮助用户更高效地推进想法、项目与产品原型。",
+        "technologies": ["Next.js", "FastAPI", "Docker", "Agents"],
+        "github": "",
+        "demo": "https://founder.muran.tech/",
+        "whitepaper": "https://clawfounder.projects.muran.tech/",
+        "video": "",
+        "icon": "Rocket"
+      },
+      {
+        "id": 2,
+        "name": "NoteRx",
+        "description": "专为小红书创作者打造的 AI 爆款笔记诊断与优化系统，结合数据分析与多智能体协作，为内容提供更具针对性的改写建议。",
+        "technologies": ["React", "FastAPI", "AI Agents", "ECharts"],
+        "github": "https://github.com/jiangmuran/noterx",
+        "demo": "https://noterx.muran.tech",
+        "whitepaper": "/whitepapers/noterx/",
+        "video": "",
+        "icon": "Activity"
+      },
+      {
+        "id": 3,
+        "name": "ClawGuard",
+        "description": "围绕主机安全、环境审计与风险检查设计的项目，用更自动化的方式帮助用户理解系统暴露面与运行风险。",
+        "technologies": ["Python", "Security", "Linux", "Automation"],
+        "github": "https://github.com/jiangmuran/clawguard",
+        "demo": "https://clawguard.muran.tech/",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Shield"
+      },
+      {
+        "id": 8,
+        "name": "Claude Image",
+        "description": "教 Claude Code / Codex 用好 gpt-image-2 的 Agent Skill 包，围绕意图优先的提示词、批量生成与视觉自检，把图像生成封装成可复用的工作流。",
+        "technologies": ["Agent Skills", "gpt-image-2", "Python", "Anthropic"],
+        "github": "https://github.com/jiangmuran/claude-image",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Image"
+      },
+      {
+        "id": 9,
+        "name": "Claude in Box",
+        "description": "把 Claude Code 装进 Docker 的便携开发环境，支持多会话、Hook 驱动、Web 管理与透明 SOCKS5 代理，甚至能直接跑在树莓派上。",
+        "technologies": ["Go", "Docker", "Claude Code", "DevOps"],
+        "github": "https://github.com/jiangmuran/claude-in-box",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Container"
+      },
+      {
+        "id": 10,
+        "name": "WebMC",
+        "description": "用 WebGPU 从零实现的网页版 Minecraft（clean room），直接在浏览器里渲染和探索体素世界。",
+        "technologies": ["WebGPU", "TypeScript", "Graphics", "Voxel"],
+        "github": "https://github.com/jiangmuran/webmc",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Boxes"
+      },
+      {
+        "id": 11,
+        "name": "TypeBox",
+        "description": "纯本地、离线优先的浏览器工具箱：Markdown 编辑器、图像套件、音视频工作台（ffmpeg.wasm）、Python IDE 与开发者工具，文件默认不出设备。",
+        "technologies": ["Vue 3", "Vite", "ffmpeg.wasm", "PWA"],
+        "github": "https://github.com/jiangmuran/jmr-typebox",
+        "demo": "https://box.muran.tech",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Wrench"
+      },
+      {
+        "id": 12,
+        "name": "CNCDraw",
+        "description": "笔式写字机 / 绘图机 Python 工具集：自研 .tfont 轨迹字体、排版与 G-code 生成（Grbl/EBB/Marlin），摄像头闭环校准，含 FastAPI Web UI 与 MCP agent 接口。",
+        "technologies": ["Python", "FastAPI", "G-code", "MCP"],
+        "github": "https://github.com/jiangmuran/CNCDraw",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "PenTool"
+      },
+      {
+        "id": 13,
+        "name": "Hachimi",
+        "description": "运行在 Android 上、可替换系统语音助手的轻量 Agent 型语音助手，面向耳机 / 智能眼镜：低延迟分步语音汇报，SLM / ASR / TTS / 工具 / MCP 全可自定义，带能力式安全沙箱与信任闸门。",
+        "technologies": ["Kotlin", "Android", "Agent", "MCP"],
+        "github": "https://github.com/jiangmuran/your-own-hachimi",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Mic"
+      },
+      {
+        "id": 5,
+        "name": "AIDocGenius",
+        "description": "一个围绕文档理解、总结与结构化输出构建的 AI 工具项目，用于提升阅读和处理复杂文档的效率。",
+        "technologies": ["AI", "Documents", "Summarization", "Web"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "FileText"
+      },
+      {
+        "id": 6,
+        "name": "FileHelper Chatbot",
+        "description": "结合文件助手与对话能力的聊天机器人项目，让文件处理、摘要与互动问答形成闭环。",
+        "technologies": ["Chatbot", "Files", "Python", "AI"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 7,
+        "name": "OI Wiki Contributions",
+        "description": "参与算法与竞赛知识社区建设，持续输出可复用的知识内容与技术说明。",
+        "technologies": ["Open Source", "Algorithms", "Docs", "Community"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "whitepaper": "",
+        "video": "",
+        "icon": "BookOpen"
+      }
+    ],
+    "zh-TW": [
+      {
+        "id": 1,
+        "name": "ClawFounder",
+        "description": "面向創業者的 AI 協作工作台，圍繞 workspace、容器與多 Agent 流程，幫助使用者更高效地推進想法、專案與產品原型。",
+        "technologies": ["Next.js", "FastAPI", "Docker", "Agents"],
+        "github": "",
+        "demo": "https://founder.muran.tech/",
+        "whitepaper": "https://clawfounder.projects.muran.tech/",
+        "video": "",
+        "icon": "Rocket"
+      },
+      {
+        "id": 2,
+        "name": "NoteRx",
+        "description": "專為小紅書創作者打造的 AI 爆款筆記診斷與優化系統，結合資料分析與多智慧體協作，為內容提供更具針對性的改寫建議。",
+        "technologies": ["React", "FastAPI", "AI Agents", "ECharts"],
+        "github": "https://github.com/jiangmuran/noterx",
+        "demo": "https://noterx.muran.tech",
+        "whitepaper": "/whitepapers/noterx/",
+        "video": "",
+        "icon": "Activity"
+      },
+      {
+        "id": 3,
+        "name": "ClawGuard",
+        "description": "圍繞主機安全、環境審計與風險檢查設計的專案，用更自動化的方式幫助使用者理解系統暴露面與運行風險。",
+        "technologies": ["Python", "Security", "Linux", "Automation"],
+        "github": "https://github.com/jiangmuran/clawguard",
+        "demo": "https://clawguard.muran.tech/",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Shield"
+      },
+      {
+        "id": 8,
+        "name": "Claude Image",
+        "description": "教 Claude Code / Codex 用好 gpt-image-2 的 Agent Skill 套件，圍繞意圖優先的提示詞、批次生成與視覺自檢，把圖像生成封裝成可重用的工作流程。",
+        "technologies": ["Agent Skills", "gpt-image-2", "Python", "Anthropic"],
+        "github": "https://github.com/jiangmuran/claude-image",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Image"
+      },
+      {
+        "id": 9,
+        "name": "Claude in Box",
+        "description": "把 Claude Code 裝進 Docker 的便攜開發環境，支援多工作階段、Hook 驅動、Web 管理與透明 SOCKS5 代理，甚至能直接跑在樹莓派上。",
+        "technologies": ["Go", "Docker", "Claude Code", "DevOps"],
+        "github": "https://github.com/jiangmuran/claude-in-box",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Container"
+      },
+      {
+        "id": 10,
+        "name": "WebMC",
+        "description": "用 WebGPU 從零實現的網頁版 Minecraft（clean room），直接在瀏覽器裡渲染和探索體素世界。",
+        "technologies": ["WebGPU", "TypeScript", "Graphics", "Voxel"],
+        "github": "https://github.com/jiangmuran/webmc",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Boxes"
+      },
+      {
+        "id": 11,
+        "name": "TypeBox",
+        "description": "純本地、離線優先的瀏覽器工具箱：Markdown 編輯器、圖像套件、音視訊工作台（ffmpeg.wasm）、Python IDE 與開發者工具，檔案預設不出裝置。",
+        "technologies": ["Vue 3", "Vite", "ffmpeg.wasm", "PWA"],
+        "github": "https://github.com/jiangmuran/jmr-typebox",
+        "demo": "https://box.muran.tech",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Wrench"
+      },
+      {
+        "id": 12,
+        "name": "CNCDraw",
+        "description": "筆式寫字機 / 繪圖機 Python 工具集：自研 .tfont 軌跡字體、排版與 G-code 生成（Grbl/EBB/Marlin），攝影機閉環校準，含 FastAPI Web UI 與 MCP agent 介面。",
+        "technologies": ["Python", "FastAPI", "G-code", "MCP"],
+        "github": "https://github.com/jiangmuran/CNCDraw",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "PenTool"
+      },
+      {
+        "id": 13,
+        "name": "Hachimi",
+        "description": "運行在 Android 上、可替換系統語音助手的輕量 Agent 型語音助手，面向耳機 / 智慧眼鏡：低延遲分步語音彙報，SLM / ASR / TTS / 工具 / MCP 全可自訂，帶能力式安全沙箱與信任閘門。",
+        "technologies": ["Kotlin", "Android", "Agent", "MCP"],
+        "github": "https://github.com/jiangmuran/your-own-hachimi",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Mic"
+      },
+      {
+        "id": 5,
+        "name": "AIDocGenius",
+        "description": "一個圍繞文件理解、摘要與結構化輸出構建的 AI 工具專案，用於提升閱讀和處理複雜文件的效率。",
+        "technologies": ["AI", "Documents", "Summarization", "Web"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "FileText"
+      },
+      {
+        "id": 6,
+        "name": "FileHelper Chatbot",
+        "description": "結合文件助手與對話能力的聊天機器人專案，讓文件處理、摘要與互動問答形成閉環。",
+        "technologies": ["Chatbot", "Files", "Python", "AI"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 7,
+        "name": "OI Wiki Contributions",
+        "description": "參與演算法與競賽知識社群建設，持續輸出可重用的知識內容與技術說明。",
+        "technologies": ["Open Source", "Algorithms", "Docs", "Community"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "whitepaper": "",
+        "video": "",
+        "icon": "BookOpen"
+      }
+    ],
+    "en": [
+      {
+        "id": 1,
+        "name": "ClawFounder",
+        "description": "An AI collaboration workspace for founders, centered around workspaces, containers, and multi-agent workflows to move ideas and product prototypes forward.",
+        "technologies": ["Next.js", "FastAPI", "Docker", "Agents"],
+        "github": "",
+        "demo": "https://founder.muran.tech/",
+        "whitepaper": "https://clawfounder.projects.muran.tech/",
+        "video": "",
+        "icon": "Rocket"
+      },
+      {
+        "id": 2,
+        "name": "NoteRx",
+        "description": "An AI note diagnosis and optimization system for Xiaohongshu creators, combining data analysis and multi-agent workflows to improve content quality and direction.",
+        "technologies": ["React", "FastAPI", "AI Agents", "ECharts"],
+        "github": "https://github.com/jiangmuran/noterx",
+        "demo": "https://noterx.muran.tech",
+        "whitepaper": "/whitepapers/noterx/",
+        "video": "",
+        "icon": "Activity"
+      },
+      {
+        "id": 3,
+        "name": "ClawGuard",
+        "description": "A security-focused project for host auditing, exposure review, and risk inspection, helping users understand system posture more automatically.",
+        "technologies": ["Python", "Security", "Linux", "Automation"],
+        "github": "https://github.com/jiangmuran/clawguard",
+        "demo": "https://clawguard.muran.tech/",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Shield"
+      },
+      {
+        "id": 8,
+        "name": "Claude Image",
+        "description": "An Agent Skill package that teaches Claude Code / Codex to use gpt-image-2 well — intent-first prompting, batch generation, and visual self-check, turning image generation into a reusable workflow.",
+        "technologies": ["Agent Skills", "gpt-image-2", "Python", "Anthropic"],
+        "github": "https://github.com/jiangmuran/claude-image",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Image"
+      },
+      {
+        "id": 9,
+        "name": "Claude in Box",
+        "description": "A portable Claude Code dev environment in Docker — multi-session, hook-driven, web-managed, with a transparent SOCKS5 proxy, light enough to run on a Raspberry Pi.",
+        "technologies": ["Go", "Docker", "Claude Code", "DevOps"],
+        "github": "https://github.com/jiangmuran/claude-in-box",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Container"
+      },
+      {
+        "id": 10,
+        "name": "WebMC",
+        "description": "A clean-room, browser-based Minecraft built from scratch with WebGPU, rendering and exploring a voxel world right in the browser.",
+        "technologies": ["WebGPU", "TypeScript", "Graphics", "Voxel"],
+        "github": "https://github.com/jiangmuran/webmc",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Boxes"
+      },
+      {
+        "id": 11,
+        "name": "TypeBox",
+        "description": "A local-first, offline browser toolkit — Markdown editor, image suite, audio/video workbench (ffmpeg.wasm), Python IDE, and developer tools. Files never leave your device by default.",
+        "technologies": ["Vue 3", "Vite", "ffmpeg.wasm", "PWA"],
+        "github": "https://github.com/jiangmuran/jmr-typebox",
+        "demo": "https://box.muran.tech",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Wrench"
+      },
+      {
+        "id": 12,
+        "name": "CNCDraw",
+        "description": "A Python toolkit for pen plotters / writing machines: a custom .tfont trajectory font format, layout and G-code generation (Grbl/EBB/Marlin), camera closed-loop calibration, with a FastAPI web UI and MCP agent tools.",
+        "technologies": ["Python", "FastAPI", "G-code", "MCP"],
+        "github": "https://github.com/jiangmuran/CNCDraw",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "PenTool"
+      },
+      {
+        "id": 13,
+        "name": "Hachimi",
+        "description": "A lightweight, Agent-style Android voice assistant that can replace the system assistant, built for earbuds / smart glasses: low-latency step-by-step voice reports, fully customizable SLM/ASR/TTS/tools/MCP, and a capability-based security sandbox.",
+        "technologies": ["Kotlin", "Android", "Agent", "MCP"],
+        "github": "https://github.com/jiangmuran/your-own-hachimi",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Mic"
+      },
+      {
+        "id": 5,
+        "name": "AIDocGenius",
+        "description": "An AI tool project focused on document understanding, summarization, and structured output for better knowledge workflows.",
+        "technologies": ["AI", "Documents", "Summarization", "Web"],
+        "github": "https://github.com/jiangmuran/AIDocGenius",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "FileText"
+      },
+      {
+        "id": 6,
+        "name": "FileHelper Chatbot",
+        "description": "A chatbot project that combines file assistance with conversational interaction to close the loop between files and answers.",
+        "technologies": ["Chatbot", "Files", "Python", "AI"],
+        "github": "https://github.com/jiangmuran/filehelper_chatbot",
+        "demo": "",
+        "whitepaper": "",
+        "video": "",
+        "icon": "Bot"
+      },
+      {
+        "id": 7,
+        "name": "OI Wiki Contributions",
+        "description": "Ongoing contributions to algorithm and competitive programming knowledge infrastructure through open-source documentation work.",
+        "technologies": ["Open Source", "Algorithms", "Docs", "Community"],
+        "github": "https://github.com/OI-wiki/OI-wiki",
+        "demo": "https://oi.wiki",
+        "whitepaper": "",
+        "video": "",
+        "icon": "BookOpen"
+      }
+    ]
+  }
+}

@@ -1,0 +1,384 @@
+1:"$Sreact.fragment"
+2:I[60906,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"LinkConfirmProvider"]
+10:I[68027,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+:HL["/_next/static/chunks/b4a91a930c01ddab.css","style"]
+:HL["/_next/static/chunks/4c96ad731c46992e.css","style"]
+:HL["/_next/static/chunks/728dbb8cdd46b735.css","style"]
+:HL["/_next/static/chunks/bb3e957e7c4c1864.css","style"]
+:HL["/_next/static/media/2a65768255d6b625.p.d19752fb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/5e5dfa9e86f764b8.p.da6e3317.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/70e3db2de7f94926.p.347f98aa.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8c2eb9ceedecfc8e.p.21935807.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/f112ed7f0b91582f.p.12569d31.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/chunks/23c0fd5017a2b615.css","style"]
+:HL["/mypic.jpg","image",{"type":"image/jpeg"}]
+:HL["https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","font",{"crossOrigin":"anonymous","type":"font/truetype"}]
+:HL["https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","style"]
+3:Tcda,
+            /* 内联字体定义 - 确保字体加载完成后再显示 */
+            @font-face {
+              font-family: 'Lora';
+              font-style: normal;
+              font-weight: 700;
+              font-display: block; /* 阻塞渲染直到字体加载完成 */
+              src: url('https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf') format('truetype');
+            }
+            @keyframes ssr-pulse {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1; }
+            }
+            @keyframes ssr-rotate {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            @keyframes ssr-rotate-reverse {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(-360deg); }
+            }
+            #ssr-loader .ssr-title {
+              font-size: clamp(1.875rem, 5vw, 3rem);
+              font-weight: 700;
+              color: white;
+              margin-bottom: 2rem;
+              font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+            }
+            #ssr-loader .ssr-pulse-text {
+              animation: ssr-pulse 2s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-gray-text {
+              color: #8a8a8a;
+              margin-left: 0.5rem;
+            }
+            #ssr-loader .ssr-progress-container {
+              width: clamp(12rem, 50vw, 16rem);
+              height: 2px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 9999px;
+              overflow: hidden;
+            }
+            #ssr-loader .ssr-progress-bar {
+              height: 100%;
+              background: linear-gradient(to right, #c0c0c0, #8a8a8a);
+              width: 0%;
+              transition: width 0.1s ease-out;
+            }
+            #ssr-loader .ssr-progress-text {
+              margin-top: 1rem;
+              font-family: 'Courier New', 'Courier', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+              font-size: 0.75rem;
+              color: #8a8a8a;
+              font-weight: 400;
+              letter-spacing: 0.05em;
+            }
+            #ssr-loader .ssr-progress-number {
+              color: #c0c0c0;
+            }
+            #ssr-loader .ssr-dots {
+              animation: ssr-pulse 1s ease-in-out infinite;
+            }
+            #ssr-loader .ssr-circle-1 {
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              width: 8rem;
+              height: 8rem;
+              border: 1px solid rgba(192, 192, 192, 0.05);
+              border-radius: 50%;
+              animation: ssr-rotate 20s linear infinite;
+            }
+            #ssr-loader .ssr-circle-2 {
+              position: absolute;
+              bottom: 25%;
+              right: 25%;
+              width: 12rem;
+              height: 12rem;
+              border: 1px solid rgba(192, 192, 192, 0.03);
+              border-radius: 50%;
+              animation: ssr-rotate-reverse 30s linear infinite;
+            }
+            #ssr-loader.ssr-hidden {
+              opacity: 0;
+              pointer-events: none;
+            }
+            #ssr-loader.ssr-gone {
+              display: none !important;
+            }
+          0:{"P":null,"b":"vT3D1Js7XGyXeYe6JXE1b","c":["","blog","features-demo"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","features-demo","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/b4a91a930c01ddab.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/4c96ad731c46992e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/chunks/728dbb8cdd46b735.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/chunks/bb3e957e7c4c1864.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/af6715fa020a259d.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/f8f5d0c955b94b71.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/91a69682796eef98.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"lenis lenis-smooth playfair_display_e099ab5b-module__TCdCaa__variable lora_b4b8a761-module__gRDlFq__variable outfit_5779da51-module__2xRKIa__variable noto_serif_sc_8ee6940-module__xGCTYq__variable ubuntu_mono_22efa9ca-module__ePIbrq__variable","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preload","href":"/mypic.jpg","as":"image","type":"image/jpeg"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"rel":"preload","href":"https://fonts.gstatic.com/s/lora/v32/0QI6MX1D_JOuGQbT0gvTJPa787weuyJGmKxemMeZ.ttf","as":"font","type":"font/truetype","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"alternateName\":\"姜睦然\",\"url\":\"https://jiangmuran.com\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://jiangmuran.com/mypic.jpg\",\"width\":400,\"height\":400},\"jobTitle\":\"学生 / AI Builder / 开源开发者\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"knowsAbout\":[\"AI Agent\",\"编程\",\"数学建模\",\"算法竞赛\",\"Web开发\",\"开源项目\"],\"sameAs\":[\"https://github.com/jiangmuran\"]}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://jiangmuran.com/#website\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\",\"description\":\"姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者，持续构建 AI、产品与真实世界的连接。\",\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"},\"inLanguage\":\"zh-CN\"}"}}]]}],["$","body",null,{"className":"antialiased","children":["$","$L2",null,{"children":[["$","div",null,{"id":"ssr-loader","suppressHydrationWarning":true,"style":{"position":"fixed","inset":0,"zIndex":99999,"background":"#050505","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","opacity":1,"transition":"opacity 0.5s ease-in-out"},"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4","$L5","$L6","$L7","$L8"]}],"$L9","$La","$Lb"]}]}]]}]]}],{"children":["$Lc",{"children":["$Ld",{"children":["$Le",{},null,false,false]},null,false,false]},null,false,false]},null,false,false],"$Lf",false]],"m":"$undefined","G":["$10",[]],"S":true}
+12:I[88343,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"I18nProvider"]
+13:I[69080,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"IframeBridge"]
+14:I[20032,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"SmoothScroll"]
+15:I[28128,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js"],"ClientComponents"]
+16:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+17:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"default"]
+18:I[29306,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/21e9ba04f3a9dd5b.js"],"default"]
+1a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+1d:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"ViewportBoundary"]
+1f:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"MetadataBoundary"]
+4:["$","div",null,{"className":"ssr-circle-1"}]
+5:["$","div",null,{"className":"ssr-circle-2"}]
+6:["$","div",null,{"className":"ssr-title","children":[["$","span",null,{"className":"ssr-pulse-text","id":"ssr-first-name","children":"Jiang"}],["$","span",null,{"className":"ssr-gray-text","id":"ssr-last-name","children":"Muran"}]]}]
+7:["$","div",null,{"className":"ssr-progress-container","children":["$","div",null,{"className":"ssr-progress-bar","id":"ssr-progress-bar","suppressHydrationWarning":true}]}]
+8:["$","div",null,{"className":"ssr-progress-text","children":[["$","span",null,{"className":"ssr-progress-number","id":"ssr-progress-number","suppressHydrationWarning":true,"children":"0%"}],["$","span",null,{"style":{"marginLeft":"0.5rem"},"children":"LOADING"}],["$","span",null,{"className":"ssr-dots","children":"..."}]]}]
+11:Td62,
+          (function() {
+            var progress = 0;
+            var progressBar = document.getElementById('ssr-progress-bar');
+            var progressNumber = document.getElementById('ssr-progress-number');
+            var ssrLoader = document.getElementById('ssr-loader');
+            
+            // 追踪资源加载进度
+            function updateProgress() {
+              if (typeof PerformanceObserver !== 'undefined') {
+                var resources = performance.getEntriesByType('resource');
+                var completed = 0;
+                var total = 0;
+                
+                resources.forEach(function(res) {
+                  total++;
+                  if (res.responseEnd > 0) completed++;
+                });
+                
+                if (total > 0) {
+                  progress = Math.min(92, Math.floor((completed / total) * 100));
+                }
+              } else {
+                // 降级：使用模拟进度
+                progress = Math.min(92, progress + Math.max(1, (92 - progress) * 0.1));
+              }
+              
+              if (progressBar) progressBar.style.width = progress + '%';
+              if (progressNumber) progressNumber.textContent = Math.round(progress) + '%';
+            }
+            
+            // 定期更新进度
+            var progressInterval = setInterval(updateProgress, 100);
+            var loaded = false;
+            var capTimer = null;
+
+            // 页面加载完成（幂等：只执行一次）
+            function handleLoad() {
+              if (loaded) return;
+              loaded = true;
+              clearInterval(progressInterval);
+              if (capTimer) clearTimeout(capTimer);
+              progress = 100;
+              if (progressBar) progressBar.style.width = '100%';
+              if (progressNumber) progressNumber.textContent = '100%';
+
+              // 传递进度给 React 组件
+              if (typeof window !== 'undefined') {
+                window.__SSR_LOADER_PROGRESS__ = 100;
+                window.__SSR_LOADER_READY__ = true;
+              }
+
+              // Hide the loader but DO NOT removeChild it — that breaks React's
+              // reconciliation (NotFoundError: removeChild / insertBefore).
+              // Leave it in the DOM as display:none after the fade completes.
+              setTimeout(function() {
+                if (ssrLoader) {
+                  ssrLoader.classList.add('ssr-hidden');
+                  setTimeout(function() {
+                    if (ssrLoader) {
+                      ssrLoader.classList.add('ssr-gone');
+                    }
+                  }, 500);
+                }
+              }, 200);
+            }
+
+            // 硬性兜底：无论 window.load 是否/何时触发，最多 2.2s 就收起加载页。
+            // 这修复了"卡在 95%"——此前只等 load 事件，遇到慢字体/挂起请求会一直卡住。
+            capTimer = setTimeout(handleLoad, 2200);
+
+            if (document.readyState === 'complete') {
+              handleLoad();
+            } else {
+              window.addEventListener('load', handleLoad);
+              // DOM 就绪后给一点缓冲即可收起，不必死等全部资源（字体、图片等）
+              document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(handleLoad, 600);
+              });
+            }
+          })();
+        9:["$","script",null,{"dangerouslySetInnerHTML":{"__html":"$11"}}]
+a:["$","$L12",null,{"children":[["$","$L13",null,{}],["$","$L14",null,{}],["$","$L15",null,{}],["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L18",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:["$","script",null,{"defer":true,"src":"https://static.cloudflareinsights.com/beacon.min.js","data-cf-beacon":"{\"token\": \"979c05fb5cbf4f8fb5268ef84c91ba07\"}"}]
+c:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+d:["$","$1","c",{"children":[null,["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+e:["$","$1","c",{"children":["$L19",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/23c0fd5017a2b615.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/097816f103c65cd3.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/1f88d2eae0bc9c31.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/6fac58be654a59fc.js","async":true,"nonce":"$undefined"}]],["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]]}]
+f:["$","$1","h",{"children":[null,["$","$L1d",null,{"children":"$L1e"}],["$","div",null,{"hidden":true,"children":["$","$L1f",null,{"children":["$","$1b",null,{"name":"Next.Metadata","children":"$L20"}]}]}],null]}]
+21:I[45678,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"Navbar"]
+22:I[65808,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"BlogPost"]
+23:T66a3,<p>这块博客的写作系统支持一些超出普通 Markdown 的东西。这篇文章把它们<strong>逐个演示一遍</strong>——
+你既能当它是效果预览,也能当它是一份&quot;抄作业&quot;的模板。写法细节见仓库里的
+<code>docs/BLOG_AUTHORING.md</code>。</p>
+<h2 id="提示卡七种语气" class="prose-heading">提示卡:七种语气</h2>
+<p>用 <code>:::类型 标题</code> 开一个提示卡,内部支持任意 Markdown。</p>
+<div class="callout callout-note" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v-4M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg><span>普通提示</span></div><div class="callout-body"><p>最常用的一种。可以放<strong>加粗</strong>、<code>代码</code>、<a href="#%E6%8F%90%E7%A4%BA%E5%8D%A1%E4%B8%83%E7%A7%8D%E8%AF%AD%E6%B0%94">链接</a>。</p>
+</div></div><div class="callout callout-tip" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5.9 1.1 1 1.8h6c.1-.7.4-1.3 1-1.8A7 7 0 0 0 12 2z"/></svg><span>小技巧</span></div><div class="callout-body"><p>不写标题时,标题栏会用类型名兜底。</p>
+</div></div><div class="callout callout-success" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>成功</span></div><div class="callout-body"><p>用来标记&quot;这样做是对的&quot;。</p>
+</div></div><div class="callout callout-warning" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>注意</span></div><div class="callout-body"><p>容易踩坑的地方放这里。</p>
+</div></div><div class="callout callout-danger" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg><span>危险</span></div><div class="callout-body"><p>不可逆操作、安全风险,用最强的语气。</p>
+</div></div><div class="callout callout-quote" role="note"><div class="callout-title"><svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 11H6a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2h1a1 1 0 0 1 1 1v4a4 4 0 0 1-2 3.5M20 11h-4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2h1a1 1 0 0 1 1 1v4a4 4 0 0 1-2 3.5"/></svg><span>引用</span></div><div class="callout-body"><blockquote>
+<p>也可以在里面继续嵌套普通的引用块。</p>
+</blockquote>
+</div></div><h2 id="折叠把细节藏起来" class="prose-heading">折叠:把细节藏起来</h2>
+<p>冗长的推导、可选的旁支,用 <code>:::details</code> 折叠,默认收起,点击展开。</p>
+<details class="prose-details"><summary class="prose-summary"><span class="summary-text">点开看一段被折叠的推导</span><svg class="summary-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="details-body"><p>这里可以放<strong>任何东西</strong>,包括列表和代码:</p>
+<ol>
+<li>第一步</li>
+<li>第二步</li>
+</ol>
+<pre><code class="hljs language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">collapse_me</span>():
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;你现在看到我了&quot;</span>
+</code></pre></div></details><h2 id="标签页同一件事的多个版本" class="prose-heading">标签页:同一件事的多个版本</h2>
+<p><code> :::tabs</code> 配合 <code>=== 面板名</code>,最适合&quot;同一段逻辑的多语言实现&quot;。</p>
+<div class="prose-tabs" data-tabs><div class="tabs-nav" role="tablist"><button class="tab-btn is-active" type="button" role="tab" data-i="0">Python</button><button class="tab-btn" type="button" role="tab" data-i="1">JavaScript</button><button class="tab-btn" type="button" role="tab" data-i="2">说明</button></div><div class="tabs-panels"><div class="tab-panel is-active" role="tabpanel" data-i="0"><pre><code class="hljs language-python">def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+</code></pre></div><div class="tab-panel" role="tabpanel" data-i="1"><pre><code class="hljs language-js">function fib(n) {
+  let [a, b] = [0, 1];
+  for (let i = 0; i &lt; n; i++) [a, b] = [b, a + b];
+  return a;
+}
+</code></pre></div><div class="tab-panel" role="tabpanel" data-i="2"><p>第三个面板放普通文字。第一个面板默认激活,点上面的标签切换。</p>
+</div></div></div><h2 id="数学公式构建期-katex" class="prose-heading">数学公式:构建期 KaTeX</h2>
+<p>行内公式像这样:当 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo mathvariant="normal">≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \ne 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord katex-vbox"><span class="katex-thinbox"><span class="rlap"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="katex-inner"><span class="mord"><span class="mrel"></span></span></span><span class="katex-fix"></span></span></span></span></span><span class="mspace nobreak"></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 时,方程 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ax^2 + bx + c = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> 的解为
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.3845em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0395em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">b</span><span class="mbin mtight">±</span><span class="mord sqrt mtight"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9221em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em;"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mtight">4</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">c</span></span></span><span style="top:-2.8821em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1179em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</p>
+<p>块级公式独占一行,居中展示:</p>
+<div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><msqrt><mi>π</mi></msqrt></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:2.3846em;vertical-align:-0.9703em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.4445em;position:relative;top:-0.0011em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4143em;"><span style="top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3.8129em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9703em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0369em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.04em;vertical-align:-0.1908em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8492em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.0359em;">π</span></span></span><span style="top:-2.8092em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1908em;"><span></span></span></span></span></span></span></span></span></span></div><div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">x</mi><mo>=</mo><mi>λ</mi><mi mathvariant="bold">x</mi><mspace width="1em"/><mo>⟹</mo><mspace width="1em"/><mi>det</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="bold">A</mi><mo>−</mo><mi>λ</mi><mi mathvariant="bold">I</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathbf{A}\mathbf{x} = \lambda\mathbf{x}
+\quad\Longrightarrow\quad
+\det(\mathbf{A} - \lambda\mathbf{I}) = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6861em;"></span><span class="mord mathbf">Ax</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7184em;vertical-align:-0.024em;"></span><span class="mord mathnormal">λ</span><span class="mord mathbf">x</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟹</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">det</span><span class="mopen">(</span><span class="mord mathbf">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mord mathbf">I</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span></div><p>公式在<strong>构建期</strong>就渲染成 HTML,首屏即完整,不依赖运行时脚本。</p>
+<h2 id="mermaid让流程quot画quot出来" class="prose-heading">Mermaid:让流程&quot;画&quot;出来</h2>
+<p>用 <code>```mermaid</code> 代码块写图,客户端按需渲染(只有含图的页面才加载 Mermaid)。</p>
+<p>一个流程图:</p>
+<pre><code class="hljs language-mermaid">flowchart LR
+    A[写 Markdown] --&gt; B{有增强语法?}
+    B --&gt;|没有| C[普通渲染]
+    B --&gt;|有| D[marked 扩展]
+    D --&gt; E[构建期出 HTML]
+    C --&gt; E
+    E --&gt; F[BlogEnhancer 客户端增强]
+    F --&gt; G([读者看到成品])
+</code></pre><p>一个时序图:</p>
+<pre><code class="hljs language-mermaid">sequenceDiagram
+    participant 读者
+    participant 页面
+    participant iframe as 沙箱嵌入
+    读者-&gt;&gt;页面: 打开文章
+    页面-&gt;&gt;iframe: srcdoc 注入内容
+    iframe--&gt;&gt;页面: postMessage(高度)
+    页面-&gt;&gt;页面: 自适应 iframe 高度
+    读者-&gt;&gt;iframe: 点击交互
+    Note over iframe: 脚本被沙箱关住,&lt;br/&gt;碰不到主页面
+</code></pre><h2 id="可交互嵌入sandbox-iframe" class="prose-heading">可交互嵌入:sandbox iframe</h2>
+<p>这是&quot;安全塞进任意 HTML/CSS/JS&quot;的正解。下面是一个真正<strong>能点</strong>的小计数器 ——
+它的样式和脚本都被关在沙箱里,既污染不了文章,也访问不到主页面。</p>
+<div class="prose-embed" data-embed><iframe class="prose-embed-frame" data-embed-id="embed-0" loading="lazy" sandbox="allow-scripts allow-popups allow-forms" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;style&gt;:root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:ui-sans-serif,system-ui,-apple-system,&quot;Segoe UI&quot;,Roboto,&quot;PingFang SC&quot;,&quot;Microsoft YaHei&quot;,sans-serif;color:#e8dcc2;background:transparent;line-height:1.6;padding:2px}a{color:#c9a86a}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;style&gt;
+  .demo { font-family: ui-sans-serif, system-ui, sans-serif; text-align: center; padding: 8px; }
+  .count { font-size: 40px; font-weight: 700; color: #e8c896; margin: 8px 0; font-variant-numeric: tabular-nums; }
+  .row { display: flex; gap: 10px; justify-content: center; }
+  button {
+    font: inherit; cursor: pointer; padding: 8px 18px; border-radius: 10px;
+    border: 1px solid rgba(184,146,99,.4); background: rgba(184,146,99,.12); color: #e8dcc2;
+    transition: background .2s;
+  }
+  button:hover { background: rgba(184,146,99,.24); }
+&lt;/style&gt;
+&lt;div class=&quot;demo&quot;&gt;
+  &lt;div class=&quot;count&quot; id=&quot;c&quot;&gt;0&lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;button onclick=&quot;document.getElementById(&#39;c&#39;).textContent = +document.getElementById(&#39;c&#39;).textContent - 1&quot;&gt;− 1&lt;/button&gt;
+    &lt;button onclick=&quot;document.getElementById(&#39;c&#39;).textContent = 0&quot;&gt;重置&lt;/button&gt;
+    &lt;button onclick=&quot;document.getElementById(&#39;c&#39;).textContent = +document.getElementById(&#39;c&#39;).textContent + 1&quot;&gt;+ 1&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;(function(){function p(){try{parent.postMessage({type:&#39;jmr:embed:height&#39;,id:&quot;embed-0&quot;,height:document.documentElement.scrollHeight},&#39;*&#39;)}catch(e){}}if(window.ResizeObserver){new ResizeObserver(p).observe(document.documentElement)}window.addEventListener(&#39;load&#39;,p);window.addEventListener(&#39;resize&#39;,p);setTimeout(p,50);setTimeout(p,300);p()})()&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" title="Interactive embed"></iframe></div><p>再来一个纯 Canvas 的小动画,证明脚本、动画、requestAnimationFrame 都能跑:</p>
+<div class="prose-embed" data-embed><iframe class="prose-embed-frame" data-embed-id="embed-1" loading="lazy" sandbox="allow-scripts allow-popups allow-forms" srcdoc="&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;style&gt;:root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:ui-sans-serif,system-ui,-apple-system,&quot;Segoe UI&quot;,Roboto,&quot;PingFang SC&quot;,&quot;Microsoft YaHei&quot;,sans-serif;color:#e8dcc2;background:transparent;line-height:1.6;padding:2px}a{color:#c9a86a}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;canvas id=&quot;cv&quot; width=&quot;600&quot; height=&quot;120&quot; style=&quot;width:100%;max-width:600px;display:block;margin:0 auto;border-radius:10px;background:#0d0a07&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const cv = document.getElementById(&#39;cv&#39;), ctx = cv.getContext(&#39;2d&#39;);
+  let t = 0;
+  (function loop(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ctx.strokeStyle = &#39;#c9a86a&#39;; ctx.lineWidth = 2; ctx.beginPath();
+    for (let x = 0; x &lt; cv.width; x++) {
+      const y = 60 + Math.sin((x*0.03) + t) * 34 * Math.sin(t*0.3);
+      x === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.stroke(); t += 0.05; requestAnimationFrame(loop);
+  })();
+&lt;/script&gt;&lt;script&gt;(function(){function p(){try{parent.postMessage({type:&#39;jmr:embed:height&#39;,id:&quot;embed-1&quot;,height:document.documentElement.scrollHeight},&#39;*&#39;)}catch(e){}}if(window.ResizeObserver){new ResizeObserver(p).observe(document.documentElement)}window.addEventListener(&#39;load&#39;,p);window.addEventListener(&#39;resize&#39;,p);setTimeout(p,50);setTimeout(p,300);p()})()&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" title="Interactive embed"></iframe></div><h2 id="顺带这些基础也一直在" class="prose-heading">顺带:这些基础也一直在</h2>
+<p>代码块自动高亮,右上角有语言标签和<strong>复制按钮</strong>:</p>
+<pre><code class="hljs language-rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">msg</span> = <span class="hljs-string">&quot;复制我试试 →&quot;</span>;
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{msg}&quot;</span>);
+}
+</code></pre><p>表格、引用照常:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>何时渲染</th>
+<th>依赖</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>提示卡 / 折叠 / 标签页</td>
+<td>构建期</td>
+<td>无</td>
+</tr>
+<tr>
+<td>数学公式</td>
+<td>构建期(KaTeX)</td>
+<td>katex</td>
+</tr>
+<tr>
+<td>Mermaid 图表</td>
+<td>客户端懒加载</td>
+<td>mermaid</td>
+</tr>
+<tr>
+<td>沙箱嵌入</td>
+<td>构建期包壳 + 客户端自适应</td>
+<td>无</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>右上角(超宽屏)会有一个自动生成的目录,随滚动高亮当前小节;顶部还有一条阅读进度条。</p>
+</blockquote>
+<h2 id="小结" class="prose-heading">小结</h2>
+<p>普通 Markdown 负责&quot;说清楚&quot;,这些增强负责&quot;演出来&quot;。别滥用——<strong>能用一句话讲明白的,就别画图</strong>。</p>
+<p>— 姜睦然</p>
+19:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://jiangmuran.com/blog/features-demo#article\",\"headline\":\"这块博客能写点什么花样\",\"description\":\"一篇“会动”的文章 —— 折叠、提示卡、标签页、数学公式、Mermaid 图表，以及可交互的沙箱嵌入,全部示范一遍。\",\"datePublished\":\"2026-05-16\",\"dateModified\":\"2026-05-16\",\"keywords\":\"元, 演示, 前端\",\"articleSection\":\"杂记\",\"inLanguage\":\"zh-CN\",\"image\":[\"https://jiangmuran.com/mypic.jpg\"],\"url\":\"https://jiangmuran.com/blog/features-demo\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://jiangmuran.com/blog/features-demo\"},\"author\":{\"@type\":\"Person\",\"@id\":\"https://jiangmuran.com/#person\",\"name\":\"Jiang Muran\",\"url\":\"https://jiangmuran.com\"},\"publisher\":{\"@id\":\"https://jiangmuran.com/#person\"}}"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"首页\",\"item\":\"https://jiangmuran.com\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://jiangmuran.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"这块博客能写点什么花样\",\"item\":\"https://jiangmuran.com/blog/features-demo\"}]}"}}],["$","$L21",null,{}],["$","$L22",null,{"post":{"slug":"features-demo","title":"这块博客能写点什么花样","description":"一篇“会动”的文章 —— 折叠、提示卡、标签页、数学公式、Mermaid 图表，以及可交互的沙箱嵌入,全部示范一遍。","date":"2026-05-16","tags":["元","演示","前端"],"category":"杂记","cover":"$undefined","readingTime":"6 min read","contentHtml":"$23"}}],"$L24","$L25"]
+26:I[16142,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"SectionDivider"]
+27:I[13642,["/_next/static/chunks/af6715fa020a259d.js","/_next/static/chunks/f8f5d0c955b94b71.js","/_next/static/chunks/91a69682796eef98.js","/_next/static/chunks/097816f103c65cd3.js","/_next/static/chunks/1f88d2eae0bc9c31.js","/_next/static/chunks/6fac58be654a59fc.js"],"Footer"]
+24:["$","$L26",null,{"variant":"line"}]
+25:["$","$L27",null,{}]
+1e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#080503"}]]
+28:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/41bc2dcb883b16d2.js"],"IconMark"]
+1c:null
+20:[["$","title","0",{"children":"这块博客能写点什么花样 | Jiang Muran | Jiangmuran.com"}],["$","meta","1",{"name":"description","content":"一篇“会动”的文章 —— 折叠、提示卡、标签页、数学公式、Mermaid 图表，以及可交互的沙箱嵌入,全部示范一遍。"}],["$","meta","2",{"name":"application-name","content":"Jiangmuran.com"}],["$","link","3",{"rel":"author","href":"https://jiangmuran.com"}],["$","meta","4",{"name":"author","content":"Jiang Muran"}],["$","link","5",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"元,演示,前端"}],["$","meta","7",{"name":"creator","content":"Jiang Muran"}],["$","meta","8",{"name":"publisher","content":"Jiang Muran"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://jiangmuran.com/blog/features-demo"}],["$","meta","13",{"property":"og:title","content":"这块博客能写点什么花样"}],["$","meta","14",{"property":"og:description","content":"一篇“会动”的文章 —— 折叠、提示卡、标签页、数学公式、Mermaid 图表，以及可交互的沙箱嵌入,全部示范一遍。"}],["$","meta","15",{"property":"og:url","content":"https://jiangmuran.com/blog/features-demo"}],["$","meta","16",{"property":"og:site_name","content":"Jiangmuran.com"}],["$","meta","17",{"property":"og:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","meta","18",{"property":"og:image:width","content":"400"}],["$","meta","19",{"property":"og:image:height","content":"400"}],["$","meta","20",{"property":"og:type","content":"article"}],["$","meta","21",{"property":"article:published_time","content":"2026-05-16"}],["$","meta","22",{"property":"article:author","content":"Jiang Muran"}],["$","meta","23",{"property":"article:tag","content":"元"}],["$","meta","24",{"property":"article:tag","content":"演示"}],["$","meta","25",{"property":"article:tag","content":"前端"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:creator","content":"@jiangmuran"}],["$","meta","28",{"name":"twitter:title","content":"这块博客能写点什么花样"}],["$","meta","29",{"name":"twitter:description","content":"一篇“会动”的文章 —— 折叠、提示卡、标签页、数学公式、Mermaid 图表，以及可交互的沙箱嵌入,全部示范一遍。"}],["$","meta","30",{"name":"twitter:image","content":"https://jiangmuran.com/mypic.jpg"}],["$","link","31",{"rel":"shortcut icon","href":"/mypic.jpg"}],["$","link","32",{"rel":"icon","href":"/mypic.jpg","type":"image/jpeg"}],["$","link","33",{"rel":"apple-touch-icon","href":"/mypic.jpg","sizes":"180x180","type":"image/jpeg"}],["$","$L28","34",{}]]
