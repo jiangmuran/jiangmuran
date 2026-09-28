@@ -1,0 +1,16 @@
+{
+  "name": "Jiangmuran.com",
+  "short_name": "JMR",
+  "description": "姜睦然（Jiang Muran）的个人主页。AI Builder、算法竞赛选手、开源开发者。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "icons": [
+    {
+      "src": "/mypic.jpg",
+      "sizes": "400x400",
+      "type": "image/jpeg"
+    }
+  ]
+}

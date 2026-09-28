@@ -1,0 +1,22 @@
+{
+  "heroButtons": {
+    "zh-CN": [
+      { "id": 1, "text": "查看应用", "type": "btn-primary", "action": "applications" },
+      { "id": 2, "text": "前往博客站", "type": "btn-secondary", "action": "blog" },
+      { "id": 3, "text": "", "type": "btn-outline", "action": "siteSwitcher" },
+      { "id": 7, "text": "联系我", "type": "btn-outline", "action": "contact" }
+    ],
+    "zh-TW": [
+      { "id": 1, "text": "查看應用", "type": "btn-primary", "action": "applications" },
+      { "id": 2, "text": "前往部落格", "type": "btn-secondary", "action": "blog" },
+      { "id": 3, "text": "", "type": "btn-outline", "action": "siteSwitcher" },
+      { "id": 7, "text": "聯絡我", "type": "btn-outline", "action": "contact" }
+    ],
+    "en": [
+      { "id": 1, "text": "View Apps", "type": "btn-primary", "action": "applications" },
+      { "id": 2, "text": "Visit Blog", "type": "btn-secondary", "action": "blog" },
+      { "id": 3, "text": "", "type": "btn-outline", "action": "siteSwitcher" },
+      { "id": 7, "text": "Contact", "type": "btn-outline", "action": "contact" }
+    ]
+  }
+}

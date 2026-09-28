@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>RED HACKATHON 2026</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --g:#00ff88;--g2:#00cc6a;--glow:rgba(0,255,136,.25);
+  --bg:#050a08;--s1:#0a1410;--s2:#0d1a14;--dim:#3a5c4a;--text:#c8efe0;
+}
+@font-face{font-family:'Mono';src:local('SF Mono'),local('Menlo'),local('Consolas');font-display:swap}
+body{
+  font-family:'Mono',monospace;background:var(--bg);color:var(--text);
+  min-height:100vh;min-height:100dvh;overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,255,136,.06),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(0,255,136,.03),transparent);
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,255,136,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,136,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:48px 20px 40px}
+
+/* ── Header ── */
+.hd{text-align:center;margin-bottom:28px}
+.tag{
+  display:inline-block;font-size:10px;letter-spacing:5px;color:var(--g);
+  border:1px solid rgba(0,255,136,.3);padding:3px 14px;margin-bottom:16px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(2.4rem,10vw,4.8rem);font-weight:900;letter-spacing:-1px;
+  color:#fff;line-height:.95;
+  text-shadow:0 0 30px var(--glow),0 0 60px var(--glow);
+}
+h1 b{color:var(--g)}
+.sub{font-size:12px;color:var(--dim);margin-top:10px;letter-spacing:2px}
+
+/* ── Phase strip ── */
+.phase{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-bottom:24px;flex-wrap:wrap;
+}
+.pd{width:28px;height:3px;border-radius:2px;background:var(--s2);transition:.4s}
+.pd.done{background:var(--g2);opacity:.4}
+.pd.on{background:var(--g);box-shadow:0 0 8px var(--glow)}
+.plbl{
+  font-size:11px;color:var(--g);font-weight:700;letter-spacing:2px;
+  margin-left:10px;text-transform:uppercase;
+}
+
+/* ── Countdown ── */
+.cd-wrap{text-align:center;margin-bottom:28px}
+.cd-tip{font-size:11px;color:var(--dim);letter-spacing:3px;margin-bottom:16px;text-transform:uppercase}
+.cd{display:flex;justify-content:center;gap:10px}
+.cb{
+  flex:1;max-width:120px;
+  background:var(--s1);border:1px solid rgba(0,255,136,.1);border-radius:10px;
+  padding:18px 0 12px;text-align:center;position:relative;overflow:hidden;
+  backdrop-filter:blur(4px);
+}
+.cb::after{
+  content:'';position:absolute;top:0;left:20%;right:20%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:.5;
+}
+.cn{
+  font-size:clamp(2rem,8vw,3.4rem);font-weight:900;color:#fff;line-height:1;
+  font-variant-numeric:tabular-nums;text-shadow:0 0 16px var(--glow);
+}
+.cl{font-size:9px;color:var(--dim);letter-spacing:2px;margin-top:6px;text-transform:uppercase}
+
+/* ── Progress ── */
+.prog{margin-bottom:24px;transition:opacity .5s}
+.prog.hide{opacity:.3}
+.prog-h{display:flex;justify-content:space-between;font-size:10px;color:var(--dim);letter-spacing:1px;margin-bottom:6px}
+.prog-t{height:3px;background:var(--s1);border-radius:2px;overflow:hidden}
+.prog-f{height:100%;background:linear-gradient(90deg,var(--g2),var(--g));border-radius:2px;transition:width .8s;position:relative}
+.prog-f::after{
+  content:'';position:absolute;right:-1px;top:-4px;width:8px;height:11px;
+  background:var(--g);border-radius:3px;box-shadow:0 0 10px var(--glow);
+}
+
+/* ── Timeline ── */
+.tl{position:relative;padding-left:24px;margin-bottom:8px}
+.tl::before{
+  content:'';position:absolute;left:4px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(var(--g2),var(--dim),transparent);
+}
+.ti{position:relative;margin-bottom:16px;opacity:.4;transition:.3s}
+.ti.on{opacity:1}
+.ti.dn{opacity:.25}
+.ti .dot{
+  position:absolute;left:-22px;top:5px;width:7px;height:7px;border-radius:50%;
+  background:var(--dim);border:1.5px solid var(--bg);transition:.3s;
+}
+.ti.on .dot{background:var(--g);box-shadow:0 0 8px var(--glow);transform:scale(1.3)}
+.ti.dn .dot{background:var(--g2)}
+.ti-d{font-size:10px;color:var(--g2);letter-spacing:2px;font-weight:700;margin-bottom:2px}
+.ti.on .ti-d{color:var(--g)}
+.ti-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.ti-s{font-size:11px;color:var(--dim);line-height:1.5}
+
+/* ── Terminal ── */
+.term{
+  background:var(--s1);border:1px solid rgba(0,255,136,.08);border-radius:8px;
+  padding:16px 18px;margin-top:20px;font-size:11px;line-height:1.8;
+}
+.term .p{color:var(--g)}
+.term .v{color:#fff}
+.term .ok{color:#4ade80}
+.term .w{color:#facc15}
+.cur{
+  display:inline-block;width:7px;height:13px;background:var(--g);
+  animation:bk 1s step-end infinite;vertical-align:text-bottom;margin-left:3px;
+}
+@keyframes bk{50%{opacity:0}}
+
+/* ── Contact card ── */
+.card{
+  margin-top:24px;padding:20px 24px;
+  background:linear-gradient(135deg,var(--s1),var(--s2));
+  border:1px solid rgba(0,255,136,.1);border-radius:10px;
+  position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;top:-1px;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:.4;
+}
+.card-hi{font-size:13px;color:var(--g);margin-bottom:10px;font-weight:700}
+.card-name{font-size:20px;font-weight:900;color:#fff;margin-bottom:4px}
+.card-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px}
+.card-links a{
+  font-size:11px;color:var(--dim);text-decoration:none;
+  transition:color .2s;letter-spacing:1px;
+  display:flex;align-items:center;gap:5px;
+}
+.card-links a:hover{color:var(--g)}
+.card-links a::before{
+  content:'';display:inline-block;width:4px;height:4px;
+  border-radius:50%;background:var(--g2);flex-shrink:0;
+}
+.card-ascii{
+  position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:28px;opacity:.12;line-height:1;pointer-events:none;
+  color:var(--g);
+}
+
+/* ── Footer ── */
+.ft{text-align:center;margin-top:20px;font-size:10px;color:var(--dim);letter-spacing:1px}
+.ft a{color:var(--g2);text-decoration:none}
+
+/* ── Anim ── */
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.wrap>*{animation:up .5s ease both}
+.wrap>*:nth-child(1){animation-delay:.05s}
+.wrap>*:nth-child(2){animation-delay:.1s}
+.wrap>*:nth-child(3){animation-delay:.15s}
+.wrap>*:nth-child(4){animation-delay:.2s}
+.wrap>*:nth-child(5){animation-delay:.25s}
+.wrap>*:nth-child(6){animation-delay:.3s}
+.wrap>*:nth-child(7){animation-delay:.35s}
+.wrap>*:nth-child(8){animation-delay:.4s}
+.wrap>*:nth-child(9){animation-delay:.45s}
+
+/* ── Mobile ── */
+@media(max-width:480px){
+  .wrap{padding:32px 14px 28px}
+  .cd{gap:6px}
+  .cb{padding:14px 0 10px;border-radius:8px}
+  .tag{font-size:9px;letter-spacing:3px;padding:2px 10px}
+  .tl{padding-left:20px}
+  .ti .dot{left:-18px}
+  .term{padding:12px 14px;font-size:10px}
+  .ti-t{font-size:13px}
+  h1{letter-spacing:-0.5px}
+  .card{padding:16px 18px}
+  .card-name{font-size:17px}
+  .card-ascii{font-size:22px;right:12px}
+}
+@media(max-width:360px){
+  .cn{font-size:1.8rem}
+  h1{font-size:2rem}
+  .cb{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hd">
+    <div class="tag">48-HOUR HACKATHON</div>
+    <h1><b>RED</b> HACK<br>ATHON</h1>
+    <div class="sub">2026.04.07 — 04.10 · 48H SPRINT</div>
+  </div>
+
+  <div class="phase">
+    <div class="pd" data-p="0"></div>
+    <div class="pd" data-p="1"></div>
+    <div class="pd" data-p="2"></div>
+    <div class="pd" data-p="3"></div>
+    <div class="pd" data-p="4"></div>
+    <div class="pd" data-p="5"></div>
+    <span class="plbl" id="plbl">—</span>
+  </div>
+
+  <div class="cd-wrap">
+    <div class="cd-tip" id="cd-tip">LOADING</div>
+    <div class="cd">
+      <div class="cb"><div class="cn" id="d">00</div><div class="cl">DAYS</div></div>
+      <div class="cb"><div class="cn" id="h">00</div><div class="cl">HOURS</div></div>
+      <div class="cb"><div class="cn" id="m">00</div><div class="cl">MINS</div></div>
+      <div class="cb"><div class="cn" id="s">00</div><div class="cl">SECS</div></div>
+    </div>
+  </div>
+
+  <div class="prog" id="prog">
+    <div class="prog-h"><span id="prog-lbl">48H CREATION PROGRESS</span><span id="pct">0%</span></div>
+    <div class="prog-t"><div class="prog-f" id="pf" style="width:0%"></div></div>
+  </div>
+
+  <div class="tl">
+    <div class="ti" data-p="0">
+      <div class="dot"></div>
+      <div class="ti-d">04/07 MON</div>
+      <div class="ti-t">开幕式 + 自由破冰</div>
+      <div class="ti-s">抵达赛场，认识队友，准备战斗</div>
+    </div>
+    <div class="ti" data-p="1">
+      <div class="dot"></div>
+      <div class="ti-d">04/08 00:00</div>
+      <div class="ti-t">48H 创作正式开始</div>
+      <div class="ti-s">硬件实验室同步开放，全力冲刺</div>
+    </div>
+    <div class="ti" data-p="2">
+      <div class="dot"></div>
+      <div class="ti-d">04/10 00:00</div>
+      <div class="ti-t">作品提交截止</div>
+      <div class="ti-s">通过官方收集表提交作品 & 队伍信息</div>
+    </div>
+    <div class="ti" data-p="3">
+      <div class="dot"></div>
+      <div class="ti-d">04/10 10:00–15:30</div>
+      <div class="ti-t">EXPO 展示 → Top 10</div>
+      <div class="ti-s">全体队伍参与 EXPO，角逐晋级名额</div>
+    </div>
+    <div class="ti" data-p="4">
+      <div class="dot"></div>
+      <div class="ti-d">04/10 15:30–18:30</div>
+      <div class="ti-t">封闭休整</div>
+      <div class="ti-s">赛场封闭，选手休息（不可离场）</div>
+    </div>
+    <div class="ti" data-p="5">
+      <div class="dot"></div>
+      <div class="ti-d">04/10 18:30–21:30</div>
+      <div class="ti-t">Top 10 决赛 & 颁奖</div>
+      <div class="ti-s">7 大主赛道 + 5 大特别单元颁奖</div>
+    </div>
+  </div>
+
+  <div class="term" id="term">
+    <div><span class="p">$</span> hackathon --status<span class="cur"></span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-ascii">&gt;_</div>
+    <div class="card-hi">// 来找我交朋友吧</div>
+    <div class="card-name">姜睦然 · JMR</div>
+    <div class="card-links">
+      <a href="https://jiangmuran.com" target="_blank">jiangmuran.com</a>
+      <a href="mailto:jmr@jiangmuran.com">jmr@jiangmuran.com</a>
+    </div>
+  </div>
+
+  <div class="ft">
+    <a href="https://event1.cn/REDHACKATHON/?vHjjPo=#/">RED HACKATHON 2026</a> · made by jmr
+  </div>
+
+</div>
+
+<script>
+const P=[
+  {n:'开幕式·破冰',e:'OPENING',s:'2026-04-07T09:00+08:00',d:'2026-04-08T00:00+08:00'},
+  {n:'48H 创作中',e:'HACKING',s:'2026-04-08T00:00+08:00',d:'2026-04-10T00:00+08:00'},
+  {n:'作品提交截止',e:'SUBMIT',s:'2026-04-10T00:00+08:00',d:'2026-04-10T10:00+08:00'},
+  {n:'EXPO 展示',e:'EXPO',s:'2026-04-10T10:00+08:00',d:'2026-04-10T15:30+08:00'},
+  {n:'封闭休整',e:'BREAK',s:'2026-04-10T15:30+08:00',d:'2026-04-10T18:30+08:00'},
+  {n:'决赛·颁奖',e:'FINALS',s:'2026-04-10T18:30+08:00',d:'2026-04-10T21:30+08:00'},
+];
+// 48H creation window
+const H48_START=new Date('2026-04-08T00:00+08:00');
+const H48_END=new Date('2026-04-10T00:00+08:00');
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+
+function cur(){
+  const t=new Date();
+  if(t<new Date(P[0].s))return{i:-1,n:'即将开始',e:'PRE-EVENT'};
+  for(let i=0;i<P.length;i++)if(t<new Date(P[i].d))return{i,n:P[i].n,e:P[i].e};
+  return{i:P.length,n:'已结束',e:'ENDED'};
+}
+
+function tick(){
+  const c=cur(),now=new Date();
+  $('plbl').textContent=c.e;
+
+  document.querySelectorAll('.pd').forEach(d=>{
+    const p=+d.dataset.p;
+    d.classList.toggle('done',p<c.i);
+    d.classList.toggle('on',p===c.i);
+  });
+  document.querySelectorAll('.ti').forEach(t=>{
+    const p=+t.dataset.p;
+    t.classList.toggle('dn',p<c.i);
+    t.classList.toggle('on',p===c.i);
+  });
+
+  let tgt,tip;
+  if(c.i===-1){tgt=new Date(P[0].s);tip='距离开幕';}
+  else if(c.i<P.length){
+    tgt=new Date(P[c.i].d);
+    tip=c.i===0?'距离比赛开始':c.i===1?'比赛结束倒计时':'距离阶段结束';
+  }else{tgt=null;tip='活动已结束';}
+
+  $('cd-tip').textContent=tip;
+
+  if(tgt){
+    const df=Math.max(0,tgt-now)/1000|0;
+    $('d').textContent=pad(df/86400|0);
+    $('h').textContent=pad(df%86400/3600|0);
+    $('m').textContent=pad(df%3600/60|0);
+    $('s').textContent=pad(df%60);
+  }else{
+    ['d','h','m','s'].forEach(id=>$(id).textContent='00');
+  }
+
+  // Progress bar: only tracks 48H creation window (phase 1)
+  const prog=$('prog');
+  const inHacking=c.i===1;
+  const hackingDone=c.i>1;
+  if(inHacking){
+    prog.classList.remove('hide');
+    $('prog-lbl').textContent='48H CREATION PROGRESS';
+    const pct=Math.max(0,Math.min(100,(now-H48_START)/(H48_END-H48_START)*100));
+    $('pf').style.width=pct.toFixed(1)+'%';
+    $('pct').textContent=pct.toFixed(1)+'%';
+  }else if(hackingDone){
+    prog.classList.remove('hide');
+    $('prog-lbl').textContent='48H CREATION COMPLETE';
+    $('pf').style.width='100%';
+    $('pct').textContent='100%';
+  }else{
+    // Before hacking starts: show 0% dimmed
+    prog.classList.add('hide');
+    $('prog-lbl').textContent='48H CREATION PROGRESS';
+    $('pf').style.width='0%';
+    $('pct').textContent='0%';
+  }
+
+  // terminal
+  const ts=now.toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false});
+  let ln=[
+    `<span class="p">$</span> hackathon --status`,
+    `<span class="p">[SYS]</span> <span class="v">${c.n}</span> · ${ts}`,
+  ];
+  if(c.i===1){
+    const r=H48_END-now,hr=r/36e5|0,mn=(r%36e5)/6e4|0;
+    ln.push(`<span class="p">[!!!]</span> 剩余: <span class="${hr<6?'w':'ok'}">${hr}h${mn}m</span>${hr<6?' <span class="w">⚠ 冲刺！</span>':''}`);
+  }else if(c.i===-1){
+    ln.push(`<span class="p">[...]</span> <span class="ok">等待开幕中</span>`);
+  }else if(c.i>=P.length){
+    ln.push(`<span class="p">[OK]</span> <span class="ok">RED HACKATHON 2026 圆满结束</span>`);
+  }
+  ln.push(`<span class="p">$</span> <span class="cur"></span>`);
+  $('term').innerHTML=ln.map(l=>`<div>${l}</div>`).join('');
+}
+
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
