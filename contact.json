@@ -1,0 +1,25 @@
+{
+  "contact": {
+    "zh-CN": [
+      { "id": 1, "icon": "Mail", "title": "邮箱", "value": "mailto:jmr@jiangmuran.com", "display": "jmr@jiangmuran.com", "type": "link", "target": "_self" },
+      { "id": 2, "icon": "Github", "title": "GitHub", "value": "https://github.com/jiangmuran", "display": "github@jiangmuran", "type": "link", "target": "_blank" },
+      { "id": 3, "icon": "BookOpen", "title": "微信公众号", "value": "", "display": "零日笔记", "type": "qrcode", "qrCode": "/wechat-qrcode.jpg" },
+      { "id": 4, "icon": "Globe", "title": "个人网站", "value": "https://jiangmuran.com", "display": "jiangmuran.com", "type": "link", "target": "_blank" },
+      { "id": 5, "icon": "MapPin", "title": "地址", "value": "中国大陆 北京", "type": "text" }
+    ],
+    "zh-TW": [
+      { "id": 1, "icon": "Mail", "title": "電子郵件", "value": "mailto:jmr@jiangmuran.com", "display": "jmr@jiangmuran.com", "type": "link", "target": "_self" },
+      { "id": 2, "icon": "Github", "title": "GitHub", "value": "https://github.com/jiangmuran", "display": "github@jiangmuran", "type": "link", "target": "_blank" },
+      { "id": 3, "icon": "BookOpen", "title": "微信公眾號", "value": "", "display": "零日筆記", "type": "qrcode", "qrCode": "/wechat-qrcode.jpg" },
+      { "id": 4, "icon": "Globe", "title": "個人網站", "value": "https://jiangmuran.com", "display": "jiangmuran.com", "type": "link", "target": "_blank" },
+      { "id": 5, "icon": "MapPin", "title": "地址", "value": "中國大陸 北京", "type": "text" }
+    ],
+    "en": [
+      { "id": 1, "icon": "Mail", "title": "Email", "value": "mailto:jmr@jiangmuran.com", "display": "jmr@jiangmuran.com", "type": "link", "target": "_self" },
+      { "id": 2, "icon": "Github", "title": "GitHub", "value": "https://github.com/jiangmuran", "display": "github@jiangmuran", "type": "link", "target": "_blank" },
+      { "id": 3, "icon": "BookOpen", "title": "WeChat Blog", "value": "", "display": "Zero-Day Notes", "type": "qrcode", "qrCode": "/wechat-qrcode.jpg" },
+      { "id": 4, "icon": "Globe", "title": "Website", "value": "https://jiangmuran.com", "display": "jiangmuran.com", "type": "link", "target": "_blank" },
+      { "id": 5, "icon": "MapPin", "title": "Location", "value": "Beijing, China", "type": "text" }
+    ]
+  }
+}

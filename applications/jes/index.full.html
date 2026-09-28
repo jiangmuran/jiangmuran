@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JES 加密系统</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin-top: 20px;
+    word-wrap: break-word;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>JES加密系统</h1>
+    <p>JES词典版本：V1.0，将密码长度设置6位以上即可保证不会被破解</p>
+    <label for="input">输入内容：</label>
+    <textarea id="input" placeholder="输入要加密/解密的内容"></textarea>
+
+    <label for="key">密钥：</label>
+    <input type="text" id="key" placeholder="输入密钥">
+
+    <button onclick="requestPassword()">加密</button>
+    <button onclick="decrypt()">解密</button>
+    <button onclick="copyToClipboard()">复制结果</button>
+    
+
+    <br><br>
+
+    <input type="file" id="fileInput" onchange="handleFileUpload()" style="display:none;">
+    <button onclick="downloadFile()">导出为文件</button>
+    <button onclick="document.getElementById('fileInput').click()">上传文件（如果没有反应请刷新页面或文件太大）</button>
+
+    <p id="output"></p>
+</div>
+
+<script>
+        // AES to JES 字母替换本V1.0 JMR出品 后续修改时务必保留原字符
+    // 字典数据来源：我自己的作文、圣经和合本、论语（去重并打乱顺序）
+    const mapping = {
+    1:"人勿保普目的除岁衣注",
+    2:"害俗廖蔬聚温山们吾诗",
+    3:"皮嘴曾治阿与箫玩童",
+    4:"女祖间字草搭喝名乐令暴",
+    5:"它施丽条至跟岭积吗吹棚羞子然漂意",
+    6:"飘想录特惧中哪应剑改岂各作首",
+    7:"拉恶橄财指天领上麦既法同",
+    8:"献座歇洗里娶毕效偶农城通事因单",
+    9:"混朋倍肚物水孩建磋果扁羊回死则铜",
+    0:"拧武盖杀苦腾式乘傻徐躲文早已行固",
+    A:"设琢长色磨第亚浩云语诺",
+    B:"移消绝胎砖蔡二下细肩伯源",
+    C:"你脸糊险夫荆显临替荡创妹逼金",
+    D:"悦节南蔽及有恋盛藏露罪身罗",
+    E:"代选冒马尽赐都雨旁音匠时淹茂耻",
+    F:"谓毁舟世环记彩扬每呢空贫楚求挪口",
+    G:"本米倒幼器藜夜向坍追形奴诉兴仇",
+    H:"菜黑油一橡只再万得善暗甸置照眼繁慧饱",
+    I:"又哥观瑙自全息完千夏新爱篾耳",
+    J:"歌拿虫父坤退罚避赤牧馨命别巴带",
+    K:"昌竭花共永外基兰那哀但日旱撒石称极零片了猾",
+    L:"操纳往穿仁整放低喜心月虽友甚圣洁棘异",
+    M:"尘漆母富政闪势红裙历族独福泉莫悔转仍咐满",
+    N:"诸切河见于香性吩咒助弗睛犹声",
+    O:"宁贤志贵思对供亮凝类榄焰希譬四强鲜拦",
+    P:"复儿归叶禽晓群鼻述接宽比真贡昆就头土没",
+    Q:"古棵前家松给随威勒裔穑西国关她闻缘",
+    R:"免年仆着雅鸽务以十园畜顶义到骨醒孝听",
+    S:"燔遭哈交七其肉抑俭该孕酒知属什候念光神劳分惟鱼筑迦诅",
+    T:"叼骄斐住怀百惊道净降灵伟多引动",
+    U:"坏谁亲塞铁兄凉润吧厚斯邪离",
+    V:"种透谨火经训渐打抹散葡好安答把",
+    W:"沌欢巧王男牲变虚易止鲁摸按落滋面版看托六或必",
+    X:"貌层微启坛艾琴脚遍汗壮五现辱生量邦伊将猎伏",
+    Y:"房要帮颂故平华他尼致爬管败食进塔八立此弹许如乌飞言帐",
+    Z:"方翻却样也己雾增利泥工虹",
+    a:"相后鸦扩彼拌起英忧信停恐谕乱",
+    b:"修吴当敞洪学些蓄研用存还且之损余乃不",
+    c:"肋气三我愠何甲寒亦鹤底醉呼撤兽背滥流",
+    d:"遵狡派原守恭玛萄说居者德宗理蛾直来活游干",
+    e:"革产便怒在顿勇习冬犯传告肘所问合齐弟提君妻找布星",
+    f:"界谄含树密高边发赫东款去岛迁由鹿慰过慕才绕",
+    g:"省先忠配愿使蛇远话取正逊等重明格敏路田栽诱裂若",
+    h:"号刑加摘大讨遇民能灭窗译逐祝列未睡陀商俄这北瓦木烧",
+    i:"患并师么支伤无出开张小处莱孙定件力妇腊珥矣珠怕腓谋雄门",
+    j:"造养灰士焉可海育美帖晚雀成闭沙乎两礼叫包祭终",
+    k:"太像而为是入摆血让篇辰制青渊旺结众晨被泛另曰走伸帕充留秘",
+    l:"沉慎智运非似从孔地更讲个付恩暑耶丈始核蒙",
+    m:"怎示良失挑昼耕初体押鸟近侄敬",
+    n:"蒺少唤脂戏萨境风凡惮辖户",
+    o:"连手论今编约公稼报九吃野隐摩",
+    p:"饥荒埃暂容俊老臣宰夸奖宫待牛骆驼驴婢灾召送银争请左右",
+    q:"举旦琐择邑数算纵横搬仑幔略达戈印攻订谷会盐奉叛盟律乏苏亭靠旷阵战坑逃跑掉",
+    r:"粮掳掠联率精练丁队敌夺迎冷饼司誓根线鞋足任凭象盾牌赏承业谢",
+    s:"嗣绵斑鸠雏劈半鸷吓忽确寄惩享寿埋葬孽盈料烟炉块",
+    t:"度坚割阳证据买须剪姓笑允升热坐站点添急忙速调牵嫩犊预",
+    u:"备奶位纪迈衰难期认程瞒眷秉察旧剿假饶恕审敢短次拜清街屋筵席烤酵躺围舍",
+    v:"官拥挤破昏迷总寻婿内差催迟延怜恤慈救祸倾覆硫磺柱窑",
+    w:"般洞常规寝几昨扪梦阻沾祷竟陷况典遮医乳婴丰愁袋撇",
+    x:"箭忍哭抱佑弓军欺负霸占责羔挖垂丝柳试验柴刀捆",
+    y:"绑畏角扣稠薛益恸尊最坟价卖收值",
+    z:"客准妥借腿倘肯遣匹",
+    "/":"波跪机瓶扛槽句镯宿诚",
+    "+":"妾屈判断书胜情顾井庇俯罕",
+    "=":"和受珍实娃赶主很服",
+    
+    
+    };
+
+// 加密请求
+function requestPassword() {
+    if (1) {
+        checkPassword(1);
+    } else {
+        promptForPassword();
+    }
+}
+
+function promptForPassword() {
+    const password = 1;  // 可以替换为实际的密码逻辑
+
+    if (password) {
+        checkPassword(password);
+    }
+}
+
+function checkPassword(password) {
+    encrypt();
+}
+
+// 加密函数
+function encrypt() {
+    const input = document.getElementById("input").value;
+    const key = document.getElementById("key").value;
+
+    const encryptedResult = CryptoJS.AES.encrypt(input, key).toString();
+
+// 函数用于随机选择一个数组中的值
+function getRandomValue(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
+// 对 encryptedResult 中的每个字符进行随机替换
+function randomReplace(input, dictionary) {
+  let result = "";
+
+  for (let char of input) {
+    if (dictionary[char]) {
+      // 从对应字典的值中随机选择一个替换
+      result += getRandomValue(dictionary[char]);
+    } else {
+      // 如果字符不在字典中，直接保留原字符
+      result += char;
+    }
+  }
+
+  return result;
+}
+
+// 调用函数并输出结果
+const encodedResult = randomReplace(encryptedResult, mapping);
+
+    document.getElementById("output").innerText = "" + encodedResult;
+}
+
+// 解密函数
+function decrypt() {
+
+    const input = document.getElementById("input").value;
+    const key = document.getElementById("key").value;
+
+    console.log("解密信息读取完成")
+    //JES替换部分
+    function decode(inputString, mapping) {
+    let result = '';
+    // 遍历输入字符串中的每一个字符
+    for (let char of inputString) {
+        // 遍历字典的键值对
+        for (let key in mapping) {
+            // 如果字典的值包含当前字符，记录键
+            if (mapping[key].includes(char)) {
+                result += key;
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+
+    const input2=decode(input,mapping);
+    const decryptedResult = CryptoJS.AES.decrypt(input2, key).toString(CryptoJS.enc.Utf8);
+    document.getElementById("output").innerText = "" + decryptedResult;
+}
+
+// 复制到剪贴板
+function copyToClipboard() {
+    const outputText = document.getElementById("output");
+    const selection = window.getSelection();
+    const range = document.createRange();
+
+    range.selectNodeContents(outputText);
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    document.execCommand("copy");
+    document.getElementById("output").innerText = "复制成功";
+    selection.removeAllRanges();
+}
+
+// 导出为文件
+function downloadFile() {
+    const outputText = document.getElementById("output").innerText;
+    const blob = new Blob([outputText], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'result.txt';
+    link.click();
+}
+
+// 上传文件处理
+function handleFileUpload() {
+    const file = document.getElementById('fileInput').files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const fileContent = event.target.result;
+            document.getElementById("input").value = fileContent;
+        };
+        reader.readAsText(file);
+    }
+}
+</script>
+
+</body>
+</html>

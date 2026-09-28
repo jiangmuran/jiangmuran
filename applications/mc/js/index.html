@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background-color:black;" lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="description" content="在浏览器里玩MC" />
+		<meta name="keywords" content="JMR Minecraft online, eaglercraft, minecraft, webmc" />
+		<title>JMR Minecraft online 1.8.8 JS</title>
+		<link type="image/png" rel="shortcut icon" href="../favicon.png" />
+		<script type="text/javascript" src="https://play.mcjs.cc/1.8.8/classes.js"></script>
+		<script type="text/javascript">
+			"use strict";
+
+			function installRelayAliasGuards() {
+				var relayNameMap = {
+					"lax1dude relay #1": "jmr 美国#1",
+					"lax1dude relay #2": "jmr 美国#2",
+					"ayunami relay #1": "jmr 美国#3"
+				};
+
+				var rewriteString = function(s) {
+					if(typeof s !== "string") return s;
+					return relayNameMap[s] || s;
+				};
+
+				var rewriteValue = function(v) {
+					if(typeof v === "string") return rewriteString(v);
+					if(!v || typeof v !== "object") return v;
+					if(Array.isArray(v)) {
+						for(var i = 0; i < v.length; ++i) v[i] = rewriteValue(v[i]);
+						return v;
+					}
+					for(var k in v) {
+						if(Object.prototype.hasOwnProperty.call(v, k)) v[k] = rewriteValue(v[k]);
+					}
+					return v;
+				};
+
+				var rawJSONParse = JSON.parse;
+				JSON.parse = function(str) {
+					var out = rawJSONParse.apply(this, arguments);
+					return rewriteValue(out);
+				};
+
+				setInterval(function() {
+					if(!window.eaglercraftXOpts || !Array.isArray(window.eaglercraftXOpts.relays)) return;
+					for(var i = 0; i < window.eaglercraftXOpts.relays.length; ++i) {
+						var relay = window.eaglercraftXOpts.relays[i];
+						if(relay && typeof relay.comment === "string") relay.comment = rewriteString(relay.comment);
+					}
+				}, 500);
+
+				var replaceTextInDOM = function() {
+					var root = document.body;
+					if(!root) return;
+					var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+					var node;
+					while((node = walker.nextNode())) {
+						var txt = node.nodeValue;
+						if(!txt) continue;
+						txt = txt.replace(/lax1dude relay #1/g, "jmr 美国#1");
+						txt = txt.replace(/lax1dude relay #2/g, "jmr 美国#2");
+						txt = txt.replace(/ayunami relay #1/g, "jmr 美国#3");
+						node.nodeValue = txt;
+					}
+				};
+
+				replaceTextInDOM();
+				setInterval(replaceTextInDOM, 300);
+				var domObserver = new MutationObserver(replaceTextInDOM);
+				domObserver.observe(document.documentElement || document.body, { childList: true, subtree: true, characterData: true });
+			}
+
+			function mountFixedSlogan() {
+				var root = document.getElementById("game_frame");
+				if(!root) return;
+				var old = document.getElementById("fixed_slogan");
+				if(old) old.remove();
+
+				var slogan = document.createElement("div");
+				slogan.id = "fixed_slogan";
+				slogan.textContent = "JMR Minecraft online";
+				slogan.setAttribute("style", "position:absolute;left:50%;top:76%;transform:translateX(-50%);z-index:9999;color:#ffd34d;font:700 24px/1.2 'Trebuchet MS','Verdana',sans-serif;letter-spacing:0.06em;text-shadow:0 2px 0 #6b4d00,0 0 16px rgba(255,173,0,0.45);pointer-events:none;white-space:nowrap;");
+				root.appendChild(slogan);
+
+				var tries = 0;
+				var timer = setInterval(function() {
+					tries += 1;
+					if(root.querySelector("canvas") || tries >= 80) {
+						slogan.remove();
+						clearInterval(timer);
+					}
+				}, 250);
+			}
+
+			function stripStartupOverlays() {
+				var root = document.getElementById("game_frame");
+				if(!root) return;
+				var cleanup = function() {
+					var nodes = root.querySelectorAll("*");
+					for(var i = 0; i < nodes.length; ++i) {
+						var node = nodes[i];
+						if(node.tagName === "CANVAS" || node.tagName === "SCRIPT") continue;
+						if(node.tagName === "IMG") {
+							node.remove();
+							continue;
+						}
+						var text = (node.textContent || "").toLowerCase();
+						if(text.indexOf("press any key") !== -1 || text.indexOf("按下任意") !== -1 || text.indexOf("mcjs") !== -1) {
+							node.remove();
+						}
+					}
+				};
+				cleanup();
+				var observer = new MutationObserver(cleanup);
+				observer.observe(root, { childList: true, subtree: true });
+			}
+
+			function autoStartGame() {
+				var attempts = 0;
+				var timer = setInterval(function() {
+					attempts += 1;
+					var keyEvt = new KeyboardEvent("keydown", { key: " ", code: "Space", keyCode: 32, which: 32, bubbles: true });
+					document.dispatchEvent(keyEvt);
+					var root = document.getElementById("game_frame");
+					if(root) {
+						root.dispatchEvent(keyEvt);
+						root.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+						root.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true }));
+					}
+					if(attempts >= 40) clearInterval(timer);
+				}, 250);
+			}
+
+			window.addEventListener("load", function() {
+				if(window.location.href.indexOf("file:") === 0) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				} else {
+					installRelayAliasGuards();
+					mountFixedSlogan();
+					stripStartupOverlays();
+					autoStartGame();
+					var relayId = 2;
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						assetsURI: "https://play.mcjs.cc/1.8.8/assets.epk",
+						localesURI: "lang/",
+						lang: "zh_CN",
+						worldsDB: "worlds",
+						logInvalidCerts: false,
+						crashOnUncaughtExceptions: false,
+						allowUpdateDL: false,
+						allowFNAWSkins: false,
+						allowVoiceClient: false,
+						localStorageNamespace: "jmr_mc_online_v2",
+						checkRelaysForUpdates: false,
+						useXHRFetch: false,
+						enableMinceraft: false,
+						showBootMenuOnLaunch: false,
+						allowBootMenu: false,
+						servers: [
+							{ addr: "wss://uwu.lzw.jiangmuran.com", name: "JMR自营pvp服务器（仍在测试）", hideAddr: false },
+							{ addr: "wss://krypticmc.net", name: "第三方不可信服务器 请勿充值", hideAddr: false }
+						],
+						relays: [
+							{ addr: "wss://relay.deev.is/", comment: "jmr 美国#1", primary: relayId === 0 },
+							{ addr: "wss://relay.lax1dude.net/", comment: "jmr 美国#2", primary: relayId === 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "jmr 美国#3", primary: relayId === 2 }
+						]
+					};
+					var q = window.location.search;
+					if((typeof q === "string") && q[0] === "?" && (typeof window.URLSearchParams !== "undefined")) {
+						q = new window.URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+					}
+					main();
+				}
+			});
+		</script>
+	</head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;" id="game_frame"></body>
+</html>
